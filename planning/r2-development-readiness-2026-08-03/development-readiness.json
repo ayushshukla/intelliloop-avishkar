@@ -1,0 +1,315 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "INTELLILOOP-DEVELOPMENT-READINESS-FREEZE-2026-08-03",
+  "createdAt": "2026-08-03T15:24:18.5507097+05:30",
+  "status": "READY_FOR_BACKLOG_GENERATION",
+  "product": {
+    "name": "IntelliLoop",
+    "subtitle": "The Evidence-Reconciled Active Software Twin",
+    "category": "AI-assisted, evidence-reconciled software-delivery intelligence",
+    "primaryWedge": "Retail software delivery",
+    "promise": "Build a living evidence-backed twin of one software change and reconcile requirements, decisions, code observations and validations into cited impact and deterministic release truth."
+  },
+  "authoritativeInputs": [
+    {"path": "discovery/portfolio-evidence.json", "sha256": "A0D582C323F18A64D4169ECD42FBF447CEDC0181C74F2F760380488D7A63F560"},
+    {"path": "discovery/discovery-state.json", "sha256": "E712C83924E94003524D008ABFC3BED8B45A2F6121F1E4734401717830A5DE19"},
+    {"path": "discovery/decision-review.md", "sha256": "3B1CA5CF45B0F5B7774CE7A01307AABF3FF02D8738E60BEE757FD0A5EFED7551"},
+    {"path": "recovery/cross-thread-2026-08-03/R0_FORENSIC_AUDIT.md", "sha256": "EDDB35107F6745099DA812B4862116D375A12BF79E13A06798801239981B0378"},
+    {"path": "recovery/cross-thread-2026-08-03/r0-state-inventory.json", "sha256": "790DE7650CF8EF284A4947712661E78A1FA6ABE250AB3912A089DC72BB6CFA68"},
+    {"path": "planning/r1-product-reconciliation-2026-08-03/R1_PRODUCT_CHARTER.md", "sha256": "09D87F6EDDC4C7486986A22CAFB123136CB88D910BA7C6874D046BC594A35A92"},
+    {"path": "planning/r1-product-reconciliation-2026-08-03/r1-product-scope.json", "sha256": "DCCABCDE620FA1CFBD66F606ED7D27A9008AC002B9119CAA3923FE682910B2FD"},
+    {"path": "planning/r1-product-reconciliation-2026-08-03/R2_QUALIFICATION_INPUT.md", "sha256": "B88AF0D32094346D8C216909525EB009014E4F17576344C9E993C5CA399549F6"}
+  ],
+  "sourceDecision": {
+    "strategy": "SOURCE_INDEPENDENT_BUILD",
+    "directSourceCopyAuthorized": false,
+    "reuseCount": 0,
+    "adaptCount": 0,
+    "cleanRoomReference": "r2-reuse-manifest.json",
+    "reason": "No candidate application source has sufficient exact-file ownership/license and competition-policy clearance."
+  },
+  "targetStack": {
+    "architecture": "LOCAL_FIRST_MODULAR_MONOLITH",
+    "packageManager": "npm 10.9.4 workspaces",
+    "runtime": "Node.js 22.22.0",
+    "language": "TypeScript 5.9.3 strict mode",
+    "web": "React 18.3.1 with Vite 5.4.21",
+    "api": "Fastify 5.8.5",
+    "database": "SQLite via better-sqlite3 11.10.0",
+    "validation": "JSON Schema at HTTP boundaries plus authored domain validators",
+    "testing": ["Vitest unit/component", "Fastify inject integration", "Playwright Chromium end-to-end"],
+    "supportedPlatforms": ["Windows 11 development and demo", "Linux CI after backlog authorization"],
+    "workspaceLayout": ["apps/web", "apps/api", "packages/domain", "packages/contracts", "packages/demo-fixtures"]
+  },
+  "modules": [
+    {"id": "M01", "name": "Foundation", "owns": ["configuration", "logging", "errors", "database lifecycle", "health"]},
+    {"id": "M02", "name": "Projects", "owns": ["project", "repository registration", "mission", "read-only snapshot"]},
+    {"id": "M03", "name": "Evidence", "owns": ["bounded import", "redaction", "digest", "source", "claim normalization", "timeline"]},
+    {"id": "M04", "name": "Twin", "owns": ["typed nodes", "typed relationships", "projection", "invalidation"]},
+    {"id": "M05", "name": "CodeMap", "owns": ["bounded TypeScript parsing", "manifest", "imports", "routes", "contracts", "test links"]},
+    {"id": "M06", "name": "Reconcile", "owns": ["conflict", "supersession", "staleness", "missing support", "ambiguity", "impact gap"]},
+    {"id": "M07", "name": "Impact", "owns": ["bounded traversal", "explainable paths", "validation gap projection"]},
+    {"id": "M08", "name": "AdvisoryAI", "owns": ["context compiler", "provider-neutral adapter", "structured output", "citations", "offline explanation"]},
+    {"id": "M09", "name": "Readiness", "owns": ["fail-closed assessment", "obligations", "blockers", "staleness"]},
+    {"id": "M10", "name": "Passport", "owns": ["immutable assessment projection", "digest", "retrieval"]},
+    {"id": "M11", "name": "Demo", "owns": ["controlled synthetic repository", "evidence set", "guided state reset"]},
+    {"id": "M12", "name": "Experiments", "owns": ["feature-flagged replay", "agent disagreement", "remediation preview"]}
+  ],
+  "scope": {
+    "winningCore": [
+      {"id": "DC-01", "name": "Local project and repository registration", "owner": "M02"},
+      {"id": "DC-02", "name": "Bounded evidence ingestion", "owner": "M03"},
+      {"id": "DC-03", "name": "Active Software Twin", "owner": "M04"},
+      {"id": "DC-04", "name": "Reconcile Core", "owner": "M06"},
+      {"id": "DC-05", "name": "Change-impact traversal", "owner": "M07"},
+      {"id": "DC-06", "name": "Evidence-cited AI explanation with deterministic fallback", "owner": "M08"},
+      {"id": "DC-07", "name": "Deterministic readiness", "owner": "M09"},
+      {"id": "DC-08", "name": "Thin Release Passport", "owner": "M10"},
+      {"id": "DC-09", "name": "Competition demo workspace", "owner": "M11"}
+    ],
+    "demoCriticalEnhancements": [
+      {"id": "ENH-01", "name": "Bounded TypeScript code map", "owner": "M05", "decision": "KEEP", "cutAfter": "all stretch features"}
+    ],
+    "supporting": [
+      {"id": "SUP-01", "name": "Evidence timeline and versioned knowledge lineage", "owner": "M03"},
+      {"id": "SUP-02", "name": "Imported runtime-observation summaries", "owner": "M03"},
+      {"id": "SUP-03", "name": "Synthetic edge-case suggestions", "owner": "M08"},
+      {"id": "SUP-04", "name": "AI usage and session-budget controls", "owner": "M08"},
+      {"id": "SUP-05", "name": "Evidence correction and dependency invalidation", "owner": "M04"},
+      {"id": "SUP-06", "name": "Privacy guardrails and compact onboarding", "owner": "M01"}
+    ],
+    "stretch": [
+      {"id": "STR-01", "name": "Evidence Replay Lab", "flag": "experiments.evidenceReplay", "default": false},
+      {"id": "STR-02", "name": "Imported multi-agent disagreement", "flag": "experiments.agentDisagreement", "default": false},
+      {"id": "STR-03", "name": "Guarded Remediation Preview", "flag": "experiments.remediationPreview", "default": false}
+    ],
+    "postCompetition": [
+      "live production twin and shadow traffic",
+      "continuous learning or retraining",
+      "agent orchestration",
+      "autonomous patch, apply, commit, push or deploy",
+      "predictive infrastructure scaling",
+      "multiple provider fabric",
+      "enterprise connectors, identity, governance and signed Passports"
+    ],
+    "cutOrder": ["STR-03", "STR-02", "STR-01", "SUP-03", "SUP-02", "SUP-04", "ENH-01 only if its fixed fixture path cannot pass"],
+    "nonCuttable": ["DC-01", "DC-02", "DC-03", "DC-04", "DC-05", "DC-06 offline path", "DC-07", "DC-08", "DC-09"]
+  },
+  "featureFlags": [
+    {"name": "ai.externalCalls", "default": false, "purpose": "Explicitly enable a configured external provider; never required."},
+    {"name": "codeMap.enabled", "default": true, "purpose": "Use the bounded code map for the controlled demo repository."},
+    {"name": "experiments.evidenceReplay", "default": false, "purpose": "Enable read-only snapshot comparison."},
+    {"name": "experiments.agentDisagreement", "default": false, "purpose": "Enable imported advisory-output comparison."},
+    {"name": "experiments.remediationPreview", "default": false, "purpose": "Enable non-applying proposal preview."}
+  ],
+  "activeTwin": {
+    "nodeTypes": ["Project", "ChangeMission", "EvidenceSource", "Claim", "SoftwareAsset", "GitSnapshot", "ValidationResult", "ReconciliationFinding", "ReleaseAssessment", "ReleasePassport"],
+    "relationshipTypes": ["SCOPED_TO", "EXTRACTED_FROM", "ASSERTS", "CONCERNS", "IMPLEMENTS", "AFFECTS", "DEPENDS_ON", "VALIDATED_BY", "CONTRADICTS", "SUPERSEDES", "DERIVED_FROM", "BOUND_TO", "BLOCKS"],
+    "requiredMetadata": ["stableId", "projectId", "missionId", "origin", "sourceReference", "sourceRevisionOrDigest", "recordedAt", "effectiveAtWhenKnown", "extractionMethod", "epistemicLabel"],
+    "epistemicLabels": ["FACT", "INFERENCE"],
+    "findingLabels": ["CONFLICT", "STALE", "MISSING", "AMBIGUOUS", "IMPACT_GAP"],
+    "confidenceMeaning": "Extraction or relationship-match confidence only, never truth probability.",
+    "versioning": "Nodes and relationships are append-oriented revisions. Corrections supersede; they do not rewrite historical evidence."
+  },
+  "codeMap": {
+    "decision": "KEEP_AS_DEMO_CRITICAL_ENHANCEMENT",
+    "languages": ["TypeScript", "TSX", "JavaScript", "JSX", "JSON manifests"],
+    "extracts": ["repository-relative files", "package manifests", "static imports/exports", "Fastify-style routes", "contract/schema declarations", "test-file associations"],
+    "parser": "TypeScript compiler API for source structure; JSON parser for manifests",
+    "never": ["execute repository code", "install candidate dependencies", "follow symlinks outside canonical root", "claim runtime dependency discovery", "claim universal semantic understanding"],
+    "limits": {"maxFiles": 2000, "maxAggregateBytes": 5242880, "maxSingleFileBytes": 262144, "maxDurationMs": 5000, "allowedExtensions": [".ts", ".tsx", ".js", ".jsx", ".json"]},
+    "fallback": "If parsing fails or exceeds limits, import the controlled demo asset manifest as explicitly declared evidence and mark inferred edges unavailable."
+  },
+  "reconcileCore": {
+    "deterministicAuthority": true,
+    "input": "One mission-scoped immutable Twin revision plus a reconciliation rule-set version.",
+    "rules": [
+      "Compare normalized claims sharing subject and predicate with overlapping applicability.",
+      "Emit CONFLICT for incompatible values unless an explicit valid SUPERSEDES edge resolves applicability.",
+      "Emit STALE when a bound source, snapshot, relationship, validation or rule version changes.",
+      "Emit MISSING for required evidence or validation absent from the exact current scope and snapshot.",
+      "Emit AMBIGUOUS when evidence cannot deterministically select an interpretation.",
+      "Emit IMPACT_GAP when an affected critical asset lacks required implementation or validation support.",
+      "Invalidate dependent answers, assessments and Passports; never silently mutate historical results."
+    ],
+    "aiAssistance": ["propose structured claims", "suggest related evidence or edges", "summarize findings", "explain impact", "answer with validated citation IDs", "suggest synthetic edge cases"],
+    "aiNever": ["invent evidence", "resolve ambiguity as fact", "approve or waive", "set readiness", "mutate repositories", "receive unredacted secrets"]
+  },
+  "persistence": {
+    "owner": "apps/api only; browser never opens SQLite directly",
+    "database": "One local SQLite file outside registered repositories",
+    "tables": ["schema_migrations", "projects", "repositories", "missions", "git_snapshots", "evidence_sources", "claims", "software_assets", "twin_edges", "validation_results", "findings", "assessments", "passports", "advisory_requests", "advisory_responses", "timeline_events"],
+    "migrationStrategy": "Numbered forward-only transactional SQL migrations recorded in schema_migrations; startup fails safely on unknown newer schema; migrations are tested from empty and previous fixture versions.",
+    "identity": "Stable UUIDs plus unique project/mission/source digest/revision constraints; all derived records carry rule and schema versions.",
+    "deletion": "No hard delete in the competition flow; archive or supersede. Demo reset affects only the dedicated synthetic workspace."
+  },
+  "api": {
+    "prefix": "/api/v1",
+    "families": [
+      {"path": "/health", "methods": ["GET"]},
+      {"path": "/projects", "methods": ["GET", "POST"]},
+      {"path": "/projects/:projectId", "methods": ["GET"]},
+      {"path": "/projects/:projectId/repository", "methods": ["PUT", "GET"]},
+      {"path": "/projects/:projectId/missions", "methods": ["GET", "POST"]},
+      {"path": "/missions/:missionId", "methods": ["GET"]},
+      {"path": "/missions/:missionId/evidence/import", "methods": ["POST"]},
+      {"path": "/missions/:missionId/twin", "methods": ["GET"]},
+      {"path": "/missions/:missionId/code-map", "methods": ["POST", "GET"]},
+      {"path": "/missions/:missionId/reconcile", "methods": ["POST"]},
+      {"path": "/missions/:missionId/findings", "methods": ["GET"]},
+      {"path": "/missions/:missionId/impact", "methods": ["GET"]},
+      {"path": "/missions/:missionId/ask", "methods": ["POST"]},
+      {"path": "/missions/:missionId/assessments", "methods": ["GET", "POST"]},
+      {"path": "/missions/:missionId/passports", "methods": ["GET", "POST"]},
+      {"path": "/demo/reset", "methods": ["POST"]}
+    ],
+    "rules": ["JSON only", "request IDs", "schema-validated bodies", "bounded pagination", "stable error codes", "no raw absolute paths in ordinary responses", "no repository mutation endpoints"]
+  },
+  "ui": {
+    "routes": [
+      {"path": "/", "name": "Welcome and project selection"},
+      {"path": "/projects/:projectId", "name": "Change overview"},
+      {"path": "/missions/:missionId/evidence", "name": "Evidence and timeline"},
+      {"path": "/missions/:missionId/twin", "name": "Active Software Twin"},
+      {"path": "/missions/:missionId/reconcile", "name": "Conflicts and gaps"},
+      {"path": "/missions/:missionId/impact", "name": "Change impact"},
+      {"path": "/missions/:missionId/ask", "name": "Cited explanation"},
+      {"path": "/missions/:missionId/passport", "name": "Readiness and Release Passport"}
+    ],
+    "trustStates": ["FACT", "INFERENCE", "CONFLICT", "MISSING", "BLOCKED", "READY", "STALE", "AI_OFF", "AI_ASSISTED"],
+    "accessibility": ["Do not encode trust by color alone", "Keyboard-operable primary flow", "Visible focus", "Semantic headings and labels", "Responsive 1366x768 demo baseline"]
+  },
+  "aiAdapter": {
+    "providerNeutral": true,
+    "externalCallsDefault": false,
+    "request": ["requestId", "missionId", "question", "redactedEvidencePack", "evidencePackDigest", "allowedCitationIds", "outputSchemaVersion", "limits"],
+    "response": ["requestId", "answer", "factStatements", "inferenceStatements", "conflicts", "gaps", "nextActions", "citationIds", "providerMetadata", "usageMetadata"],
+    "validation": ["JSON schema", "known request ID", "exact evidence-pack digest", "citation allowlist", "unknown citation rejection", "size limits", "no readiness-authority fields"],
+    "offlineFallback": "Render the same finding/impact structures as DETERMINISTIC_EXPLANATION with citations.",
+    "redaction": "Redact secrets and private path prefixes before persistence and again before optional transfer; show the user the outbound pack preview.",
+    "limits": {"timeoutMs": 20000, "maxRetries": 1, "maxConcurrentRequests": 1, "maxInputTokens": 12000, "maxOutputTokens": 1200, "sessionTokenBudget": 50000},
+    "usage": "Store provider/model/request identifiers, latency and returned token usage when present; cost is an estimate, never billing truth; never store credentials."
+  },
+  "personalOpenAiCheckpoint": {
+    "status": "SPECIFIED_NOT_EXECUTED",
+    "stage": "MID_DEVELOPMENT_AFTER_DETERMINISTIC_CORE",
+    "entryCriteria": [
+      "evidence ingestion and redaction tests pass",
+      "Active Twin fixture projection passes",
+      "Reconcile Core conflict and staleness tests pass",
+      "citation IDs and evidence-pack digest are stable",
+      "AI-off explanation completes the golden path",
+      "provider-neutral adapter and mocked structured-output tests pass"
+    ],
+    "credentialInjection": "Runtime-only environment variable or OS secret mechanism; never commit, persist or print it.",
+    "evaluationSet": ["primary release question", "conflict explanation", "impact question", "missing-validation question", "post-correction readiness explanation", "unknown-citation adversarial response"],
+    "measures": ["grounding", "citation validity", "usefulness", "latency", "token use", "privacy/redaction", "improvement over deterministic explanation"],
+    "decisions": ["USE_LIVE_PROVIDER_IN_FINALE", "CORRECT_AND_RETEST", "KEEP_FINALE_OFFLINE"],
+    "notRequiredFor": ["startup", "tests", "reconciliation", "impact", "readiness", "Passport"],
+    "credentialUsedInR2": false,
+    "liveCallMadeInR2": false
+  },
+  "demo": {
+    "durationMinutes": "5-7",
+    "workspace": "Controlled synthetic TypeScript retail repository generated as an IntelliLoop-owned fixture during development.",
+    "change": "Expand cancellation eligibility from BEFORE_PICKING to after picking starts but before dispatch.",
+    "initialEvidence": [
+      "Requirement v2 permits BEFORE_DISPATCH cancellation and requires inventory release, refund, fulfilment stop and notification.",
+      "Older ADR permits cancellation only BEFORE_PICKING and assigns inventory release differently.",
+      "Snapshot changes cancellation and refund paths but omits inventory-reservation and fulfilment changes.",
+      "Order-state and refund validations pass while post-picking inventory and fulfilment validation is missing.",
+      "Release note claims the change is ready."
+    ],
+    "goldenFlow": [
+      "Open apparently green overview without treating the claim as readiness.",
+      "Import attributed evidence and create the Twin.",
+      "Map bounded code assets and tests.",
+      "Reconcile the requirement/ADR conflict, unsupported ready claim and impact gaps.",
+      "Ask if release is safe and receive facts, inferences, gaps and citations.",
+      "Show explainable impact through order, inventory, refund, fulfilment, notification and tests.",
+      "Add an explicit superseding decision plus missing implementation/validation evidence.",
+      "Reassess from BLOCKED to READY.",
+      "Generate a Passport identical to the assessment projection.",
+      "Optionally change a bound source and show STALE."
+    ],
+    "dataPolicy": "Synthetic only; no Nisum, client, employer, personal or production repository content."
+  },
+  "readinessAndPassport": {
+    "states": ["BLOCKED", "READY", "STALE"],
+    "failClosed": true,
+    "readyWhen": ["integrity valid", "exact mission and snapshot bound", "no unresolved critical conflict or impact gap", "all required validations pass", "explicit review recorded", "all dependencies current"],
+    "cannotMakeReady": ["sample data", "fallback data", "AI advice", "unpersisted results", "unknown-scope validation", "stale evidence"],
+    "passport": "Immutable persisted projection of one assessment containing scope, snapshot, rule version, evidence digest, status, obligations, blockers, findings, validations, citations and passport digest.",
+    "staleness": "Any dependency change retains history and marks affected assessments, answers and Passports STALE."
+  },
+  "aiMasteryConcepts": [
+    {"id": "AM-01", "concept": "Dual-engine execution and shadow testing", "disposition": "POST_COMPETITION", "boundedCompetitionForm": "Offline deterministic versus optional advisory explanation comparison only."},
+    {"id": "AM-02", "concept": "Automated discrepancy reconciliation", "disposition": "CORE", "boundedCompetitionForm": "Deterministic Reconcile Core; no automatic code or prompt mutation."},
+    {"id": "AM-03", "concept": "Continuous feedback integration", "disposition": "MVP_SUPPORTING", "boundedCompetitionForm": "Attributed imported runtime-observation summaries; no continuous learning."},
+    {"id": "AM-04", "concept": "Explainable AI auditing", "disposition": "CORE", "boundedCompetitionForm": "Fact/inference separation, request lineage, evidence-pack digest and validated citations."},
+    {"id": "AM-05", "concept": "Multi-agent collaboration fabric", "disposition": "STRETCH_THEN_POST", "boundedCompetitionForm": "Compare imported named advisory outputs; no orchestration."},
+    {"id": "AM-06", "concept": "Semantic code understanding", "disposition": "DEMO_CRITICAL_ENHANCEMENT", "boundedCompetitionForm": "Bounded static TypeScript code map."},
+    {"id": "AM-07", "concept": "Self-healing code generation", "disposition": "STRETCH_THEN_POST", "boundedCompetitionForm": "Non-applying remediation preview only; autonomous repair remains post-competition."},
+    {"id": "AM-08", "concept": "Synthetic data generation", "disposition": "MVP_SUPPORTING", "boundedCompetitionForm": "Synthetic retail fixture and cited edge-case suggestions."},
+    {"id": "AM-09", "concept": "Governance and guardrail verification", "disposition": "CORE", "boundedCompetitionForm": "Minimal deterministic safety/readiness guardrails with hard repository and citation boundaries."},
+    {"id": "AM-10", "concept": "Multi-modal state syncing", "disposition": "CORE", "boundedCompetitionForm": "Versioned requirements, decisions, repository observations, validations and explanations in one Twin; text/JSON/code, not broad media."},
+    {"id": "AM-11", "concept": "Predictive resource scaling", "disposition": "POST_COMPETITION", "boundedCompetitionForm": "Token, timeout, concurrency and estimated-cost controls only."},
+    {"id": "AM-12", "concept": "Version-controlled knowledge bases", "disposition": "CORE", "boundedCompetitionForm": "Append-oriented lineage, supersession, read-only temporal comparison and stale historical outputs."}
+  ],
+  "security": {
+    "defaults": ["localhost bind", "no network", "external AI off", "read-only registered repositories", "no shell or arbitrary code execution", "database stored outside repositories", "bounded imports", "safe structured logs"],
+    "repositoryControls": ["canonicalize root", "reject traversal", "reject symlink escape", "never write under registered root", "never invoke git mutation commands", "capture before/after status in repository-safety tests"],
+    "privacyControls": ["allowlisted file types", "pre-persistence redaction", "secret sentinel tests", "outbound-pack preview", "no credential persistence", "no raw prompts or response bodies in normal logs"]
+  },
+  "testStrategy": {
+    "unit": ["claim normalization", "conflict truth tables", "supersession", "invalidation", "impact traversal", "readiness truth table", "citation validation", "redaction", "code-map limits"],
+    "integration": ["database migrations", "import persistence", "repository snapshot", "Twin projection", "reconcile persistence", "assessment/Passport equality", "restart retrieval", "mocked AI adapter"],
+    "component": ["trust labels", "graph/list parity", "blocked/ready/stale states", "AI-off disclosure", "empty/error states"],
+    "endToEnd": ["Playwright golden flow", "AI-off flow", "BLOCKED-to-READY-to-STALE", "demo reset", "invalid import", "unknown citation", "oversize code map"],
+    "nonFunctional": ["no repository mutation", "no external call by default", "secret sentinel absent", "5-7 minute rehearsal", "restart persistence", "1366x768 visual pass"],
+    "releaseGate": "Winning core and offline path must pass independently of all feature flags and any personal OpenAI configuration."
+  },
+  "risks": [
+    {"id": "R-01", "severity": "HIGH", "risk": "Competition or source-ownership policy remains unavailable.", "control": "Source-independent build; direct copy remains false."},
+    {"id": "R-02", "severity": "HIGH", "risk": "Ambition threatens demo reliability.", "control": "Nine non-cuttable capabilities, explicit cut order and disabled stretch flags."},
+    {"id": "R-03", "severity": "MEDIUM", "risk": "Code mapping appears broader than proof.", "control": "Static TypeScript-only limits, explicit fallback and honest labels."},
+    {"id": "R-04", "severity": "MEDIUM", "risk": "Provider output is ungrounded or unavailable.", "control": "Citation rejection and complete deterministic fallback."},
+    {"id": "R-05", "severity": "MEDIUM", "risk": "Graph UI consumes excessive time.", "control": "Accessible list/path view is authoritative; visualization is a projection."}
+  ],
+  "assumptions": [
+    "Individual participation permits a locally developed prototype using synthetic data.",
+    "The demo machine supports Node 22 and a local SQLite native dependency.",
+    "The final detailed event submission rubric may arrive later without changing the product truth model.",
+    "A personal OpenAI configuration may be tested later but is not guaranteed."
+  ],
+  "nonBlockingUnknowns": [
+    "Exact judging weights and submission packaging rules",
+    "Whether a live internet connection is available on demo day",
+    "Which optional OpenAI model is selected at the checkpoint",
+    "Whether the bounded code-map UI uses a graph library or authored SVG/list projection",
+    "Final third-party notice inventory after dependencies are installed"
+  ],
+  "definitionOfReady": [
+    {"id": "DOR-01", "criterion": "Competition product, wedge and 5-7 minute promise are frozen.", "status": "PASS"},
+    {"id": "DOR-02", "criterion": "All nine winning-core capabilities have owners, boundaries and completion evidence inherited from R1.", "status": "PASS"},
+    {"id": "DOR-03", "criterion": "All 18 feature families and all six authorized candidates are qualified.", "status": "PASS"},
+    {"id": "DOR-04", "criterion": "Every candidate-feature record above 50 percent has a disposition.", "status": "PASS"},
+    {"id": "DOR-05", "criterion": "Reuse is source-independent and no permission is inferred from maturity.", "status": "PASS"},
+    {"id": "DOR-06", "criterion": "Stack, module ownership, persistence and migrations are frozen.", "status": "PASS"},
+    {"id": "DOR-07", "criterion": "Twin vocabulary, deterministic reconciliation and AI authority boundaries are frozen.", "status": "PASS"},
+    {"id": "DOR-08", "criterion": "Bounded code map is kept with limits, safety rules and fallback.", "status": "PASS"},
+    {"id": "DOR-09", "criterion": "API families, UI routes, demo fixtures and golden flow are frozen.", "status": "PASS"},
+    {"id": "DOR-10", "criterion": "Personal OpenAI checkpoint is fully specified and unexecuted.", "status": "PASS"},
+    {"id": "DOR-11", "criterion": "Stretch features are off by default and cannot block the winning core.", "status": "PASS"},
+    {"id": "DOR-12", "criterion": "Test pyramid, restart, negative-path, safety and offline release gates are frozen.", "status": "PASS"},
+    {"id": "DOR-13", "criterion": "No candidate changed, no source was copied and no product source was created in R2.", "status": "PASS"},
+    {"id": "DOR-14", "criterion": "No implementation backlog or executable coding prompt was generated.", "status": "PASS"}
+  ],
+  "nextGate": {
+    "id": "DEPENDENCY_ORDERED_BACKLOG_GENERATION",
+    "authorizedNow": false,
+    "input": "This five-artifact R2 package",
+    "outputWhenAuthorized": "Dependency-ordered development backlog and only then the first bounded implementation prompt."
+  },
+  "completionMarker": "INTELLILOOP_DEV_READY_FOR_BACKLOG_GENERATION"
+}

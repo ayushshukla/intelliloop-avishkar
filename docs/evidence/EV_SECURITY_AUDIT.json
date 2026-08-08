@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-SECURITY-AUDIT",
+  "story": "IL-9.2",
+  "status": "PASS",
+  "checkpoint": "RELEASE_SECURITY_AUDIT_COMPLETE",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:release-security",
+  "candidate": {
+    "sha256": "sha256:5c1c1a97e1b7f0038afc4dfe5c733644878271e393e9e3dc23f667a7180d7fbf",
+    "fileCount": 421,
+    "boundary": {
+      "status": "PASS",
+      "excludedRoots": [
+        "discovery",
+        "recovery",
+        "artifacts"
+      ],
+      "releaseAuthority": "CANDIDATE_ALLOWLIST_ONLY"
+    }
+  },
+  "dependencies": {
+    "status": "PASS",
+    "fullAudit": {
+      "status": "PASS",
+      "reportVersion": 2,
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencyMetadata": {
+        "prod": 105,
+        "dev": 128,
+        "optional": 54,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 232
+      }
+    },
+    "productionAudit": {
+      "status": "PASS",
+      "reportVersion": 2,
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencyMetadata": {
+        "prod": 105,
+        "dev": 128,
+        "optional": 54,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 232
+      }
+    },
+    "inventory": {
+      "path": "docs/governance/THIRD_PARTY_INVENTORY.json",
+      "sha256": "sha256:0e463e23e3b41ef8e2851d9c6d2e6fca60a158df83962ba6e4b841de40d9d87d",
+      "packageInstanceCount": 222,
+      "uniquePackageVersionCount": 220,
+      "productionInstanceCount": 94,
+      "developmentInstanceCount": 128,
+      "optionalInstanceCount": 54,
+      "unknownOrUnapprovedLicenseCount": 0
+    }
+  },
+  "candidatePrivacyScan": {
+    "status": "PASS",
+    "scannedFileCount": 421,
+    "scannedTextFileCount": 413,
+    "secretPatternCount": 5,
+    "allowedSyntheticSecretFixtureCount": 5,
+    "allowedSyntheticPrivatePathFixtureCount": 7,
+    "nonFixtureSecretFindings": 0,
+    "nonFixturePrivatePathFindings": 0,
+    "prohibitedFileFindings": 0
+  },
+  "provenance": {
+    "status": "PASS",
+    "decision": "SOURCE_INDEPENDENT_BUILD",
+    "directSourceCopyAuthorized": false,
+    "reuseCount": 0,
+    "adaptCount": 0,
+    "releaseSanitization": {
+      "reason": "Machine-local absolute roots were replaced with logical local-reference identifiers without changing source-use dispositions.",
+      "originalArtifactHashes": {
+        "planning/r2-development-readiness-2026-08-03/r2-reuse-manifest.json": "sha256:af2bd739300675f04faf33409f084953f2710ec4cfaf0ba9f70e24ea4e15997a",
+        "planning/r2-development-readiness-2026-08-03/r2-feature-maturity.json": "sha256:79cbeaa8d662916fc3f489c8241a4918ae51df7c9e8dce46c2b6cfb03412f8a2"
+      },
+      "sanitizedArtifactHashes": {
+        "planning/r2-development-readiness-2026-08-03/r2-reuse-manifest.json": "sha256:c0f312773bb0628cd842e051dbf832f3ec204d7590473b7acc593837399fc6c8",
+        "planning/r2-development-readiness-2026-08-03/r2-feature-maturity.json": "sha256:cf15c3fb2e5cfaac81694a5ef9fd69639517d3437252400c9e9eb5ad2b1d544b"
+      }
+    }
+  },
+  "similarityReview": {
+    "status": "PASS_BOUNDED_REVIEW",
+    "implementationFileMarkerFindings": 0,
+    "thirdPartyCopyrightHeaderFindings": 0,
+    "method": "Static marker/header scan plus the frozen zero-reuse/zero-adapt clean-room manifest.",
+    "limitation": "No external proprietary source corpus was imported or compared; this is not a universal plagiarism determination."
+  },
+  "networkAndMutation": {
+    "status": "PASS",
+    "privacy": {
+      "status": "PASS",
+      "sha256": "sha256:6f235bc1d54c51160552d3b0914aa419fb7d2e93eaef28bd53efb0fc20225719"
+    },
+    "repositoryMutation": {
+      "status": "PASS",
+      "sha256": "sha256:b803ec9a42aa85f3ca0876202447e181a1b5c40f693b9c015dabd1617ae5bd65"
+    },
+    "productExternalProviderCalls": 0,
+    "productRegisteredRepositoryWrites": 0
+  },
+  "limitations": [
+    "npm advisory data is time-sensitive and must be refreshed at final freeze.",
+    "Pattern scans and bounded marker review cannot prove absence of every transformed secret or similarity.",
+    "This is a source/prototype release audit, not a penetration test, OS sandbox certification, legal opinion or production approval."
+  ],
+  "nextAuthorizedStory": "IL-9.4"
+}

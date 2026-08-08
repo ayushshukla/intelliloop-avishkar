@@ -1,0 +1,857 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "INTELLILOOP-R3-IMPLEMENTATION-BACKLOG-2026-08-03",
+  "createdAt": "2026-08-03T00:00:00+05:30",
+  "status": "G5_CORE_DEMONSTRABLE",
+  "sourceDecision": "SOURCE_INDEPENDENT_BUILD",
+  "directSourceCopyAuthorized": false,
+  "implementationStarted": true,
+  "lastReconciledAt": "2026-08-07",
+  "progress": {
+    "implementedThrough": "IL-9.3",
+    "completedOptionalStories": ["IL-10.1", "IL-10.2", "IL-10.3"],
+    "completedStoryCount": 58,
+    "totalStoryCount": 62,
+    "remainingMandatoryStoryCount": 4,
+    "remainingOptionalStoryCount": 0,
+    "nextDependencyEligibleStory": "IL-9.4",
+    "baseline": "Phase-1 repository reconciliation against implementation, tests, migrations, UI, fixtures, documentation and generated evidence; development Git HEAD is unborn"
+  },
+  "phase1Reconciliation": {
+    "verifiedAt": "2026-08-07",
+    "status": "EVIDENCE_BACKED",
+    "completeStoryCount": 58,
+    "completeSet": "IL-1.1_THROUGH_IL-9.3_PLUS_IL-10.1_THROUGH_IL-10.3",
+    "incompleteStories": [
+      {"id": "IL-9.4", "classification": "PARTIAL", "reason": "Genuine paired human timing, role feedback and sourced cadence are pending."},
+      {"id": "IL-9.5", "classification": "BLOCKED", "reason": "No official rulebook or authorized official source is available."},
+      {"id": "IL-9.6", "classification": "PARTIAL", "reason": "Prepared artifacts exist; official-rule adaptation and final approved delivery package are pending."},
+      {"id": "IL-9.7", "classification": "PARTIAL", "reason": "Final manifest approval, clean freeze, tag/handoff and final claim approval have not occurred."}
+    ],
+    "notApplicableStoryCount": 0,
+    "developmentRepository": {
+      "branch": "main",
+      "head": "UNBORN",
+      "entryWorkingTree": "ALL_PROJECT_PATHS_UNTRACKED",
+      "remoteCount": 0,
+      "worktreeCount": 1
+    },
+    "phase2BlockedByPendingHumanPilot": false,
+    "executionState": "docs/product/EXECUTION_STATE.md"
+  },
+  "authoritativeInputs": [
+    "planning/r2-development-readiness-2026-08-03/DEVELOPMENT_READINESS_FREEZE.md",
+    "planning/r2-development-readiness-2026-08-03/development-readiness.json",
+    "planning/r2-development-readiness-2026-08-03/r2-reuse-manifest.json",
+    "planning/r1-product-reconciliation-2026-08-03/R1_PRODUCT_CHARTER.md",
+    "planning/r1-product-reconciliation-2026-08-03/AVISHKAR_SUBMISSION_DRAFT.md"
+  ],
+  "priorities": {
+    "P0": "Non-cuttable winning core or release gate",
+    "P1": "Demo-critical or supporting, cut only in frozen order",
+    "P2": "Optional feature-flagged stretch"
+  },
+  "sizes": {
+    "S": "Small bounded change",
+    "M": "Moderate change across a few seams",
+    "L": "Large vertical slice",
+    "XL": "Complex authority-bearing or end-to-end slice"
+  },
+  "gates": [
+    {"id": "G1_FOUNDATION_RUNNABLE", "after": ["IL-1.6"], "requires": ["clean install", "typecheck", "tests", "build", "API health", "web smoke", "no default external call"]},
+    {"id": "G2_EVIDENCE_TWIN_PROVEN", "after": ["IL-4.7"], "requires": ["project isolation", "repository safety", "redacted import", "stable digest", "Twin projection", "code-map limits"]},
+    {"id": "G3_DETERMINISTIC_CORE_PROVEN", "after": ["IL-6.4"], "requires": ["reconcile truth tables", "impact paths", "stable evidence pack", "offline cited explanation", "mock adapter"]},
+    {"id": "G4_OPENAI_COURSE_CORRECTION", "after": ["IL-6.5"], "requires": ["entry checklist", "runtime-only credential", "redacted evaluation", "one exact decision"]},
+    {"id": "G5_CORE_DEMONSTRABLE", "after": ["IL-8.5"], "requires": ["BLOCKED to READY to STALE", "Passport equality", "demo reset", "restart", "no repository mutation"]},
+    {"id": "G6_CODE_FREEZE", "after": ["IL-9.4"], "requires": ["clean build/tests", "secret scan", "license and notice audit", "accessibility", "rehearsal"]},
+    {"id": "G7_SUBMISSION_READY", "after": ["IL-9.7"], "requires": ["official-rules matrix", "claim evidence", "pitch", "demo assets", "submission manifest"]}
+  ],
+  "epics": [
+    {"id": "EP-01", "name": "Foundation and trust baseline", "storyIds": ["IL-1.1", "IL-1.2", "IL-1.3", "IL-1.4", "IL-1.5", "IL-1.6"]},
+    {"id": "EP-02", "name": "Projects, missions and repository evidence", "storyIds": ["IL-2.1", "IL-2.2", "IL-2.3", "IL-2.4", "IL-2.5", "IL-2.6"]},
+    {"id": "EP-03", "name": "Evidence ingestion and lineage", "storyIds": ["IL-3.1", "IL-3.2", "IL-3.3", "IL-3.4", "IL-3.5", "IL-3.6", "IL-3.7"]},
+    {"id": "EP-04", "name": "Active Twin and code map", "storyIds": ["IL-4.1", "IL-4.2", "IL-4.3", "IL-4.4", "IL-4.5", "IL-4.6", "IL-4.7"]},
+    {"id": "EP-05", "name": "Reconcile Core and impact", "storyIds": ["IL-5.1", "IL-5.2", "IL-5.3", "IL-5.4", "IL-5.5", "IL-5.6", "IL-5.7"]},
+    {"id": "EP-06", "name": "Cited explanation and OpenAI checkpoint", "storyIds": ["IL-6.1", "IL-6.2", "IL-6.3", "IL-6.4", "IL-6.5", "IL-6.6", "IL-6.7"]},
+    {"id": "EP-07", "name": "Readiness and Release Passport", "storyIds": ["IL-7.1", "IL-7.2", "IL-7.3", "IL-7.4", "IL-7.5", "IL-7.6"]},
+    {"id": "EP-08", "name": "Competition demo and polish", "storyIds": ["IL-8.1", "IL-8.2", "IL-8.3", "IL-8.4", "IL-8.5", "IL-8.6"]},
+    {"id": "EP-09", "name": "Release and submission", "storyIds": ["IL-9.1", "IL-9.2", "IL-9.3", "IL-9.4", "IL-9.5", "IL-9.6", "IL-9.7"]},
+    {"id": "EP-10", "name": "Feature-flagged stretch", "storyIds": ["IL-10.1", "IL-10.2", "IL-10.3"]}
+  ],
+  "stories": [
+    {
+      "id": "IL-1.1", "epicId": "EP-01", "title": "Clean-room workspace and offline health slice", "priority": "P0", "size": "M", "dependencies": [], "capabilities": [], "optional": false,
+      "outcome": "Pinned npm workspaces build, test and run an offline API health and honest web foundation.",
+      "acceptance": ["strict typecheck passes", "unit and Fastify health tests pass", "production build passes", "web smoke passes", "no credential or external network is required"],
+      "documentation": ["DOC-01", "DOC-02", "DOC-03", "DOC-07", "DOC-08", "DOC-09", "DOC-12", "DOC-13", "DOC-14"]
+    },
+    {
+      "id": "IL-1.2", "epicId": "EP-01", "title": "Safe configuration, errors, request IDs, logging and flags", "priority": "P0", "size": "M", "dependencies": ["IL-1.1"], "capabilities": ["SUP-06"], "optional": false,
+      "outcome": "Typed localhost/offline configuration and safe observability enforce frozen feature defaults.",
+      "acceptance": ["invalid config fails safely", "request IDs propagate", "secret sentinel is absent from logs", "external and experiment flags default off"],
+      "documentation": ["DOC-03", "DOC-10"]
+    },
+    {
+      "id": "IL-1.3", "epicId": "EP-01", "title": "Deterministic domain and contract primitives", "priority": "P0", "size": "M", "dependencies": ["IL-1.1"], "capabilities": [], "optional": false,
+      "outcome": "Stable IDs, injected clock, canonical JSON/digest and scope/origin/revision contracts remain infrastructure-free.",
+      "acceptance": ["canonical vectors pass", "clock and ID tests are deterministic", "domain imports no app, Fastify or SQLite module", "serialization is exhaustive"],
+      "documentation": ["DOC-03", "DOC-04"]
+    },
+    {
+      "id": "IL-1.4", "epicId": "EP-01", "title": "SQLite lifecycle and migration baseline", "priority": "P0", "size": "L", "dependencies": ["IL-1.2", "IL-1.3"], "capabilities": [], "optional": false,
+      "outcome": "API-owned SQLite outside registered repositories bootstraps with forward-only transactional migrations.",
+      "acceptance": ["empty bootstrap passes", "restart passes", "failed migration rolls back", "unknown newer schema refuses startup"],
+      "documentation": ["DOC-05", "DOC-07"]
+    },
+    {
+      "id": "IL-1.5", "epicId": "EP-01", "title": "Web trust shell and API client states", "priority": "P0", "size": "M", "dependencies": ["IL-1.1", "IL-1.2"], "capabilities": ["SUP-06"], "optional": false,
+      "outcome": "Accessible route shell shows loading, empty, error and AI-off states without fake readiness.",
+      "acceptance": ["component tests pass", "keyboard navigation works", "health integration works", "no green placeholder or fake product data exists"],
+      "documentation": ["DOC-01", "DOC-03"]
+    },
+    {
+      "id": "IL-1.6", "epicId": "EP-01", "title": "Foundation proof and documentation baseline", "priority": "P0", "size": "S", "dependencies": ["IL-1.3", "IL-1.4", "IL-1.5"], "capabilities": [], "optional": false,
+      "outcome": "Foundation evidence and professional documentation reflect only implemented behavior.",
+      "acceptance": ["EV-FOUNDATION is recorded", "documented setup commands pass", "documentation links resolve", "source-independent status is explicit"],
+      "documentation": ["DOC-01", "DOC-02", "DOC-03", "DOC-07", "DOC-08", "DOC-09", "DOC-10", "DOC-12", "DOC-13", "DOC-14", "DOC-21"]
+    },
+
+    {
+      "id": "IL-2.1", "epicId": "EP-02", "title": "Project and Change Mission domain", "priority": "P0", "size": "M", "dependencies": ["IL-1.3"], "capabilities": ["DC-01"], "optional": false,
+      "outcome": "Deterministic project and mission lifecycles enforce scope and revision isolation.",
+      "acceptance": ["state invariants pass", "cross-project references reject", "archive and current-mission behavior pass"],
+      "documentation": ["DOC-04"]
+    },
+    {
+      "id": "IL-2.2", "epicId": "EP-02", "title": "Project and Mission persistence and API", "priority": "P0", "size": "L", "dependencies": ["IL-1.4", "IL-2.1"], "capabilities": ["DC-01"], "optional": false,
+      "outcome": "Projects and missions persist, restart and expose bounded versioned JSON contracts.",
+      "acceptance": ["database integration passes", "schema failures are stable", "restart equality passes", "pagination is bounded"],
+      "documentation": ["DOC-05", "DOC-06"]
+    },
+    {
+      "id": "IL-2.3", "epicId": "EP-02", "title": "Safe local repository registration", "priority": "P0", "size": "L", "dependencies": ["IL-2.2"], "capabilities": ["DC-01"], "optional": false,
+      "outcome": "A mission binds a canonical allowlisted local repository read-only without ordinary raw-path exposure.",
+      "acceptance": ["missing and non-Git paths reject", "traversal and symlink escape reject", "database is outside the repository", "no write endpoint exists"],
+      "documentation": ["DOC-06", "DOC-10"]
+    },
+    {
+      "id": "IL-2.4", "epicId": "EP-02", "title": "Read-only Git snapshot capture", "priority": "P0", "size": "L", "dependencies": ["IL-2.3"], "capabilities": ["DC-01"], "optional": false,
+      "outcome": "Branch, HEAD, dirty summary and changed-file digest become an immutable GitSnapshot.",
+      "acceptance": ["clean, dirty, unborn and detached fixtures pass", "digest is stable", "timeouts map safely", "before and after repository state match"],
+      "documentation": ["DOC-04", "DOC-06", "DOC-10"]
+    },
+    {
+      "id": "IL-2.5", "epicId": "EP-02", "title": "Project selection and change overview UI", "priority": "P0", "size": "L", "dependencies": ["IL-1.5", "IL-2.2", "IL-2.4"], "capabilities": ["DC-01"], "optional": false,
+      "outcome": "User creates a project and mission, registers the controlled repository and sees attributed snapshot truth.",
+      "acceptance": ["browser happy and failure paths pass", "restart retrieval passes", "raw paths are not exposed", "no readiness is inferred"],
+      "documentation": ["DOC-15"]
+    },
+    {
+      "id": "IL-2.6", "epicId": "EP-02", "title": "Repository-safety proof and operator docs", "priority": "P0", "size": "S", "dependencies": ["IL-2.5"], "capabilities": ["DC-01"], "optional": false,
+      "outcome": "DC-01 has reproducible safety proof and verified operator documentation.",
+      "acceptance": ["EV-REPO-SAFETY is recorded", "status and digest equality pass", "negative corpus passes", "docs match API behavior"],
+      "documentation": ["DOC-06", "DOC-07", "DOC-10", "DOC-15", "DOC-21"]
+    },
+
+    {
+      "id": "IL-3.1", "epicId": "EP-03", "title": "Bounded import, redaction and digest pipeline", "priority": "P0", "size": "L", "dependencies": ["IL-1.3", "IL-1.4"], "capabilities": ["DC-02", "SUP-06"], "optional": false,
+      "outcome": "Markdown, text and JSON are typed, bounded, redacted before persistence and deterministically digested.",
+      "acceptance": ["format allowlist passes", "malformed and oversize inputs reject atomically", "secret corpus redacts", "digest vectors are stable"],
+      "documentation": ["DOC-10", "DOC-16"]
+    },
+    {
+      "id": "IL-3.2", "epicId": "EP-03", "title": "Evidence persistence, attribution, idempotency and timeline", "priority": "P0", "size": "L", "dependencies": ["IL-2.2", "IL-3.1"], "capabilities": ["DC-02", "SUP-01"], "optional": false,
+      "outcome": "Evidence retains origin, locator, digest/revision and append-oriented history without duplicate current records.",
+      "acceptance": ["same import is idempotent", "project and mission isolation pass", "restart passes", "attribution is immutable"],
+      "documentation": ["DOC-05", "DOC-16"]
+    },
+    {
+      "id": "IL-3.3", "epicId": "EP-03", "title": "Claim normalization and explicit supersession intake", "priority": "P0", "size": "L", "dependencies": ["IL-3.2"], "capabilities": ["DC-02", "SUP-05"], "optional": false,
+      "outcome": "Bounded claims have comparison keys, applicability and explicit successor links while raw evidence remains preserved.",
+      "acceptance": ["normalization vectors pass", "invalid supersession rejects", "history remains intact", "inference is labeled"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-3.4", "epicId": "EP-03", "title": "Evidence and claim API contracts", "priority": "P0", "size": "M", "dependencies": ["IL-3.2", "IL-3.3"], "capabilities": ["DC-02"], "optional": false,
+      "outcome": "Preview, commit, retrieval, timeline and supersession APIs are bounded and schema validated.",
+      "acceptance": ["Fastify injection suite passes", "stable errors and request IDs pass", "no secret or raw path leaks", "pagination is bounded"],
+      "documentation": ["DOC-06"]
+    },
+    {
+      "id": "IL-3.5", "epicId": "EP-03", "title": "Evidence and timeline UI", "priority": "P0", "size": "L", "dependencies": ["IL-2.5", "IL-3.4"], "capabilities": ["DC-02", "SUP-01"], "optional": false,
+      "outcome": "User previews redaction, imports evidence and sees provenance, revisions, epistemic labels and supersession history.",
+      "acceptance": ["browser import and restart pass", "invalid import is honest", "keyboard flow passes", "integrity and empty states are explicit"],
+      "documentation": ["DOC-15", "DOC-16"]
+    },
+    {
+      "id": "IL-3.6", "epicId": "EP-03", "title": "Evidence privacy proof and trust documentation", "priority": "P0", "size": "M", "dependencies": ["IL-3.5"], "capabilities": ["DC-02", "SUP-06"], "optional": false,
+      "outcome": "Secret sentinel is absent across persistence and transfer fixtures and the trust model is documented.",
+      "acceptance": ["EV-PRIVACY is recorded", "negative corpus passes", "logs, DB and APIs contain no raw sentinel", "trust docs match implementation"],
+      "documentation": ["DOC-10", "DOC-16", "DOC-21", "DOC-23"]
+    },
+    {
+      "id": "IL-3.7", "epicId": "EP-03", "title": "Imported runtime-observation summaries", "priority": "P1", "size": "M", "dependencies": ["IL-3.4", "IL-3.6"], "capabilities": ["SUP-02"], "optional": false,
+      "outcome": "Bounded attributed JSON runtime summaries use evidence paths and remain historical observations rather than a live feed.",
+      "acceptance": ["schema, size and source tests pass", "duplicates and stale observations are explicit", "offline operation passes", "observations have no direct readiness authority"],
+      "documentation": ["DOC-06", "DOC-15", "DOC-16"]
+    },
+
+    {
+      "id": "IL-4.1", "epicId": "EP-04", "title": "Twin node and relationship domain vocabulary", "priority": "P0", "size": "L", "dependencies": ["IL-3.3"], "capabilities": ["DC-03"], "optional": false,
+      "outcome": "Ten node and thirteen relationship types enforce scope, attribution, revision and epistemic metadata.",
+      "acceptance": ["vocabulary invariants pass", "serialization is exhaustive", "cross-scope edges reject", "confidence never represents truth probability"],
+      "documentation": ["DOC-04"]
+    },
+    {
+      "id": "IL-4.2", "epicId": "EP-04", "title": "Twin projection, revisions and invalidation graph", "priority": "P0", "size": "XL", "dependencies": ["IL-3.2", "IL-4.1"], "capabilities": ["DC-03", "SUP-05"], "optional": false,
+      "outcome": "Evidence and snapshots project into immutable Twin revisions with exact dependent invalidation.",
+      "acceptance": ["same input is deterministic", "changed digest invalidates exact dependents", "history is unchanged", "restart equality passes"],
+      "documentation": ["DOC-04", "DOC-05"]
+    },
+    {
+      "id": "IL-4.3", "epicId": "EP-04", "title": "Twin persistence, API and accessible list projection", "priority": "P0", "size": "L", "dependencies": ["IL-1.4", "IL-4.2"], "capabilities": ["DC-03"], "optional": false,
+      "outcome": "Twin revisions and attributed paths persist and expose bounded APIs and an authoritative list projection.",
+      "acceptance": ["database and API integration pass", "revision selection passes", "path citations resolve", "integrity errors are explicit"],
+      "documentation": ["DOC-05", "DOC-06"]
+    },
+    {
+      "id": "IL-4.4", "epicId": "EP-04", "title": "Code-map filesystem safety and limits", "priority": "P1", "size": "L", "dependencies": ["IL-1.3", "IL-2.3"], "capabilities": ["ENH-01"], "optional": false,
+      "outcome": "Scanner applies canonical-root, extension, file, byte and time limits without executing or installing repository code.",
+      "acceptance": ["traversal and symlink tests pass", "oversize and timeout fail safely", "unsupported extensions are skipped honestly", "repository state is unchanged"],
+      "documentation": ["DOC-10", "DOC-16"]
+    },
+    {
+      "id": "IL-4.5", "epicId": "EP-04", "title": "Bounded TypeScript and JSON extraction", "priority": "P1", "size": "XL", "dependencies": ["IL-4.4"], "capabilities": ["ENH-01"], "optional": false,
+      "outcome": "Compiler API extracts bounded static files, manifests, imports, routes, contracts and test associations.",
+      "acceptance": ["golden parser fixtures pass", "syntax errors return bounded partial results", "ordering is deterministic", "no runtime semantics are claimed"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-4.6", "epicId": "EP-04", "title": "Code-map Twin projection and declared-manifest fallback", "priority": "P1", "size": "L", "dependencies": ["IL-4.3", "IL-4.5"], "capabilities": ["DC-03", "ENH-01"], "optional": false,
+      "outcome": "Code assets bind to one snapshot and safe failure can use explicitly declared IntelliLoop evidence.",
+      "acceptance": ["snapshot binding passes", "inferred and declared labels differ", "fallback is explicit", "no silent parser equivalence exists"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-4.7", "epicId": "EP-04", "title": "Twin and code-map UI, proof and documentation", "priority": "P0", "size": "L", "dependencies": ["IL-3.5", "IL-4.6"], "capabilities": ["DC-03", "ENH-01"], "optional": false,
+      "outcome": "User sees attributed nodes and explainable paths in an accessible authoritative list.",
+      "acceptance": ["EV-TWIN is recorded", "EV-CODEMAP is recorded", "restart passes", "graph and list match if a graph is present"],
+      "documentation": ["DOC-04", "DOC-06", "DOC-15", "DOC-16", "DOC-21"]
+    },
+
+    {
+      "id": "IL-5.1", "epicId": "EP-05", "title": "Comparison keys, claim values and rule-set contract", "priority": "P0", "size": "L", "dependencies": ["IL-4.2"], "capabilities": ["DC-04"], "optional": false,
+      "outcome": "Subject, predicate, applicability and incompatible-value rules are versioned and deterministic.",
+      "acceptance": ["comparison truth vectors pass", "rule version is stable", "fuzzy matching has no canonical authority", "unknown values preserve ambiguity"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-5.2", "epicId": "EP-05", "title": "Conflict, supersession and ambiguity rules", "priority": "P0", "size": "XL", "dependencies": ["IL-5.1"], "capabilities": ["DC-04"], "optional": false,
+      "outcome": "Incompatible claims conflict, valid supersession resolves applicability and ambiguity is never guessed away.",
+      "acceptance": ["truth table passes", "overlapping and separate scopes pass", "cyclic supersession rejects", "no implicit winner exists"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-5.3", "epicId": "EP-05", "title": "Staleness, missing support and reassessment", "priority": "P0", "size": "XL", "dependencies": ["IL-4.2", "IL-5.2"], "capabilities": ["DC-04", "SUP-05"], "optional": false,
+      "outcome": "Dependency changes stale exact outputs and absent required evidence creates missing findings without history rewrite.",
+      "acceptance": ["invalidation matrix passes", "missing-support cases pass", "successor reassessment preserves history", "restart passes"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-5.4", "epicId": "EP-05", "title": "Impact traversal and validation-gap projection", "priority": "P0", "size": "XL", "dependencies": ["IL-4.6", "IL-5.3"], "capabilities": ["DC-05"], "optional": false,
+      "outcome": "Typed traversal shows affected assets and missing implementation or validation paths with citations.",
+      "acceptance": ["retail expected paths pass", "cycle and depth bounds pass", "irrelevant paths are excluded", "IMPACT_GAP truth cases pass"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-5.5", "epicId": "EP-05", "title": "Reconciliation and impact persistence and API", "priority": "P0", "size": "L", "dependencies": ["IL-4.3", "IL-5.4"], "capabilities": ["DC-04", "DC-05"], "optional": false,
+      "outcome": "One Twin revision and rule version produce immutable findings and stable impact paths via API.",
+      "acceptance": ["same input is idempotent", "supersession rerun passes", "cross-scope requests reject", "transaction failure is atomic"],
+      "documentation": ["DOC-05", "DOC-06"]
+    },
+    {
+      "id": "IL-5.6", "epicId": "EP-05", "title": "Findings and impact UI", "priority": "P0", "size": "L", "dependencies": ["IL-4.7", "IL-5.5"], "capabilities": ["DC-04", "DC-05"], "optional": false,
+      "outcome": "Conflict, stale, missing, ambiguous and impact-gap states show reasons, evidence and paths clearly.",
+      "acceptance": ["browser conflict and correction pass", "stale path passes", "loading and error states are honest", "accessibility passes"],
+      "documentation": ["DOC-15", "DOC-16"]
+    },
+    {
+      "id": "IL-5.7", "epicId": "EP-05", "title": "Deterministic-core proof, docs and metrics baseline", "priority": "P0", "size": "M", "dependencies": ["IL-5.6"], "capabilities": ["DC-04", "DC-05"], "optional": false,
+      "outcome": "Truth-table evidence and controlled timing and accuracy baselines are recorded without production extrapolation.",
+      "acceptance": ["EV-RECONCILE is recorded", "rerun equality passes", "metrics limitations are explicit", "trust docs are refreshed"],
+      "documentation": ["DOC-04", "DOC-16", "DOC-21", "DOC-22"]
+    },
+
+    {
+      "id": "IL-6.1", "epicId": "EP-06", "title": "Redacted evidence-pack compiler and citation registry", "priority": "P0", "size": "L", "dependencies": ["IL-3.4", "IL-5.5"], "capabilities": ["DC-06"], "optional": false,
+      "outcome": "A mission question yields a minimized deterministic pack digest and allowlisted stable citation IDs.",
+      "acceptance": ["same-input digest passes", "ordering is stable", "redaction and size bounds pass", "citation locators resolve"],
+      "documentation": ["DOC-11", "DOC-16"]
+    },
+    {
+      "id": "IL-6.2", "epicId": "EP-06", "title": "Deterministic offline explanation", "priority": "P0", "size": "L", "dependencies": ["IL-6.1"], "capabilities": ["DC-06"], "optional": false,
+      "outcome": "Release questions render facts, inferences, conflicts, gaps, next actions and citations without AI.",
+      "acceptance": ["golden structure passes", "citations resolve", "AI_OFF label is visible", "no evidence is invented"],
+      "documentation": ["DOC-11", "DOC-15", "DOC-16"]
+    },
+    {
+      "id": "IL-6.3", "epicId": "EP-06", "title": "Provider-neutral adapter and mocked validation", "priority": "P0", "size": "XL", "dependencies": ["IL-1.2", "IL-6.1"], "capabilities": ["DC-06", "SUP-04"], "optional": false,
+      "outcome": "Disabled adapter enforces request identity, pack digest, schema, citation allowlist and resource limits.",
+      "acceptance": ["mock success and failure pass", "unknown citations reject", "wrong digest and schema reject", "timeout, retry and budget limits pass"],
+      "documentation": ["DOC-11", "DOC-13"]
+    },
+    {
+      "id": "IL-6.4", "epicId": "EP-06", "title": "Cited-question API and UI", "priority": "P0", "size": "L", "dependencies": ["IL-5.6", "IL-6.2", "IL-6.3"], "capabilities": ["DC-06"], "optional": false,
+      "outcome": "User sees outbound disclosure, offline answer and optional validated advisory answer without authority confusion.",
+      "acceptance": ["EV-CITATIONS is recorded", "browser AI-off and provider failure pass", "unknown citation path passes", "offline completion passes"],
+      "documentation": ["DOC-06", "DOC-11", "DOC-15", "DOC-21"]
+    },
+    {
+      "id": "IL-6.5", "epicId": "EP-06", "title": "Personal OpenAI evaluation checkpoint", "priority": "P1", "size": "M", "dependencies": ["IL-5.7", "IL-6.4"], "capabilities": ["DC-06", "SUP-04"], "optional": false, "externalInput": "Explicit user enablement and runtime-only personal credential are required only for the live-call branch; otherwise record the offline decision",
+      "outcome": "The fixed redacted evaluation runs, if authorized, and records exactly one frozen course-correction decision.",
+      "acceptance": ["entry checklist passes", "credential is absent from files, logs and DB", "evaluation metrics are recorded safely", "decision uses the exact allowed enum"],
+      "documentation": ["DOC-11", "DOC-13", "DOC-21"]
+    },
+    {
+      "id": "IL-6.6", "epicId": "EP-06", "title": "AI safety, transfer and course-correction docs", "priority": "P0", "size": "M", "dependencies": ["IL-6.4"], "capabilities": ["DC-06", "SUP-04"], "optional": false,
+      "outcome": "Professional AI documentation records transfer, limits, evidence and the live-or-offline finale posture.",
+      "acceptance": ["authority boundary is explicit", "data transfer is explicit", "checkpoint result or pending offline posture is explicit", "no credential or raw private body appears"],
+      "documentation": ["DOC-11", "DOC-13", "DOC-21"]
+    },
+    {
+      "id": "IL-6.7", "epicId": "EP-06", "title": "Advisory synthetic edge-case suggestions", "priority": "P1", "size": "M", "dependencies": ["IL-6.3", "IL-6.4"], "capabilities": ["SUP-03"], "optional": false,
+      "outcome": "Validated provider or deterministic advisory logic suggests cited synthetic retail edge cases without canonical-state effect.",
+      "acceptance": ["structured output and citations validate", "synthetic and advisory labels are explicit", "provider-off behavior is safe", "findings and readiness remain unchanged"],
+      "documentation": ["DOC-11", "DOC-15", "DOC-16"]
+    },
+
+    {
+      "id": "IL-7.1", "epicId": "EP-07", "title": "Readiness obligation catalog and evaluator", "priority": "P0", "size": "XL", "dependencies": ["IL-3.4", "IL-5.5"], "capabilities": ["DC-07"], "optional": false,
+      "outcome": "readiness.v1 maps integrity, scope, snapshot, findings, validations, review and freshness to fail-closed status.",
+      "acceptance": ["exhaustive truth table passes", "sample, fallback, AI and stale inputs never create READY", "rule version is recorded", "ordering is deterministic"],
+      "documentation": ["DOC-04", "DOC-16"]
+    },
+    {
+      "id": "IL-7.2", "epicId": "EP-07", "title": "Assessment persistence and dependency staleness", "priority": "P0", "size": "L", "dependencies": ["IL-4.2", "IL-7.1"], "capabilities": ["DC-07"], "optional": false,
+      "outcome": "Immutable assessments persist exact input fingerprints and become historical STALE after dependency changes.",
+      "acceptance": ["transaction and concurrency pass", "restart passes", "stale matrix passes", "old assessment remains immutable"],
+      "documentation": ["DOC-05", "DOC-16"]
+    },
+    {
+      "id": "IL-7.3", "epicId": "EP-07", "title": "Release Passport projection and digest", "priority": "P0", "size": "L", "dependencies": ["IL-7.2"], "capabilities": ["DC-08"], "optional": false,
+      "outcome": "Passport is an immutable projection of one persisted assessment and never recomputes readiness.",
+      "acceptance": ["canonical projection equality passes", "digest vectors pass", "history retrieves", "stale association is visible"],
+      "documentation": ["DOC-17"]
+    },
+    {
+      "id": "IL-7.4", "epicId": "EP-07", "title": "Readiness and Passport API and UI", "priority": "P0", "size": "L", "dependencies": ["IL-6.4", "IL-7.3"], "capabilities": ["DC-07", "DC-08"], "optional": false,
+      "outcome": "User sees obligations, blockers, evidence and historical Passport with exact trust states.",
+      "acceptance": ["browser BLOCKED, READY and STALE pass", "API contracts pass", "export projection is safe", "UI does not recompute"],
+      "documentation": ["DOC-06", "DOC-15", "DOC-17"]
+    },
+    {
+      "id": "IL-7.5", "epicId": "EP-07", "title": "Readiness and Passport proof", "priority": "P0", "size": "L", "dependencies": ["IL-7.4"], "capabilities": ["DC-07", "DC-08"], "optional": false,
+      "outcome": "Domain, API, DB and UI proof shows zero controlled false READY and exact Passport equality.",
+      "acceptance": ["EV-READINESS is recorded", "EV-PASSPORT is recorded", "restart and isolation pass", "integrity and AI-off tests pass"],
+      "documentation": ["DOC-21", "DOC-22"]
+    },
+    {
+      "id": "IL-7.6", "epicId": "EP-07", "title": "Readiness, Passport and user documentation", "priority": "P0", "size": "S", "dependencies": ["IL-7.5"], "capabilities": ["DC-07", "DC-08"], "optional": false,
+      "outcome": "Trust semantics, limitations and operator guidance match verified authority.",
+      "acceptance": ["docs match contracts", "examples match tests", "no deployment guarantee exists", "historical staleness is explained"],
+      "documentation": ["DOC-04", "DOC-05", "DOC-15", "DOC-16", "DOC-17"]
+    },
+
+    {
+      "id": "IL-8.1", "epicId": "EP-08", "title": "Controlled retail repository and evidence fixtures", "priority": "P0", "size": "XL", "dependencies": ["IL-4.6", "IL-7.3"], "capabilities": ["DC-09"], "optional": false,
+      "outcome": "IntelliLoop-owned synthetic fixtures encode the cancellation conflict, impact, partial validation and correction.",
+      "acceptance": ["fixture review passes", "no private or company data exists", "hashes are deterministic", "provenance is recorded"],
+      "documentation": ["DOC-12", "DOC-15"]
+    },
+    {
+      "id": "IL-8.2", "epicId": "EP-08", "title": "Real-path fixture loader and scoped reset", "priority": "P0", "size": "L", "dependencies": ["IL-2.4", "IL-3.4", "IL-8.1"], "capabilities": ["DC-09"], "optional": false,
+      "outcome": "Demo setup uses normal application paths and reset affects only the dedicated demo workspace.",
+      "acceptance": ["empty-to-initial setup passes", "reset is idempotent", "non-demo isolation passes", "restart passes"],
+      "documentation": ["DOC-15"]
+    },
+    {
+      "id": "IL-8.3", "epicId": "EP-08", "title": "Browser golden workflow", "priority": "P0", "size": "XL", "dependencies": ["IL-7.4", "IL-8.2"], "capabilities": ["DC-01", "DC-02", "DC-03", "DC-04", "DC-05", "DC-06", "DC-07", "DC-08", "DC-09"], "optional": false,
+      "outcome": "Playwright proves import, Twin, conflict, impact, offline answer, correction, BLOCKED to READY to STALE and Passport.",
+      "acceptance": ["EV-GOLDEN-FLOW is recorded", "all stretch flags are off", "no credential is present", "failure traces are retained safely"],
+      "documentation": ["DOC-18", "DOC-19", "DOC-21"]
+    },
+    {
+      "id": "IL-8.4", "epicId": "EP-08", "title": "Competition visual, responsive and accessibility polish", "priority": "P0", "size": "XL", "dependencies": ["IL-8.3"], "capabilities": ["DC-09"], "optional": false,
+      "outcome": "Critical story is understandable within two minutes and keyboard-operable at 1366x768 without color-only trust.",
+      "acceptance": ["EV-ACCESSIBILITY is recorded", "keyboard and focus pass", "semantic headings pass", "all loading, empty, error and trust states receive visual QA"],
+      "documentation": ["DOC-24"]
+    },
+    {
+      "id": "IL-8.5", "epicId": "EP-08", "title": "Non-functional safety, restart and rehearsal gate", "priority": "P0", "size": "L", "dependencies": ["IL-8.4"], "capabilities": ["DC-09"], "optional": false,
+      "outcome": "Reset, restart, offline, repository safety, privacy and 5-7 minute rehearsal pass together.",
+      "acceptance": ["repository before and after match", "default network is blocked", "secret sentinel is absent", "rehearsal and recovery drill pass"],
+      "documentation": ["DOC-21", "DOC-23", "DOC-25"]
+    },
+    {
+      "id": "IL-8.6", "epicId": "EP-08", "title": "Demo runbook, troubleshooting, judge Q&A and fallback assets", "priority": "P0", "size": "L", "dependencies": ["IL-8.5"], "capabilities": ["DC-09"], "optional": false,
+      "outcome": "Professional demo and support assets reflect the exact release flow and honest limitations.",
+      "acceptance": ["runbook rehearsal passes", "fallback path is tested", "asset metadata is recorded", "AI-off path and limitations are explicit"],
+      "documentation": ["DOC-18", "DOC-19", "DOC-20", "DOC-24", "DOC-25", "DOC-28"]
+    },
+
+    {
+      "id": "IL-9.1", "epicId": "EP-09", "title": "Clean install, build, test and platform verification", "priority": "P0", "size": "L", "dependencies": ["IL-8.5"], "capabilities": [], "optional": false,
+      "outcome": "Release candidate installs reproducibly and passes required checks on Windows and available Linux CI.",
+      "acceptance": ["pinned Node and npm verify", "lockfile install passes", "all test layers and build pass", "artifact hashes are recorded"],
+      "documentation": ["DOC-07", "DOC-08", "DOC-21", "DOC-25"]
+    },
+    {
+      "id": "IL-9.2", "epicId": "EP-09", "title": "Dependency, provenance, similarity, secrets and security audit", "priority": "P0", "size": "XL", "dependencies": ["IL-9.1"], "capabilities": [], "optional": false,
+      "outcome": "Release has complete notices and proof that candidate source, secrets and private content were not transferred.",
+      "acceptance": ["license inventory passes", "provenance ledger is complete", "similarity review passes", "secret, network and mutation audits pass"],
+      "documentation": ["DOC-10", "DOC-12", "DOC-14", "DOC-23", "DOC-25"]
+    },
+    {
+      "id": "IL-9.3", "epicId": "EP-09", "title": "Final technical, setup, user, API and security docs", "priority": "P0", "size": "L", "dependencies": ["IL-7.6", "IL-8.6", "IL-9.1"], "capabilities": [], "optional": false,
+      "outcome": "Canonical professional documents match the release candidate and verified commands.",
+      "acceptance": ["documentation checklist passes", "links and commands verify", "deferred features are labeled", "screenshots are current"],
+      "documentation": ["DOC-01", "DOC-02", "DOC-03", "DOC-04", "DOC-05", "DOC-06", "DOC-07", "DOC-08", "DOC-09", "DOC-10", "DOC-15", "DOC-16", "DOC-17", "DOC-19"]
+    },
+    {
+      "id": "IL-9.4", "epicId": "EP-09", "title": "Controlled metrics and claim-evidence dossier", "priority": "P0", "size": "L", "dependencies": ["IL-8.5"], "capabilities": [], "optional": false,
+      "outcome": "Prototype measurements and every external claim map to reproducible evidence with limitations, including a bounded manual-versus-assisted pilot protocol for the submitted time-saving hypothesis.",
+      "acceptance": ["representative change and release count is recorded", "manual and assisted context-gathering, impact-analysis, evidence-checking and release-preparation time are measured", "path and citation validity are measured", "readiness and Passport fidelity are measured", "developer, lead and manager feedback is recorded", "the monthly team-hour calculation states its method, assumptions, sample and limitations", "no individual surveillance or production extrapolation exists"],
+      "documentation": ["DOC-22", "DOC-27", "DOC-29"]
+    },
+    {
+      "id": "IL-9.5", "epicId": "EP-09", "title": "Official Avishkar rule verification and compliance matrix", "priority": "P0", "size": "M", "dependencies": ["IL-9.2", "IL-9.3", "IL-9.4"], "capabilities": [], "optional": false, "externalInput": "Official Avishkar rulebook, form or authorized public source",
+      "outcome": "Official rules are hashed, mapped and resolved across branding, AI, ownership, data, dependency and submission terms.",
+      "acceptance": ["official source is identified", "rules matrix has no unresolved submission blocker", "organizer clarifications are retained", "claims and assets are corrected"],
+      "documentation": ["DOC-13", "DOC-14", "DOC-26", "DOC-27", "DOC-29"]
+    },
+    {
+      "id": "IL-9.6", "epicId": "EP-09", "title": "Submission copy, pitch, demo package and manifest", "priority": "P0", "size": "XL", "dependencies": ["IL-9.5"], "capabilities": [], "optional": false,
+      "outcome": "Form-ready copy, pitch, demo script, fallback assets and final manifest are professional and truthful.",
+      "acceptance": ["word and format limits pass", "claim matrix passes", "asset hashes are recorded", "rehearsal and disclosures pass"],
+      "documentation": ["DOC-18", "DOC-20", "DOC-27", "DOC-28", "DOC-29", "DOC-30"]
+    },
+    {
+      "id": "IL-9.7", "epicId": "EP-09", "title": "Code freeze, release candidate and final claim gate", "priority": "P0", "size": "M", "dependencies": ["IL-9.6"], "capabilities": [], "optional": false,
+      "outcome": "No P0 or P1 blocker remains and final claims are bounded by complete evidence.",
+      "acceptance": ["full gate rerun passes", "release checklist passes", "repository state is reviewed", "final manifest and claim are approved"],
+      "documentation": ["DOC-25", "DOC-29", "DOC-30"]
+    },
+
+    {
+      "id": "IL-10.1", "epicId": "EP-10", "title": "Evidence Replay Lab", "priority": "P2", "size": "L", "dependencies": ["IL-8.3"], "capabilities": ["STR-01"], "optional": true,
+      "outcome": "Flagged read-only comparison explains differences between immutable Twin snapshots.",
+      "acceptance": ["flag-off isolation passes", "canonical state is unchanged", "diff citations resolve", "feature can be omitted cleanly"],
+      "documentation": ["DOC-15"]
+    },
+    {
+      "id": "IL-10.2", "epicId": "EP-10", "title": "Imported advisory-output disagreement", "priority": "P2", "size": "L", "dependencies": ["IL-6.3", "IL-8.3"], "capabilities": ["STR-02"], "optional": true,
+      "outcome": "Flagged view compares attributed imported recommendations without orchestration or readiness authority.",
+      "acceptance": ["flag-off isolation passes", "outputs remain advisory", "no live orchestration occurs", "readiness is unchanged"],
+      "documentation": ["DOC-11", "DOC-15"]
+    },
+    {
+      "id": "IL-10.3", "epicId": "EP-10", "title": "Guarded Remediation Preview", "priority": "P2", "size": "XL", "dependencies": ["IL-6.3", "IL-8.3"], "capabilities": ["STR-03"], "optional": true,
+      "outcome": "Flagged cited patch or test proposal is preview-only and performs no repository, Git, shell or deployment action.",
+      "acceptance": ["flag-off isolation passes", "repository state is unchanged", "proposal citations validate", "no execution or network action exists"],
+      "documentation": ["DOC-10", "DOC-11", "DOC-15"]
+    }
+  ],
+  "personalOpenAiCheckpoint": {
+    "storyId": "IL-6.5",
+    "status": "COMPLETED_OFFLINE_DECISION",
+    "externalCallsDefault": false,
+    "credentialPolicy": "Runtime-only; never commit, persist or print.",
+    "liveEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+    "selectedDecision": "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE",
+    "evidence": "docs/evidence/EV_OPENAI_EVAL.json",
+    "allowedDecisions": [
+      "USE_LIVE_PROVIDER_IN_FINALE",
+      "CORRECT_PROMPT_OR_EVIDENCE_PACK_AND_RETEST",
+      "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE"
+    ]
+  },
+  "aiSafetyDocumentation": {
+    "storyId": "IL-6.6",
+    "status": "FINALIZED",
+    "finaleProviderPosture": "OFFLINE",
+    "currentOutboundProviderPayloadCount": 0,
+    "selectedDecision": "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE",
+    "checkpointEvidence": "docs/evidence/EV_OPENAI_EVAL.json",
+    "storyEvidence": "docs/evidence/IL_6_6_TEST_EVIDENCE.md",
+    "contractCommand": "npm.cmd run check:ai-safety-docs"
+  },
+  "syntheticEdgeCaseSuggestions": {
+    "storyId": "IL-6.7",
+    "status": "IMPLEMENTED",
+    "generationMode": "DETERMINISTIC_RULES",
+    "provider": "NONE",
+    "labels": ["SYNTHETIC", "ADVISORY_ONLY", "NOT_EVIDENCE"],
+    "canonicalStateAuthority": false,
+    "readinessAuthority": false,
+    "releasePassportAuthority": false,
+    "evidence": "docs/evidence/EV_CITATIONS.json",
+    "storyEvidence": "docs/evidence/IL_6_7_TEST_EVIDENCE.md"
+  },
+  "readinessEvaluation": {
+    "storyId": "IL-7.1",
+    "status": "DOMAIN_CONTRACT_IMPLEMENTED",
+    "policyVersion": "readiness.v1",
+    "states": ["BLOCKED", "READY", "STALE"],
+    "obligationCount": 9,
+    "failClosed": true,
+    "evaluationPersistence": "NOT_PERSISTED",
+    "releaseDecisionAuthority": false,
+    "releasePassportAuthority": false,
+    "deploymentAuthority": false,
+    "nextPersistenceStory": "COMPLETE_IL_7_2",
+    "storyEvidence": "docs/evidence/IL_7_1_TEST_EVIDENCE.md"
+  },
+  "readinessAssessmentPersistence": {
+    "storyId": "IL-7.2",
+    "status": "IMPLEMENTED",
+    "assessmentVersion": "release-assessment.v1",
+    "reviewVersion": "readiness-review.v1",
+    "derivedStateVersion": "release-assessment-state.v1",
+    "schemaVersion": 11,
+    "dependencyAuthority": "REPOSITORY_DERIVED",
+    "historyMutation": false,
+    "releaseDecisionAuthority": false,
+    "releasePassportAuthority": false,
+    "deploymentAuthority": false,
+    "nextStory": "COMPLETE_IL_7_3",
+    "storyEvidence": "docs/evidence/IL_7_2_TEST_EVIDENCE.md"
+  },
+  "releasePassportProjection": {
+    "storyId": "IL-7.3",
+    "status": "IMPLEMENTED",
+    "passportVersion": "release-passport.v1",
+    "derivedStateVersion": "release-passport-state.v1",
+    "schemaVersion": 12,
+    "sourceAuthority": "ONE_PERSISTED_RELEASE_ASSESSMENT",
+    "projectionAuthority": "REPRODUCED_NOT_RECOMPUTED",
+    "signed": false,
+    "historyMutation": false,
+    "releaseDecisionAuthority": false,
+    "deploymentAuthority": false,
+    "nextStory": "IL-7.4",
+    "storyEvidence": "docs/evidence/IL_7_3_TEST_EVIDENCE.md"
+  },
+  "readinessPassportApiUi": {
+    "storyId": "IL-7.4",
+    "status": "IMPLEMENTED",
+    "apiVersion": "v1",
+    "browserRoute": "/missions/:missionId/passport",
+    "assessmentStates": ["BLOCKED", "READY", "STALE"],
+    "repositoryDerivedInputsOnly": true,
+    "browserReadinessRecomputation": false,
+    "structuralJsonExport": true,
+    "containsSourceBodies": false,
+    "containsCredentials": false,
+    "containsPrivateAbsolutePaths": false,
+    "signed": false,
+    "releaseDecisionAuthority": false,
+    "deploymentAuthority": false,
+    "nextStory": "IL-7.5",
+    "storyEvidence": "docs/evidence/IL_7_4_TEST_EVIDENCE.md"
+  },
+  "readinessPassportProof": {
+    "storyId": "IL-7.5",
+    "status": "PASS",
+    "evidenceIds": ["EV-READINESS", "EV-PASSPORT"],
+    "layerCoverage": ["DOMAIN", "SQLITE", "PRODUCTION_API_ROUTES", "BROWSER_DECODER", "BROWSER_UI"],
+    "controlledFalseReadyCount": 0,
+    "exactPassportProjection": true,
+    "restartRecovery": true,
+    "projectIsolation": true,
+    "integrityFailureClosed": true,
+    "externalAiCallMade": false,
+    "signed": false,
+    "releaseDecisionAuthority": false,
+    "deploymentAuthority": false,
+    "nextStory": "IL-7.6",
+    "storyEvidence": "docs/evidence/IL_7_5_TEST_EVIDENCE.md"
+  },
+  "readinessPassportDocumentation": {
+    "storyId": "IL-7.6",
+    "status": "PASS",
+    "phaseStatus": "PHASE_7_COMPLETE",
+    "canonicalGuide": "docs/product/READINESS_AND_PASSPORT_GUIDE.md",
+    "historicalStalenessExplained": true,
+    "operatorRecoveryExplained": true,
+    "deploymentOrSafetyGuaranteeClaimed": false,
+    "runtimeChanged": false,
+    "nextStory": "IL-8.1",
+    "storyEvidence": "docs/evidence/IL_7_6_TEST_EVIDENCE.md"
+  },
+  "controlledRetailFixture": {
+    "storyId": "IL-8.1",
+    "status": "PASS",
+    "fixtureVersion": "intelliloop-retail-cancellation-fixture.v1",
+    "fixtureId": "loopmart-expanded-cancellation-v1",
+    "fixtureDigest": "sha256:bfc7189f28dd5bcffb4888ec3e9e69c0a86d95a6b3fc06fcefa7cbc449b8ac40",
+    "initialRepositoryTreeDigest": "sha256:0085d0861ca95e66f3b33558f88a6a75136917b63ab332d30668e1a0b5c42b6c",
+    "correctedRepositoryTreeDigest": "sha256:5e3bd1ca47b9d4f1af0ce0fc073490167dbe7dc510649f6c925085be06c1e4d0",
+    "evidenceSetDigest": "sha256:cce7fe82f08da418b9020a3c30f4d3e9f3907fd9f232a915e95cfe2eb3dff357",
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC_ONLY",
+    "containsPersonalData": false,
+    "containsEmployerOrClientData": false,
+    "materializationImplemented": true,
+    "resetImplemented": true,
+    "nextStory": "IL-8.6",
+    "storyEvidence": "docs/evidence/IL_8_1_TEST_EVIDENCE.md"
+  },
+  "controlledDemoLoader": {
+    "storyId": "IL-8.2",
+    "status": "PASS",
+    "fixtureId": "loopmart-expanded-cancellation-v1",
+    "generatedRootOnly": true,
+    "normalProductServicesUsed": ["PROJECT", "MISSION", "REPOSITORY", "EVIDENCE", "CLAIM", "CODE_MAP", "TWIN", "RECONCILIATION", "READINESS"],
+    "initialReadinessStatus": "BLOCKED",
+    "setupIdempotent": true,
+    "resetIdempotent": true,
+    "restartRecovery": true,
+    "nonDemoIsolation": true,
+    "callerControlledResetScope": false,
+    "repositoryCodeExecuted": false,
+    "nextStory": "IL-8.6",
+    "storyEvidence": "docs/evidence/IL_8_2_TEST_EVIDENCE.md"
+  },
+  "browserGoldenWorkflow": {
+    "storyId": "IL-8.3",
+    "status": "PASS",
+    "route": "/demo",
+    "persistedStateSequence": ["BLOCKED", "READY", "STALE"],
+    "conflictAndImpactVisible": true,
+    "deterministicOfflineAnswer": true,
+    "externalAiCalls": false,
+    "unexpectedOutboundBrowserRequests": 0,
+    "credentialBearingBrowserRequests": 0,
+    "unsignedPassport": true,
+    "historicalPassportStaleness": true,
+    "stretchFlagsOff": true,
+    "focusedApiAndMigrationTests": 17,
+    "serialChromiumTests": 4,
+    "nextStory": "IL-8.6",
+    "storyEvidence": "docs/evidence/IL_8_3_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_GOLDEN_FLOW.json"
+  },
+  "competitionAccessibilityReview": {
+    "storyId": "IL-8.4",
+    "status": "PASS",
+    "primaryViewport": "1366x768",
+    "responsiveViewports": ["768x1024", "390x844"],
+    "focusedChromiumTests": 4,
+    "keyboardOnlyGoldenSequence": true,
+    "focusRestoredAfterStateReplacement": true,
+    "semanticHeadingOrder": true,
+    "nonColorStatusCues": true,
+    "visualQaStates": ["LOADING", "EMPTY", "ERROR", "BLOCKED", "READY", "STALE"],
+    "horizontalOverflowObserved": false,
+    "wcagCertificationClaimed": false,
+    "nextStory": "IL-8.6",
+    "storyEvidence": "docs/evidence/IL_8_4_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_ACCESSIBILITY.json"
+  },
+  "demoNonFunctionalGate": {
+    "storyId": "IL-8.5",
+    "status": "PASS",
+    "checkpoint": "G5_CORE_DEMONSTRABLE",
+    "pacedRehearsalMinutes": 5.8,
+    "pacedRehearsalTargetMinutes": [5, 7],
+    "apiProcessStarts": 3,
+    "restartRecovery": true,
+    "resetAfterRestart": true,
+    "applicationSourceTreeEquality": true,
+    "gitStatusByteEquality": true,
+    "registeredRepositoryTreeEquality": true,
+    "browserNonLoopbackRequests": 0,
+    "browserAuthorizationHeaders": 0,
+    "secretSentinelHits": 0,
+    "externalAiCalls": false,
+    "nextStory": "IL-8.6",
+    "storyEvidence": "docs/evidence/IL_8_5_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_DEMO_GATE.json"
+  },
+  "demoSupportPackage": {
+    "storyId": "IL-8.6",
+    "status": "PASS",
+    "phase": "PHASE_8_COMPLETE",
+    "assetCount": 7,
+    "assetViewport": {"width": 1366, "height": 768},
+    "assetMetadataRecorded": true,
+    "fallbackFormat": "STATIC_LOCAL_HTML_ORDERED_SCREENSHOT_SEQUENCE",
+    "fallbackValidatedWithApiStopped": true,
+    "fallbackBrokenImages": 0,
+    "browserNonLoopbackRequests": 0,
+    "externalAiCalls": false,
+    "judgeQaComplete": true,
+    "pitchAndNarrationComplete": true,
+    "nextStory": "IL-9.1",
+    "storyEvidence": "docs/evidence/IL_8_6_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_DEMO_SUPPORT.json",
+    "assetManifest": "docs/demo/DEMO_ASSET_MANIFEST.json"
+  },
+  "releasePlatformVerification": {
+    "storyId": "IL-9.1",
+    "status": "PASS_WINDOWS_LINUX_CI_CONFIGURED",
+    "nodeVersion": "22.22.0",
+    "npmVersion": "10.9.4",
+    "cleanInstall": true,
+    "lockfileEquality": true,
+    "requiredCommandCount": 20,
+    "passedCommandCount": 20,
+    "windows11Observed": true,
+    "linuxCiConfigured": true,
+    "linuxObserved": false,
+    "artifactHashCount": 17,
+    "productionCertificationClaimed": false,
+    "nextStory": "IL-9.2",
+    "storyEvidence": "docs/evidence/IL_9_1_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_RELEASE.json",
+    "workflow": ".github/workflows/release-platform-verification.yml"
+  },
+  "releaseSecurityAudit": {
+    "storyId": "IL-9.2",
+    "status": "PASS_WITH_DISCLOSED_LIMITS",
+    "dependencyInstanceCount": 222,
+    "uniquePackageVersionCount": 220,
+    "fullAuditVulnerabilityCount": 0,
+    "productionAuditVulnerabilityCount": 0,
+    "unknownOrUnapprovedLicenseCount": 0,
+    "candidateFileCount": 406,
+    "nonFixtureSecretFindingCount": 0,
+    "nonFixturePrivatePathFindingCount": 0,
+    "reuseDecisionCount": 0,
+    "adaptDecisionCount": 0,
+    "similarityDisposition": "PASS_BOUNDED_REVIEW",
+    "productProviderCallCount": 0,
+    "registeredRepositoryWriteCount": 0,
+    "productionCertificationClaimed": false,
+    "nextStory": "IL-9.3",
+    "storyEvidence": "docs/evidence/IL_9_2_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_SECURITY_AUDIT.json",
+    "inventory": "docs/governance/THIRD_PARTY_INVENTORY.json",
+    "notices": "docs/governance/THIRD_PARTY_NOTICES.md",
+    "similarityReview": "docs/governance/SOURCE_SIMILARITY_REVIEW.md"
+  },
+  "documentationVerification": {
+    "storyId": "IL-9.3",
+    "status": "PASS",
+    "canonicalDocumentCount": 14,
+    "apiRouteCount": 53,
+    "screenshotCount": 7,
+    "brokenLocalLinkCount": 0,
+    "deferredCapabilitiesExplicit": true,
+    "nextStory": "IL-9.4",
+    "storyEvidence": "docs/evidence/IL_9_3_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_DOCUMENTATION.json"
+  },
+  "metricsDossier": {
+    "storyId": "IL-9.4",
+    "status": "PRODUCT_PROOF_AND_MANUAL_QA_PASS_HUMAN_PILOT_INPUT_REQUIRED",
+    "representativeChangeCount": 1,
+    "candidateReleaseCount": 1,
+    "reconciliationTruthCasesPassed": 6,
+    "reconciliationTruthCasesTotal": 6,
+    "controlledFalseReadyCount": 0,
+    "controlledNonReadyCaseCount": 26,
+    "renderedStatementCount": 56,
+    "allRenderedStatementsCited": true,
+    "exactPassportProjection": true,
+    "pairedHumanRunsComplete": 0,
+    "pairedHumanRunsRequired": 6,
+    "roleFeedbackResponsesComplete": 0,
+    "roleFeedbackResponsesRequired": 3,
+    "pilotMissingFieldCount": 62,
+    "pilotInputValidatorSelfTest": "PASS_SYNTHETIC_MEMORY_ONLY",
+    "benefitHypothesis": "NOT_VALIDATED",
+    "individualSurveillance": false,
+    "productionExtrapolationPerformed": false,
+    "nextStory": "IL-9.4_HUMAN_PILOT_INPUT",
+    "storyEvidence": "docs/evidence/IL_9_4_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_METRICS.json",
+    "pilotInput": "docs/evidence/PILOT_MEASUREMENT_TEMPLATE.json"
+  },
+  "evidenceReplay": {
+    "storyId": "IL-10.1",
+    "status": "PASS_OPTIONAL_FEATURE_FLAGGED",
+    "defaultEnabled": false,
+    "baselineRevision": 1,
+    "candidateRevision": 2,
+    "addedMembers": 58,
+    "removedMembers": 13,
+    "changedMembers": 30,
+    "unchangedMembers": 37,
+    "unitAndComponentTestsPassed": 391,
+    "apiAndIntegrationTestsPassed": 163,
+    "productionBuildModules": 86,
+    "allDifferencesCited": true,
+    "canonicalStateMutation": false,
+    "readinessAuthority": false,
+    "storyEvidence": "docs/evidence/IL_10_1_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_EVIDENCE_REPLAY.json"
+  },
+  "advisoryDisagreement": {
+    "storyId": "IL-10.2",
+    "status": "PASS_OPTIONAL_FEATURE_FLAGGED",
+    "defaultEnabled": false,
+    "importedOutputs": 2,
+    "exactTextGroups": 3,
+    "citationVarianceGroups": 1,
+    "outputOnlyGroups": 2,
+    "comparisonNetworkRequests": 0,
+    "canonicalStateMutation": false,
+    "semanticContradictionInferred": false,
+    "liveOrchestration": false,
+    "readinessAuthority": false,
+    "storyEvidence": "docs/evidence/IL_10_2_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_ADVISORY_DISAGREEMENT.json"
+  },
+  "remediationPreview": {
+    "storyId": "IL-10.3",
+    "status": "PASS_OPTIONAL_FEATURE_FLAGGED",
+    "defaultEnabled": false,
+    "previewMode": "TEST_PLAN",
+    "citedProposalCount": 5,
+    "repositoryHeadAndFileHashesEqual": true,
+    "repositoryMutation": false,
+    "commandsExecuted": 0,
+    "networkRequestsDuringPreview": 0,
+    "canonicalStateMutation": false,
+    "readinessAuthority": false,
+    "storyEvidence": "docs/evidence/IL_10_3_TEST_EVIDENCE.md",
+    "machineEvidence": "docs/evidence/EV_REMEDIATION_PREVIEW.json"
+  },
+  "rulesCompliance": {
+    "status": "REGISTRATION_SUBMITTED_RULEBOOK_NOT_VERIFIED",
+    "registrationSubmitted": true,
+    "organizerAcceptanceVerified": false,
+    "blocksDevelopment": false,
+    "blocksFinalCompetitionSignoff": true,
+    "storyId": "IL-9.5",
+    "register": "planning/r3-implementation-backlog-2026-08-03/AVISHKAR_RULES_GAP_REGISTER.md"
+  },
+  "aiMasteryTraceability": [
+    {"id": "AM-01", "disposition": "POST_COMPETITION", "storyIds": []},
+    {"id": "AM-02", "disposition": "CORE", "storyIds": ["IL-5.1", "IL-5.2", "IL-5.3", "IL-5.4", "IL-5.5", "IL-5.6"]},
+    {"id": "AM-03", "disposition": "MVP_SUPPORTING", "storyIds": ["IL-3.7"]},
+    {"id": "AM-04", "disposition": "CORE", "storyIds": ["IL-6.1", "IL-6.2", "IL-6.3", "IL-6.4", "IL-6.5", "IL-6.6"]},
+    {"id": "AM-05", "disposition": "STRETCH_THEN_POST", "storyIds": ["IL-10.2"]},
+    {"id": "AM-06", "disposition": "DEMO_CRITICAL_ENHANCEMENT", "storyIds": ["IL-4.4", "IL-4.5", "IL-4.6", "IL-4.7"]},
+    {"id": "AM-07", "disposition": "STRETCH_THEN_POST", "storyIds": ["IL-10.3"]},
+    {"id": "AM-08", "disposition": "MVP_SUPPORTING", "storyIds": ["IL-6.7", "IL-8.1"]},
+    {"id": "AM-09", "disposition": "CORE", "storyIds": ["IL-1.2", "IL-3.6", "IL-6.3", "IL-7.1", "IL-7.2", "IL-7.3", "IL-7.4", "IL-7.5"]},
+    {"id": "AM-10", "disposition": "CORE", "storyIds": ["IL-3.1", "IL-3.2", "IL-4.2", "IL-4.3"]},
+    {"id": "AM-11", "disposition": "POST_COMPETITION_WITH_MVP_CONTROLS", "storyIds": ["IL-6.3"]},
+    {"id": "AM-12", "disposition": "CORE", "storyIds": ["IL-3.2", "IL-4.2", "IL-5.3", "IL-10.1"]}
+  ],
+  "cutOrder": ["IL-10.3", "IL-10.2", "IL-10.1", "IL-6.7 (SUP-03)", "IL-3.7 (SUP-02)", "SUP-04 usage display only within IL-6.3 and IL-6.6", "ENH-01 only if controlled parser proof fails"],
+  "nonCuttableCapabilities": ["DC-01", "DC-02", "DC-03", "DC-04", "DC-05", "DC-06 offline path", "DC-07", "DC-08", "DC-09"],
+  "nextStory": "IL-9.4",
+  "completionMarker": "INTELLILOOP_IL_10_3_PASS_ALL_OPTIONAL_COMPLETE_IL_9_4_HUMAN_PILOT_INPUT_REQUIRED"
+}

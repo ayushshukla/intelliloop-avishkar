@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "pilotId": "INTELLILOOP-BOUNDED-PILOT-01",
+  "status": "NOT_RUN",
+  "representativeScenario": {
+    "fixtureId": "loopmart-expanded-cancellation-v1",
+    "changeCount": 1,
+    "releaseCount": 1,
+    "taskBoundary": "Context gathering, impact analysis, evidence checking and candidate-release preparation for the fixed synthetic cancellation change."
+  },
+  "cadenceAssumption": {
+    "representativeChangesPerMonth": null,
+    "source": null
+  },
+  "privacy": {
+    "individualSurveillance": false,
+    "personRanking": false,
+    "personallyIdentifyingFieldsCollected": false,
+    "aggregationRule": "Report role-level medians and aggregate ratings only."
+  },
+  "fieldRules": {
+    "phaseMinutes": "Non-negative numbers measured with the same visible timer.",
+    "observations": "Non-negative integer counts; enter 0 when none were observed.",
+    "ratings": "Whole numbers from 1 through 5.",
+    "wouldUseInPilot": "Boolean true or false, not free text.",
+    "sanitizedNote": "Required non-empty text up to 500 characters with no names, customer data or performance evaluation.",
+    "cadence": "Positive whole-number representative changes per month plus a non-empty source citation."
+  },
+  "runs": [
+    { "runId": "DEV-M", "role": "DEVELOPER", "mode": "MANUAL", "phaseMinutes": { "contextGathering": null, "impactAnalysis": null, "evidenceChecking": null, "releasePreparation": null }, "observations": { "validImpactPaths": null, "invalidCitations": null, "falseReady": null, "passportMismatch": null }, "feedback": null },
+    { "runId": "DEV-A", "role": "DEVELOPER", "mode": "INTELLILOOP_ASSISTED", "phaseMinutes": { "contextGathering": null, "impactAnalysis": null, "evidenceChecking": null, "releasePreparation": null }, "observations": { "validImpactPaths": null, "invalidCitations": null, "falseReady": null, "passportMismatch": null }, "feedback": { "usefulnessRating": null, "trustClarityRating": null, "wouldUseInPilot": null, "sanitizedNote": null } },
+    { "runId": "LEAD-M", "role": "TECHNICAL_LEAD", "mode": "MANUAL", "phaseMinutes": { "contextGathering": null, "impactAnalysis": null, "evidenceChecking": null, "releasePreparation": null }, "observations": { "validImpactPaths": null, "invalidCitations": null, "falseReady": null, "passportMismatch": null }, "feedback": null },
+    { "runId": "LEAD-A", "role": "TECHNICAL_LEAD", "mode": "INTELLILOOP_ASSISTED", "phaseMinutes": { "contextGathering": null, "impactAnalysis": null, "evidenceChecking": null, "releasePreparation": null }, "observations": { "validImpactPaths": null, "invalidCitations": null, "falseReady": null, "passportMismatch": null }, "feedback": { "usefulnessRating": null, "trustClarityRating": null, "wouldUseInPilot": null, "sanitizedNote": null } },
+    { "runId": "MGR-M", "role": "MANAGER", "mode": "MANUAL", "phaseMinutes": { "contextGathering": null, "impactAnalysis": null, "evidenceChecking": null, "releasePreparation": null }, "observations": { "validImpactPaths": null, "invalidCitations": null, "falseReady": null, "passportMismatch": null }, "feedback": null },
+    { "runId": "MGR-A", "role": "MANAGER", "mode": "INTELLILOOP_ASSISTED", "phaseMinutes": { "contextGathering": null, "impactAnalysis": null, "evidenceChecking": null, "releasePreparation": null }, "observations": { "validImpactPaths": null, "invalidCitations": null, "falseReady": null, "passportMismatch": null }, "feedback": { "usefulnessRating": null, "trustClarityRating": null, "wouldUseInPilot": null, "sanitizedNote": null } }
+  ],
+  "operatorNotes": "Copy this file before entering observations. Use one timer, the same task definition and no participant names. Enter zero for observed counts when none occur. Mark COMPLETE only after all timing, observation, feedback and cadence fields are populated."
+}

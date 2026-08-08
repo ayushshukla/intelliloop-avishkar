@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-REMEDIATION-PREVIEW",
+  "story": "IL-10.3",
+  "status": "PASS_OPTIONAL_FEATURE_FLAGGED",
+  "evidenceDate": "2026-08-07",
+  "reproductionCommand": "npm.cmd run evidence:remediation-preview",
+  "featureFlag": {
+    "name": "experiments.remediationPreview",
+    "apiEnvironmentKey": "INTELLILOOP_EXPERIMENT_REMEDIATION_PREVIEW",
+    "webEnvironmentKey": "VITE_INTELLILOOP_EXPERIMENT_REMEDIATION_PREVIEW",
+    "defaultEnabled": false,
+    "malformedValueFailsClosed": true,
+    "launcher": "npm.cmd run dev:remediation"
+  },
+  "focusedVerification": {
+    "webPreviewTests": 4,
+    "apiConfigurationTests": 16,
+    "testAndPatchIntentModes": "PASS",
+    "citationAndAuthorityRejection": "PASS",
+    "pureGenerationNoInputMutation": "PASS",
+    "defaultFlagIsolation": "PASS"
+  },
+  "directBrowserObservation": {
+    "environment": "Windows 11 / local loopback / in-app Chromium / isolated schema-14 directory",
+    "previewMode": "TEST_PLAN",
+    "citedProposals": 5,
+    "repositoryWrites": 0,
+    "commandsExecuted": 0,
+    "comparisonNetworkRequests": 0,
+    "nonLoopbackRequests": 0,
+    "registeredRepositoryTreeEqualBeforeAfter": true,
+    "readinessBefore": "READY",
+    "readinessAfter": "READY",
+    "defaultOffLabCount": 0
+  },
+  "authority": {
+    "browserMemoryOnly": true,
+    "advisoryOnly": true,
+    "notEvidence": true,
+    "notExecuted": true,
+    "canonicalStateMutation": false,
+    "repositoryMutation": false,
+    "shellOrGitExecution": false,
+    "providerCall": false,
+    "networkCall": false,
+    "readinessAuthority": false,
+    "passportAuthority": false
+  },
+  "sourceIntegrity": {
+    "apps/api/src/config.ts": "sha256:771edde0a9558264e36012f48eb248129b6e3e0a203a7a86df6db99df5cf231c",
+    "apps/api/test/config.test.ts": "sha256:2fa21abdd0acfa45dc116d27d2b7a6b7c23bf627a1424564c67590d334425e31",
+    "apps/web/src/feature-flags.ts": "sha256:eaea03999301fc9cefb961d18af72372772004d0de3966a87ffb1710186b7a79",
+    "apps/web/src/remediation-preview.ts": "sha256:a38cab676bccc9336e024c3a3cf733dc220faafa62969eb06a15edb57fa9caec",
+    "apps/web/src/RemediationPreviewLab.tsx": "sha256:9c5ba6c41bfa274016c58233e3238d2dfbbf8131764b9107b0ffe07f25aaaff2",
+    "apps/web/src/CitedExplanationWorkspace.tsx": "sha256:a7a8df4387b9771f3bb16fdd50482fa4282adcc97ccbf24ad9ce5460c83932a3",
+    "apps/web/test/remediation-preview.test.tsx": "sha256:819275da98751cb11a58c291168166be4b49276d86089eb85a9ce4baa71fa553",
+    "scripts/run-remediation-preview.mjs": "sha256:34516a63ab82dcf67eab6c4e49fa6338e31702a271bfa96d2a62c5dbf7f5c27f"
+  },
+  "limitations": [
+    "The patch-intent mode describes a cited human-review intent; it does not fabricate source code or a unified diff without source bodies.",
+    "Disposable execution is intentionally not implemented, so no test result or patch validity is claimed.",
+    "The direct browser observation uses IntelliLoop-authored controlled demonstration data and is not production validation."
+  ],
+  "nextAuthorizedStory": "IL-9.4_HUMAN_PILOT_INPUT"
+}

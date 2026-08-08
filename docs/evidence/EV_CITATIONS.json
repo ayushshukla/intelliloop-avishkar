@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-CITATIONS",
+  "storyBoundary": {
+    "from": "IL-6.1",
+    "through": "IL-6.7"
+  },
+  "capabilities": [
+    "DC-06",
+    "SUP-03"
+  ],
+  "phaseExitAuthority": "G3_DETERMINISTIC_CORE_PROVEN",
+  "status": "PASS",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:citations",
+  "fixture": {
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC",
+    "network": "OFFLINE",
+    "sourceAssessmentRevision": 2,
+    "sourceTwinRevision": 2,
+    "externalProviderUsed": false,
+    "controlledMockValidationUsed": true
+  },
+  "proofs": {
+    "fixedQuestionApi": {
+      "expectedQuestions": 6,
+      "passedQuestions": 6,
+      "exactQuestions": [
+        "Can we release?",
+        "What conflicts are open?",
+        "What is impacted?",
+        "What validation is missing?",
+        "What should happen next?",
+        "What changed after correction?"
+      ],
+      "deterministicPrimaryForEveryQuestion": "PASS",
+      "aiOffForEveryQuestion": "PASS",
+      "unsupportedQuestionAccepted": false
+    },
+    "outboundDisclosure": {
+      "transferStatus": "NOT_SENT",
+      "exactPackJsonReturnedForReview": "PASS",
+      "questionPackAndExplanationDigestBinding": "PASS",
+      "maximumSerializedBytes": 11683,
+      "maximumConservativeInputTokenUpperBound": 11683,
+      "serializedBytesByQuestion": [
+        {
+          "question": "Can we release?",
+          "serializedBytes": 11674
+        },
+        {
+          "question": "What conflicts are open?",
+          "serializedBytes": 5713
+        },
+        {
+          "question": "What is impacted?",
+          "serializedBytes": 6057
+        },
+        {
+          "question": "What validation is missing?",
+          "serializedBytes": 5170
+        },
+        {
+          "question": "What should happen next?",
+          "serializedBytes": 11683
+        },
+        {
+          "question": "What changed after correction?",
+          "serializedBytes": 7705
+        }
+      ],
+      "privateAbsoluteRootAbsent": "PASS",
+      "rawRepositoryBodiesRecorded": false
+    },
+    "citations": {
+      "renderedStatementCount": 56,
+      "resolvedStatementCitationCount": 78,
+      "everyStatementCited": "PASS",
+      "everyRenderedCitationResolved": "PASS",
+      "unknownCitationRendered": false
+    },
+    "syntheticEdgeCases": {
+      "fixedQuestionSets": 6,
+      "totalSuggestions": 23,
+      "resolvedSuggestionCitationCount": 23,
+      "suggestionKinds": [
+        "DEPENDENCY_CHANGE_REPLAY",
+        "IMPACT_PATH_INTERRUPTION",
+        "IMPLEMENTATION_GAP_VARIANT",
+        "INTERPRETATION_VARIANT",
+        "MISSING_EVIDENCE_PAIR",
+        "MISSING_VALIDATION_PAIR",
+        "VALIDATION_GAP_VARIANT"
+      ],
+      "generationMode": "DETERMINISTIC_RULES",
+      "provider": "NONE",
+      "everySuggestionSynthetic": "PASS",
+      "everySuggestionAdvisoryOnly": "PASS",
+      "everySuggestionNotEvidence": "PASS",
+      "everySuggestionCitationResolved": "PASS",
+      "externalCallMade": false
+    },
+    "providerBoundary": {
+      "productionOutcome": "DISABLED",
+      "validControlledMockAdvisoryAccepted": "PASS",
+      "unknownCitationRejectedWithoutRetry": "PASS",
+      "transportFailureRetriedOnceThenFellBack": "PASS",
+      "unvalidatedProviderTextReturned": false,
+      "externalCallMade": false
+    },
+    "authority": {
+      "canonicalStateChanged": false,
+      "reconciliationRevisionCountBefore": 2,
+      "reconciliationRevisionCountAfter": 2,
+      "findingMutationAvailable": false,
+      "releaseDecisionAvailable": false,
+      "passportAvailable": false
+    }
+  },
+  "integrity": {
+    "rawAbsolutePathsRecorded": false,
+    "credentialReadOrRecorded": false,
+    "externalProductCallMade": false,
+    "personalOrCandidateRepositoryUsed": false,
+    "generatedReportContainsProviderBodies": false,
+    "temporaryFixtureRemovedAfterRun": true
+  },
+  "limitations": [
+    "CONTROLLED_SYNTHETIC_EVIDENCE_ONLY",
+    "NO_LIVE_PROVIDER_CALL",
+    "NO_PERSISTED_EXPLANATION_OR_PROVIDER_RESPONSE",
+    "NO_RELEASE_READINESS_OR_PASSPORT_AUTHORITY",
+    "BROWSER_REGRESSION_RECORDED_SEPARATELY"
+  ],
+  "nextAuthorizedStory": "IL-7.1"
+}

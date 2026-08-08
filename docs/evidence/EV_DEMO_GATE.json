@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-DEMO-GATE",
+  "story": "IL-8.5",
+  "status": "PASS",
+  "checkpoint": "G5_CORE_DEMONSTRABLE",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:demo-gate",
+  "mode": "PACED_REHEARSAL",
+  "rehearsal": {
+    "elapsedMs": 345770,
+    "elapsedMinutes": 5.76,
+    "targetMinutes": {
+      "minimum": 5,
+      "maximum": 7
+    },
+    "narrationSeconds": 320,
+    "phases": [
+      {
+        "name": "TRUST_BOUNDARY",
+        "actionMs": 916,
+        "narrationSeconds": 25,
+        "totalMs": 25927
+      },
+      {
+        "name": "MATERIALIZE_BLOCKED",
+        "actionMs": 2912,
+        "narrationSeconds": 30,
+        "totalMs": 32920
+      },
+      {
+        "name": "CONFLICT_AND_IMPACT",
+        "actionMs": 825,
+        "narrationSeconds": 45,
+        "totalMs": 45838
+      },
+      {
+        "name": "OFFLINE_CITED_ANSWER",
+        "actionMs": 744,
+        "narrationSeconds": 35,
+        "totalMs": 35748
+      },
+      {
+        "name": "CORRECTION_TO_READY",
+        "actionMs": 2897,
+        "narrationSeconds": 50,
+        "totalMs": 52910
+      },
+      {
+        "name": "UNSIGNED_PASSPORT",
+        "actionMs": 3432,
+        "narrationSeconds": 35,
+        "totalMs": 38445
+      },
+      {
+        "name": "RESTART_AND_RECOVERY",
+        "actionMs": 2281,
+        "narrationSeconds": 35,
+        "totalMs": 37288
+      },
+      {
+        "name": "DEPENDENCY_TO_STALE",
+        "actionMs": 4741,
+        "narrationSeconds": 45,
+        "totalMs": 49742
+      },
+      {
+        "name": "CLOSE_RESET_RESTART",
+        "actionMs": 3036,
+        "narrationSeconds": 20,
+        "totalMs": 23043
+      }
+    ]
+  },
+  "workflow": {
+    "sequence": [
+      "EMPTY",
+      "BLOCKED",
+      "READY",
+      "UNAVAILABLE",
+      "READY_AFTER_RESTART",
+      "STALE",
+      "EMPTY_AFTER_RESET_AND_RESTART"
+    ],
+    "apiProcessStarts": 3,
+    "recoveryDrill": "PASS",
+    "resetAfterRestart": "PASS",
+    "historicalPassportStaleness": "PASS"
+  },
+  "safety": {
+    "applicationSourceTreeBefore": "sha256:71eb750169f08f714d4bb3461ceaa2b0744a00f4af76da326bed93f15224a8b4",
+    "applicationSourceTreeAfter": "sha256:71eb750169f08f714d4bb3461ceaa2b0744a00f4af76da326bed93f15224a8b4",
+    "applicationSourceTreeEquality": "PASS",
+    "gitStatusByteEquality": "PASS",
+    "registeredRepositoryCompleteTreeEquality": "PASS",
+    "browserNonLoopbackRequests": 0,
+    "browserAuthorizationHeaders": 0,
+    "privacyProofFetchCalls": 0,
+    "secretSentinelInLogs": false,
+    "secretSentinelInResponses": false,
+    "secretSentinelInRenderedText": false,
+    "secretSentinelInDataDirectory": false,
+    "dataDirectorySentinelHits": [],
+    "externalAiCalls": false
+  },
+  "evidenceDependencies": {
+    "repositorySafety": {
+      "status": "PASS",
+      "evidenceId": "EV-REPO-SAFETY"
+    },
+    "privacy": {
+      "status": "PASS",
+      "evidenceId": "EV-PRIVACY"
+    }
+  },
+  "sourceIntegrity": {
+    "apps/api/src/demo/demo-workspace-service.ts": "sha256:84cc6adc013e633922f7289c3cc37c36c63d54788a804cfb2fb0b5b5ca2d6aca",
+    "apps/web/src/DemoWorkspace.tsx": "sha256:d5b9d2cf9eba90cb48404570cd80172e7d764215031fe98f373ae157571f77f1",
+    "apps/web/e2e/golden-flow.spec.ts": "sha256:7783d521886acad662c7b9c06cbf188a5b78fdbac208b3e38699913a44a1eb6d",
+    "scripts/generate-demo-gate-evidence.mjs": "sha256:9ad58f65e9297d122eb29066d4633332522d1d1359cbb8036e41d16063a9f596",
+    "scripts/generate-repo-safety-evidence.mjs": "sha256:3364a8392409663f8ab78fa9e7ab6897bf495f200e5633ff663b4e75be596004",
+    "scripts/generate-privacy-evidence.mjs": "sha256:6427a5ebfc70d0d1e24419bc750da6bfa272bbaa694357df3c1d5ee5d9b7c72a"
+  },
+  "limitations": [
+    "The rehearsal uses an IntelliLoop-authored synthetic fixture on loopback and does not prove production performance or universal DLP.",
+    "Browser egress is actively blocked and server-side product paths are source-checked/provider-off; this is not an operating-system network sandbox.",
+    "The generated demo repository is intentionally changed inside the isolated data directory; registered repositories and application source remain unchanged.",
+    "Ready remains an exact-input Release Check and the Release Evidence Report remains unsigned and non-approving."
+  ],
+  "nextAuthorizedStory": "IL-8.6"
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-PRIVACY",
+  "story": "IL-3.6",
+  "capabilities": [
+    "DC-02",
+    "SUP-06"
+  ],
+  "status": "PASS",
+  "evidenceDate": "2026-08-04",
+  "reproductionCommand": "npm.cmd run evidence:privacy",
+  "fixture": {
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC",
+    "network": "OFFLINE",
+    "providerCredentialRequired": false,
+    "redactionRulesExercised": 11,
+    "persistenceFilesScanned": 3,
+    "transferFixtures": [
+      "EXPORT_VERIFICATION_ONLY",
+      "AI_PACK_VERIFICATION_ONLY"
+    ]
+  },
+  "proofs": {
+    "negativeCorpus": {
+      "JSON_SECRET_KEY": "PASS",
+      "PRIVATE_KEY": "PASS",
+      "OPENAI_TOKEN": "PASS",
+      "GITHUB_TOKEN": "PASS",
+      "SERVICE_TOKEN": "PASS",
+      "SLACK_TOKEN": "PASS",
+      "AWS_ACCESS_KEY": "PASS",
+      "JWT": "PASS",
+      "AUTHORIZATION": "PASS",
+      "URI_CREDENTIAL": "PASS",
+      "GENERIC_SECRET_ASSIGNMENT": "PASS"
+    },
+    "surfaces": {
+      "logs": {
+        "rawSentinelAbsent": "PASS",
+        "bodyFieldsExcluded": "PASS"
+      },
+      "persistence": {
+        "utf8SentinelAbsent": "PASS",
+        "utf16leSentinelAbsent": "PASS",
+        "sqliteAndSidecarFilesScanned": "PASS"
+      },
+      "api": {
+        "previewRedacted": "PASS",
+        "commitRedacted": "PASS",
+        "retrievalRedacted": "PASS",
+        "idempotentReplayRedacted": "PASS",
+        "rejectedPrivatePathNonRevealing": "PASS"
+      },
+      "exportFixture": {
+        "rawSentinelAbsent": "PASS",
+        "productSurface": false
+      },
+      "aiPackFixture": {
+        "rawSentinelAbsent": "PASS",
+        "transmitted": false,
+        "productSurface": false
+      }
+    },
+    "documentation": [
+      {
+        "document": "docs/security/SECURITY_AND_PRIVACY.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/TRUST_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/TEST_EVIDENCE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/SECURITY_REVIEW.md",
+        "status": "PASS"
+      }
+    ]
+  },
+  "integrity": {
+    "rawSentinelRecordedInReport": false,
+    "rawPrivatePathRecordedInReport": false,
+    "unredactedTransferFixtureCreated": false,
+    "externalFetchCalls": 0,
+    "providerCredentialRead": false,
+    "productionExportEndpointPresent": false,
+    "productionAiPackEndpointPresent": false,
+    "temporaryFixtureRemovedAfterRun": true
+  },
+  "limitations": [
+    "PATTERN_REDACTION_NOT_COMPLETE_DLP",
+    "VERIFICATION_FIXTURES_ARE_NOT_PRODUCT_EXPORTS",
+    "NO_SECURE_MEMORY_ERASURE_CLAIM",
+    "LOCAL_SINGLE_USER_TRUST_MODEL",
+    "NOT_VALIDATION_OR_READINESS",
+    "OFFICIAL_AVISHKAR_RULES_UNVERIFIED"
+  ],
+  "nextAuthorizedStory": "IL-3.7"
+}

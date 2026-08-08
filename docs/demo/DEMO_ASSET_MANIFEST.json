@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "INTELLILOOP-DEMO-ASSETS",
+  "story": "IL-8.6",
+  "status": "PASS",
+  "captureDate": "2026-08-06",
+  "appRevision": {
+    "scheme": "SOURCE_FILE_SET_SHA256",
+    "digest": "sha256:aecfa59a23e58a53dd303a21b8515886f3b3d0bdce83bc4a0d067770542ccb71",
+    "files": [
+      "apps/api/src/demo/demo-workspace-service.ts",
+      "apps/web/src/App.tsx",
+      "apps/web/src/DemoWorkspace.tsx",
+      "apps/web/src/TwinWorkspace.tsx",
+      "apps/web/src/ReconciliationWorkspace.tsx",
+      "apps/web/src/CitedExplanationWorkspace.tsx",
+      "apps/web/src/ReadinessPassportWorkspace.tsx",
+      "apps/web/src/styles.css",
+      "packages/demo-fixtures/src/retail-cancellation.ts",
+      "scripts/generate-demo-support-evidence.mjs"
+    ]
+  },
+  "fixture": {
+    "fixtureId": "loopmart-expanded-cancellation-v1",
+    "fixtureVersion": "intelliloop-retail-cancellation-fixture.v1",
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC_ONLY"
+  },
+  "capture": {
+    "browser": "PLAYWRIGHT_BUNDLED_CHROMIUM",
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "productionBuild": true,
+    "loopbackOnly": true,
+    "externalAiCalls": false
+  },
+  "assets": [
+    {
+      "order": 1,
+      "file": "01-blocked-control-room.png",
+      "title": "Not Ready control room",
+      "route": "/demo",
+      "workflowStage": "INITIAL_BLOCKED",
+      "readinessState": "BLOCKED",
+      "testState": "PERSISTED_CONFLICT",
+      "path": "docs/demo/assets/01-blocked-control-room.png",
+      "mediaType": "image/png",
+      "bytes": 342640,
+      "sha256": "sha256:9408739944208e908a5a8eee882417862885b51b7b16a9490020aa88e710dd75",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "order": 2,
+      "file": "02-active-twin.png",
+      "title": "Attributed Impact Map",
+      "route": "/missions/:missionId/twin",
+      "workflowStage": "INITIAL_BLOCKED",
+      "readinessState": "BLOCKED",
+      "testState": "PERSISTED_TWIN_REVISION",
+      "path": "docs/demo/assets/02-active-twin.png",
+      "mediaType": "image/png",
+      "bytes": 179778,
+      "sha256": "sha256:07f5f94f1c3166943fa435f37f1cc7dcf84260482fa3aa60215450b47e4cfb69",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "order": 3,
+      "file": "03-conflict-impact.png",
+      "title": "Risks & Checks",
+      "route": "/missions/:missionId/reconciliation",
+      "workflowStage": "INITIAL_BLOCKED",
+      "readinessState": "BLOCKED",
+      "testState": "OPEN_CONFLICT_AND_CITED_IMPACT",
+      "path": "docs/demo/assets/03-conflict-impact.png",
+      "mediaType": "image/png",
+      "bytes": 185809,
+      "sha256": "sha256:b8d011a5092011671426b4d5c327bbca7abe8b1751d89e3a6d676bc16b30ba7b",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "order": 4,
+      "file": "04-ai-off-cited-answer.png",
+      "title": "AI-off cited answer",
+      "route": "/missions/:missionId/explanation",
+      "workflowStage": "INITIAL_BLOCKED",
+      "readinessState": "BLOCKED",
+      "testState": "DETERMINISTIC_EXPLANATION_NOT_SENT",
+      "path": "docs/demo/assets/04-ai-off-cited-answer.png",
+      "mediaType": "image/png",
+      "bytes": 338059,
+      "sha256": "sha256:41392e643ecf915849deb626061b9786bd5a85e1c3a0802965e846e894d15799",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "order": 5,
+      "file": "05-ready-passport.png",
+      "title": "Unsigned Ready Evidence Report",
+      "route": "/missions/:missionId/passport",
+      "workflowStage": "CORRECTED_READY",
+      "readinessState": "READY",
+      "testState": "EXACT_OBLIGATIONS_PASS",
+      "path": "docs/demo/assets/05-ready-passport.png",
+      "mediaType": "image/png",
+      "bytes": 63863,
+      "sha256": "sha256:396f5aeaa7e3bceefdf755b3809499a227c63637acb8e245be42d3a29bca3895",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "order": 6,
+      "file": "06-stale-passport.png",
+      "title": "Historical Evidence Report needs recheck",
+      "route": "/missions/:missionId/passport",
+      "workflowStage": "READY_STALE",
+      "readinessState": "STALE",
+      "testState": "IMMUTABLE_PROJECTION_STALE_ASSOCIATION",
+      "path": "docs/demo/assets/06-stale-passport.png",
+      "mediaType": "image/png",
+      "bytes": 64793,
+      "sha256": "sha256:317d73bb65467b3607fc458aacc188689e38c89539ba300e10beab7c37f05e6f",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    },
+    {
+      "order": 7,
+      "file": "07-live-service-unavailable.png",
+      "title": "Explicit live-service failure",
+      "route": "/demo",
+      "workflowStage": "UNAVAILABLE",
+      "readinessState": "UNAVAILABLE",
+      "testState": "NO_INFERRED_OR_CACHED_READINESS",
+      "path": "docs/demo/assets/07-live-service-unavailable.png",
+      "mediaType": "image/png",
+      "bytes": 206858,
+      "sha256": "sha256:9ffc4a764904b8bd740d52547e5d1cedb0c5a8373ee5fe4932da55b3cd9cf9b4",
+      "dimensions": {
+        "width": 1366,
+        "height": 768
+      }
+    }
+  ],
+  "limitations": [
+    "Screenshots are recorded synthetic evidence, not live execution or production results.",
+    "Ready is an exact-input Release Check; the Release Evidence Report is unsigned and non-approving.",
+    "The sequence demonstrates loopback behavior and does not prove production scale, organizational benefit or universal accessibility."
+  ]
+}

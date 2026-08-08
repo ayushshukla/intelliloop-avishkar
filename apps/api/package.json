@@ -1,0 +1,24 @@
+{
+  "name": "@intelliloop/api",
+  "version": "0.0.0-foundation",
+  "private": true,
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@intelliloop/contracts": "0.0.0-foundation",
+    "@intelliloop/demo-fixtures": "0.0.0-foundation",
+    "@intelliloop/domain": "0.0.0-foundation",
+    "better-sqlite3": "11.10.0",
+    "fastify": "5.8.5",
+    "typescript": "5.9.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-METRICS",
+  "story": "IL-9.4",
+  "status": "PASS_CONTROLLED_PRODUCT_METRICS_PILOT_INPUT_REQUIRED",
+  "checkpoint": "G6_PRODUCT_PROOF_READY_HUMAN_BENEFIT_PILOT_PENDING",
+  "evidenceDate": "2026-08-07",
+  "reproductionCommand": "npm.cmd run evidence:metrics",
+  "representativeWork": {
+    "fixture": "loopmart-expanded-cancellation-v1",
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC_ONLY",
+    "changeCount": 1,
+    "candidateReleaseCount": 1,
+    "persistedStateSequence": [
+      "BLOCKED",
+      "READY",
+      "STALE"
+    ]
+  },
+  "measuredPrototypeBehavior": {
+    "reconciliationTruthCases": {
+      "passed": 6,
+      "total": 6,
+      "percentage": 100
+    },
+    "impactPaths": {
+      "expectedAndObserved": 2,
+      "citationRequirement": "PASS"
+    },
+    "citations": {
+      "fixedQuestionsPassed": 6,
+      "fixedQuestionsTotal": 6,
+      "renderedStatements": 56,
+      "resolvedStatementCitations": 78,
+      "everyStatementCited": "PASS",
+      "everyRenderedCitationResolved": "PASS",
+      "resolvedSyntheticSuggestionCitations": 23
+    },
+    "readiness": {
+      "positiveCases": 1,
+      "controlledNonReadyCases": 26,
+      "falseReadyCount": 0
+    },
+    "passportFidelity": {
+      "exactAssessmentProjection": true,
+      "canonicalEqualityAndDigestBinding": true,
+      "changedProjectionRejected": true,
+      "signed": false,
+      "releaseApproval": false
+    },
+    "focusedGoldenFlowTests": 21,
+    "releaseVerification": {
+      "unitAndComponentTests": 391,
+      "apiAndIntegrationTests": 163,
+      "browserScenarios": 17
+    }
+  },
+  "timing": {
+    "kind": "LOCAL_SYNTHETIC_SYSTEM_ACTION_TIMING_NOT_HUMAN_TASK_TIME",
+    "assistedSystemActionMilliseconds": {
+      "contextGathering": 2479,
+      "impactAnalysis": 1178,
+      "evidenceChecking": 813,
+      "releasePreparation": 4260
+    },
+    "assistedSystemActionTotalMilliseconds": 8730,
+    "pacedEndToEndDemoMinutes": 5.8,
+    "manualBaselineMinutes": null,
+    "comparableAssistedHumanTaskMinutes": null,
+    "limitation": "Action timings are one local synthetic run and cannot be subtracted from an unmeasured human baseline."
+  },
+  "humanPilot": {
+    "status": "NOT_RUN",
+    "completeRunCount": 0,
+    "requiredRunCount": 6,
+    "completeTimingRunCount": 0,
+    "completeObservationRunCount": 0,
+    "feedbackResponseCount": 0,
+    "requiredFeedbackResponseCount": 3,
+    "cadenceComplete": false,
+    "missingFieldCount": 62,
+    "missingFields": [
+      "DEV-M.phaseMinutes.contextGathering",
+      "DEV-M.phaseMinutes.impactAnalysis",
+      "DEV-M.phaseMinutes.evidenceChecking",
+      "DEV-M.phaseMinutes.releasePreparation",
+      "DEV-M.observations.validImpactPaths",
+      "DEV-M.observations.invalidCitations",
+      "DEV-M.observations.falseReady",
+      "DEV-M.observations.passportMismatch",
+      "DEV-A.phaseMinutes.contextGathering",
+      "DEV-A.phaseMinutes.impactAnalysis",
+      "DEV-A.phaseMinutes.evidenceChecking",
+      "DEV-A.phaseMinutes.releasePreparation",
+      "DEV-A.observations.validImpactPaths",
+      "DEV-A.observations.invalidCitations",
+      "DEV-A.observations.falseReady",
+      "DEV-A.observations.passportMismatch",
+      "DEV-A.feedback.usefulnessRating",
+      "DEV-A.feedback.trustClarityRating",
+      "DEV-A.feedback.wouldUseInPilot",
+      "DEV-A.feedback.sanitizedNote",
+      "LEAD-M.phaseMinutes.contextGathering",
+      "LEAD-M.phaseMinutes.impactAnalysis",
+      "LEAD-M.phaseMinutes.evidenceChecking",
+      "LEAD-M.phaseMinutes.releasePreparation",
+      "LEAD-M.observations.validImpactPaths",
+      "LEAD-M.observations.invalidCitations",
+      "LEAD-M.observations.falseReady",
+      "LEAD-M.observations.passportMismatch",
+      "LEAD-A.phaseMinutes.contextGathering",
+      "LEAD-A.phaseMinutes.impactAnalysis",
+      "LEAD-A.phaseMinutes.evidenceChecking",
+      "LEAD-A.phaseMinutes.releasePreparation",
+      "LEAD-A.observations.validImpactPaths",
+      "LEAD-A.observations.invalidCitations",
+      "LEAD-A.observations.falseReady",
+      "LEAD-A.observations.passportMismatch",
+      "LEAD-A.feedback.usefulnessRating",
+      "LEAD-A.feedback.trustClarityRating",
+      "LEAD-A.feedback.wouldUseInPilot",
+      "LEAD-A.feedback.sanitizedNote",
+      "MGR-M.phaseMinutes.contextGathering",
+      "MGR-M.phaseMinutes.impactAnalysis",
+      "MGR-M.phaseMinutes.evidenceChecking",
+      "MGR-M.phaseMinutes.releasePreparation",
+      "MGR-M.observations.validImpactPaths",
+      "MGR-M.observations.invalidCitations",
+      "MGR-M.observations.falseReady",
+      "MGR-M.observations.passportMismatch",
+      "MGR-A.phaseMinutes.contextGathering",
+      "MGR-A.phaseMinutes.impactAnalysis",
+      "MGR-A.phaseMinutes.evidenceChecking",
+      "MGR-A.phaseMinutes.releasePreparation",
+      "MGR-A.observations.validImpactPaths",
+      "MGR-A.observations.invalidCitations",
+      "MGR-A.observations.falseReady",
+      "MGR-A.observations.passportMismatch",
+      "MGR-A.feedback.usefulnessRating",
+      "MGR-A.feedback.trustClarityRating",
+      "MGR-A.feedback.wouldUseInPilot",
+      "MGR-A.feedback.sanitizedNote",
+      "cadenceAssumption.representativeChangesPerMonth",
+      "cadenceAssumption.source"
+    ],
+    "benefitHypothesis": "NOT_VALIDATED",
+    "monthlyTeamHoursSaved": null,
+    "reason": "Real role-based baseline/assisted timings, quality observations, complete feedback and a documented cadence have not been supplied."
+  },
+  "monthlyCalculation": {
+    "formula": "((median manual minutes per representative change - median assisted minutes per representative change) * representative changes per month) / 60",
+    "submittedThresholdHoursPerMonth": 20,
+    "requiredMedianDeltaMinutesByCadence": [
+      {
+        "representativeChangesPerMonth": 20,
+        "requiredDeltaMinutesPerChange": 60
+      },
+      {
+        "representativeChangesPerMonth": 40,
+        "requiredDeltaMinutesPerChange": 30
+      },
+      {
+        "representativeChangesPerMonth": 80,
+        "requiredDeltaMinutesPerChange": 15
+      }
+    ],
+    "resultHoursPerMonth": null,
+    "productionExtrapolationPerformed": false
+  },
+  "safetyAndEthics": {
+    "individualSurveillance": false,
+    "personRanking": false,
+    "personallyIdentifyingFields": false,
+    "registeredRepositoryWrites": 0,
+    "browserNonLoopbackRequests": 0,
+    "externalAiCalls": false
+  },
+  "sourceIntegrity": {
+    "docs/evidence/EV_RECONCILE.json#measurement-projection": "sha256:fb079013c9038dd68af19372009f86b731b2b1c5106fe4dc624a0c9945f2da66",
+    "docs/evidence/EV_CITATIONS.json#measurement-projection": "sha256:11a801cc5d2fda603a52e08f9bd0f14435fadf75430d4edbbdc7066b810f6365",
+    "docs/evidence/EV_READINESS.json#measurement-projection": "sha256:3f30c674fdaa378f6d1188fc3e179d1e8f7f35ab8ab41688fcf3cbb0da179af1",
+    "docs/evidence/EV_PASSPORT.json#measurement-projection": "sha256:6c5d5b3335525e71c3ff69bb8341496154f3ab6510f4c86a6b419d27ae0fb73a",
+    "docs/evidence/EV_GOLDEN_FLOW.json#measurement-projection": "sha256:970bc9e7f43761a20b526421ce2dc7a670a481d69b98aa270d9f14b83e4d7abe",
+    "docs/evidence/EV_DEMO_GATE.json#measurement-projection": "sha256:35441bafc2c0f9e6153d1c2b36c118643feb76c11da0464cbcd57e8459e81352",
+    "docs/evidence/EV_RELEASE.json#measurement-projection": "sha256:be29ff185606e13d2e0c3af3b4318e0798cf306dfbc78b1b2a7561bcbdf773ea",
+    "docs/evidence/PILOT_MEASUREMENT_TEMPLATE.json": "sha256:95a391474fcafffbec4751a39b4e8ab73441f473934b7d54e91ffdb9e7aa9e55"
+  },
+  "limitations": [
+    "The fixture and all current conformance measurements are IntelliLoop-authored, local and synthetic.",
+    "No real developer, technical-lead or manager timing/feedback sample has been collected; the submitted >20 hours/month statement remains a pilot hypothesis.",
+    "System-action time is not human task time and is not used to calculate savings, ROI or productivity.",
+    "No individual surveillance, person ranking, production extrapolation or causal organizational claim is permitted.",
+    "READY is exact-input candidate readiness; the Passport is unsigned and supplies no release or deployment authority."
+  ],
+  "nextAuthorizedStory": "IL-9.4_HUMAN_PILOT_INPUT"
+}

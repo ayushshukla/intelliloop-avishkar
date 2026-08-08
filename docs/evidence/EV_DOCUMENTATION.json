@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-DOCUMENTATION",
+  "story": "IL-9.3",
+  "status": "PASS",
+  "checkpoint": "FINAL_CANONICAL_DOCUMENTATION_SYNCHRONIZED",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:documentation",
+  "canonicalDocuments": {
+    "status": "PASS",
+    "count": 17,
+    "records": [
+      {
+        "path": "README.md",
+        "bytes": 27305,
+        "sha256": "sha256:6c433cc54fb707f51fe613155fea33576c75996095d46ade17233884c7347d53"
+      },
+      {
+        "path": "docs/INDEX.md",
+        "bytes": 32312,
+        "sha256": "sha256:0cee19afd8d14c1f64a13bdf20efc90de83cf97dd2db1c3ecfda11237be90811"
+      },
+      {
+        "path": "docs/architecture/ARCHITECTURE.md",
+        "bytes": 50960,
+        "sha256": "sha256:9737a13bbf7fe00f4123e3949d2db572264acf4725ab42d7b437a3452e75138d"
+      },
+      {
+        "path": "docs/architecture/DOMAIN_MODEL.md",
+        "bytes": 53365,
+        "sha256": "sha256:1e944aa0e209f86c09a402da31ef2ed7cf9b80c716296a7367ea12b866ac019b"
+      },
+      {
+        "path": "docs/architecture/DATA_AND_MIGRATIONS.md",
+        "bytes": 24993,
+        "sha256": "sha256:c5343e845cb4eb71e2bd1a60e588cbb0b7a3f7cd8ea2b75c75cd28cb6b73c500"
+      },
+      {
+        "path": "docs/api/API_REFERENCE.md",
+        "bytes": 42072,
+        "sha256": "sha256:95fe77ee216510624fb55e21c4ba27355fa265f33b24685e85746009fb2c22a1"
+      },
+      {
+        "path": "docs/development/SETUP.md",
+        "bytes": 17956,
+        "sha256": "sha256:b4bbb260a7a278e926f6fcf5986de8749861430ad01651d61bc61dfc541b2e86"
+      },
+      {
+        "path": "docs/development/TESTING.md",
+        "bytes": 70573,
+        "sha256": "sha256:f514a975adee09d467eba70627fd4e60e873cf1262e0d4373d4575816399a733"
+      },
+      {
+        "path": "docs/development/CONTRIBUTING.md",
+        "bytes": 14716,
+        "sha256": "sha256:574bd83926d9fcaabbe94efc9eae910a3cb51a6f55483334ed512c2b1981ce9f"
+      },
+      {
+        "path": "docs/security/SECURITY_AND_PRIVACY.md",
+        "bytes": 48776,
+        "sha256": "sha256:8916f52614444363ba8399a2cf780af5ccdf3c16f39c18a51cc3bc552fd448e8"
+      },
+      {
+        "path": "docs/product/USER_GUIDE.md",
+        "bytes": 32789,
+        "sha256": "sha256:0c41e279e2b7cad07d3b959523adcbdd2b56b8516c8b550fadae4799e8e3b709"
+      },
+      {
+        "path": "docs/product/PRODUCT_TARGET.md",
+        "bytes": 4523,
+        "sha256": "sha256:3ecb69f40c8ff02a6635e15d7535aa9aa605852d0a780948f500d2f114cb28e4"
+      },
+      {
+        "path": "docs/product/EXECUTION_STATE.md",
+        "bytes": 33086,
+        "sha256": "sha256:51be273c455e43114bf2d7db417397443cfb802827a9a7bdb83fdbfaa36f903c"
+      },
+      {
+        "path": "docs/product/TRUST_MODEL.md",
+        "bytes": 44530,
+        "sha256": "sha256:5e0bfbacd303ea110419ea0274c90185e6380867b9e9af3cd7c93c7c07331532"
+      },
+      {
+        "path": "docs/product/READINESS_AND_PASSPORT_GUIDE.md",
+        "bytes": 9583,
+        "sha256": "sha256:869df6f912a2025dc154c89dd7ebb02028b5ae4b6df06e843a5b545bd09fbd68"
+      },
+      {
+        "path": "docs/demo/DEMO_TROUBLESHOOTING.md",
+        "bytes": 3758,
+        "sha256": "sha256:f734bc30d0ddb27a73c5c231beee0e194a725558e22b614271f75b22722c060c"
+      },
+      {
+        "path": "docs/submission/SUBMISSION_MANIFEST.md",
+        "bytes": 2871,
+        "sha256": "sha256:871fe33b37f620ecee0ab06e04b6186a749b5b0b64188a2fcc32ac4b8b4926b3"
+      }
+    ]
+  },
+  "commands": {
+    "status": "PASS",
+    "requiredScripts": [
+      "dev",
+      "typecheck",
+      "test",
+      "test:unit",
+      "test:api",
+      "test:e2e",
+      "build",
+      "check",
+      "check:docs",
+      "check:documentation",
+      "check:demo-support",
+      "check:release-platform",
+      "check:release-security",
+      "evidence:documentation",
+      "evidence:demo-support",
+      "evidence:release-platform",
+      "evidence:release-security"
+    ],
+    "documentedScripts": [
+      "build",
+      "check",
+      "check:advisory-disagreement",
+      "check:demo-gate",
+      "check:demo-support",
+      "check:docs",
+      "check:documentation",
+      "check:evidence-replay",
+      "check:metrics",
+      "check:release-platform",
+      "check:release-security",
+      "check:remediation-preview",
+      "dev",
+      "dev:api",
+      "dev:demo",
+      "dev:disagreement",
+      "dev:remediation",
+      "dev:replay",
+      "evidence:accessibility",
+      "evidence:advisory-disagreement",
+      "evidence:citations",
+      "evidence:demo-gate",
+      "evidence:demo-support",
+      "evidence:documentation",
+      "evidence:evidence-replay",
+      "evidence:golden-flow",
+      "evidence:metrics",
+      "evidence:openai-eval",
+      "evidence:privacy",
+      "evidence:readiness-passport",
+      "evidence:reconcile",
+      "evidence:release-platform",
+      "evidence:release-security",
+      "evidence:remediation-preview",
+      "evidence:repo-safety",
+      "evidence:retail-fixture",
+      "evidence:twin-code-map",
+      "test",
+      "test:api",
+      "test:e2e",
+      "test:pilot-measurement",
+      "test:unit",
+      "typecheck"
+    ]
+  },
+  "apiReference": {
+    "status": "PASS",
+    "routes": [
+      "GET /api/v1/demo",
+      "GET /api/v1/git-snapshots/:snapshotId",
+      "GET /api/v1/health",
+      "GET /api/v1/local-project-pilot/capability",
+      "GET /api/v1/missions/:missionId",
+      "GET /api/v1/missions/:missionId/claim-supersessions",
+      "GET /api/v1/missions/:missionId/claims",
+      "GET /api/v1/missions/:missionId/claims/:claimId",
+      "GET /api/v1/missions/:missionId/code-map/revisions",
+      "GET /api/v1/missions/:missionId/code-map/revisions/:revision",
+      "GET /api/v1/missions/:missionId/code-map/revisions/:revision/assets",
+      "GET /api/v1/missions/:missionId/code-map/revisions/:revision/edges",
+      "GET /api/v1/missions/:missionId/evidence-sources",
+      "GET /api/v1/missions/:missionId/evidence-sources/:evidenceSourceId",
+      "GET /api/v1/missions/:missionId/evidence/runtime-observations",
+      "GET /api/v1/missions/:missionId/evidence/runtime-observations/:runtimeObservationId",
+      "GET /api/v1/missions/:missionId/git-snapshots",
+      "GET /api/v1/missions/:missionId/readiness/assessments",
+      "GET /api/v1/missions/:missionId/readiness/assessments/:revision",
+      "GET /api/v1/missions/:missionId/readiness/passports",
+      "GET /api/v1/missions/:missionId/readiness/passports/:revision",
+      "GET /api/v1/missions/:missionId/readiness/passports/:revision/export",
+      "GET /api/v1/missions/:missionId/reconciliation/revisions",
+      "GET /api/v1/missions/:missionId/reconciliation/revisions/:revision",
+      "GET /api/v1/missions/:missionId/reconciliation/revisions/:revision/findings",
+      "GET /api/v1/missions/:missionId/reconciliation/revisions/:revision/impact-paths",
+      "GET /api/v1/missions/:missionId/timeline-events",
+      "GET /api/v1/missions/:missionId/twin/revisions",
+      "GET /api/v1/missions/:missionId/twin/revisions/:revision",
+      "GET /api/v1/missions/:missionId/twin/revisions/:revision/nodes",
+      "GET /api/v1/missions/:missionId/twin/revisions/:revision/relationships",
+      "GET /api/v1/projects",
+      "GET /api/v1/projects/:projectId",
+      "GET /api/v1/projects/:projectId/local-project-pilot-context",
+      "GET /api/v1/projects/:projectId/missions",
+      "GET /api/v1/projects/:projectId/repository",
+      "POST /api/v1/demo/correction",
+      "POST /api/v1/demo/reset",
+      "POST /api/v1/demo/setup",
+      "POST /api/v1/demo/staleness",
+      "POST /api/v1/local-project-pilot/preflight",
+      "POST /api/v1/missions/:missionId/cited-explanations",
+      "POST /api/v1/missions/:missionId/claims/:claimId/successors",
+      "POST /api/v1/missions/:missionId/code-map/revisions",
+      "POST /api/v1/missions/:missionId/evidence-sources",
+      "POST /api/v1/missions/:missionId/evidence-sources/:evidenceSourceId/claims",
+      "POST /api/v1/missions/:missionId/evidence/preview",
+      "POST /api/v1/missions/:missionId/evidence/runtime-observations",
+      "POST /api/v1/missions/:missionId/git-snapshots",
+      "POST /api/v1/missions/:missionId/readiness/assessments",
+      "POST /api/v1/missions/:missionId/readiness/assessments/:revision/passport",
+      "POST /api/v1/missions/:missionId/reconciliation/revisions",
+      "POST /api/v1/missions/:missionId/twin/revisions",
+      "POST /api/v1/projects",
+      "POST /api/v1/projects/:projectId/missions",
+      "PUT /api/v1/projects/:projectId/repository"
+    ]
+  },
+  "deferredCapabilities": {
+    "status": "PASS",
+    "markers": [
+      "public validation/review intake",
+      "release approval",
+      "signing",
+      "deployment authority",
+      "live provider"
+    ]
+  },
+  "screenshots": {
+    "status": "PASS",
+    "manifest": "docs/demo/DEMO_ASSET_MANIFEST.json",
+    "captureDate": "2026-08-06",
+    "appRevision": "sha256:aecfa59a23e58a53dd303a21b8515886f3b3d0bdce83bc4a0d067770542ccb71",
+    "assets": [
+      {
+        "path": "docs/demo/assets/01-blocked-control-room.png",
+        "bytes": 342640,
+        "sha256": "sha256:9408739944208e908a5a8eee882417862885b51b7b16a9490020aa88e710dd75",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "INITIAL_BLOCKED"
+      },
+      {
+        "path": "docs/demo/assets/02-active-twin.png",
+        "bytes": 179778,
+        "sha256": "sha256:07f5f94f1c3166943fa435f37f1cc7dcf84260482fa3aa60215450b47e4cfb69",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "INITIAL_BLOCKED"
+      },
+      {
+        "path": "docs/demo/assets/03-conflict-impact.png",
+        "bytes": 185809,
+        "sha256": "sha256:b8d011a5092011671426b4d5c327bbca7abe8b1751d89e3a6d676bc16b30ba7b",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "INITIAL_BLOCKED"
+      },
+      {
+        "path": "docs/demo/assets/04-ai-off-cited-answer.png",
+        "bytes": 338059,
+        "sha256": "sha256:41392e643ecf915849deb626061b9786bd5a85e1c3a0802965e846e894d15799",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "INITIAL_BLOCKED"
+      },
+      {
+        "path": "docs/demo/assets/05-ready-passport.png",
+        "bytes": 63863,
+        "sha256": "sha256:396f5aeaa7e3bceefdf755b3809499a227c63637acb8e245be42d3a29bca3895",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "CORRECTED_READY"
+      },
+      {
+        "path": "docs/demo/assets/06-stale-passport.png",
+        "bytes": 64793,
+        "sha256": "sha256:317d73bb65467b3607fc458aacc188689e38c89539ba300e10beab7c37f05e6f",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "READY_STALE"
+      },
+      {
+        "path": "docs/demo/assets/07-live-service-unavailable.png",
+        "bytes": 206858,
+        "sha256": "sha256:9ffc4a764904b8bd740d52547e5d1cedb0c5a8373ee5fe4932da55b3cd9cf9b4",
+        "width": 1366,
+        "height": 768,
+        "workflowStage": "UNAVAILABLE"
+      }
+    ]
+  },
+  "limitations": [
+    "Command verification proves documented npm script names exist; runtime execution results are recorded in IL-9.1 through IL-9.3 evidence.",
+    "Screenshot freshness is bound to the IL-8.6 source-file-set manifest and verify-existing gate; recapture remains an IL-9.6 release-candidate action.",
+    "Documentation describes a local prototype and is not production certification, release approval or official Avishkar compliance."
+  ],
+  "nextAuthorizedStory": "IL-9.4"
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-TWIN",
+  "storyBoundary": {
+    "from": "IL-4.1",
+    "through": "IL-4.7"
+  },
+  "capability": "DC-03",
+  "gate": "G2_EVIDENCE_TWIN_PROVEN",
+  "status": "PASS",
+  "evidenceDate": "2026-08-05",
+  "reproductionCommand": "npm.cmd run evidence:twin-code-map",
+  "proofs": {
+    "materialization": {
+      "revision": 1,
+      "nodeCount": 10,
+      "relationshipCount": 17,
+      "softwareAssetCount": 6,
+      "codeAttributedRelationshipCount": 2,
+      "exactMemberRevisionEndpoints": "PASS",
+      "codeAssetsRemainInference": "PASS"
+    },
+    "persistence": {
+      "immutableRevision": "PASS",
+      "restartDigestEquality": "PASS",
+      "canonicalIntegrityVerifiedOnRead": "PASS"
+    },
+    "browser": {
+      "authoritativeAttributedNodeList": "PASS",
+      "explainableDependencyPathList": "PASS",
+      "historicalRevisionSelector": "PASS",
+      "keyboardPath": "PASS",
+      "reloadPersistence": "PASS",
+      "graphListParity": "NOT_APPLICABLE_NO_GRAPH"
+    },
+    "documentation": [
+      {
+        "document": "docs/api/API_REFERENCE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/architecture/DOMAIN_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/USER_GUIDE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/TRUST_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/security/SECURITY_AND_PRIVACY.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/TEST_EVIDENCE.md",
+        "status": "PASS"
+      }
+    ]
+  },
+  "integrity": {
+    "rawAbsolutePathsRecorded": false,
+    "repositoryContentBodiesRecorded": false,
+    "registeredRepositoryWritePerformedByProduct": false,
+    "externalProductCallMade": false,
+    "personalOrCandidateRepositoryUsed": false,
+    "temporaryFixtureRemovedAfterRun": true
+  },
+  "limitations": [
+    "PROJECTION_IS_NOT_AUTOMATIC_TRUTH",
+    "NO_GRAPH_VISUALIZATION_SHIPPED",
+    "NO_RECONCILIATION_OR_READINESS_AUTHORITY",
+    "LOCAL_SINGLE_USER_TRUST_MODEL"
+  ],
+  "nextAuthorizedStory": "IL-5.1"
+}

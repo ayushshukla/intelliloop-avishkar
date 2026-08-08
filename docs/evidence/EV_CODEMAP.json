@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-CODEMAP",
+  "storyBoundary": {
+    "from": "IL-4.4",
+    "through": "IL-4.7"
+  },
+  "capability": "ENH-01",
+  "gate": "G2_EVIDENCE_TWIN_PROVEN",
+  "status": "PASS",
+  "evidenceDate": "2026-08-05",
+  "reproductionCommand": "npm.cmd run evidence:twin-code-map",
+  "fixture": {
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC",
+    "network": "OFFLINE",
+    "databasePlacement": "OUTSIDE_REGISTERED_REPOSITORIES",
+    "staticSourceFileCount": 4,
+    "safeFailureKind": "OVERSIZED_TYPESCRIPT_SOURCE"
+  },
+  "proofs": {
+    "staticInference": {
+      "evidenceKind": "STATIC_INFERENCE",
+      "inferenceStatus": "AVAILABLE",
+      "completeness": "COMPLETE",
+      "assetCount": 6,
+      "edgeCount": 2,
+      "exactSnapshotBinding": "PASS",
+      "relativePathAttribution": "PASS",
+      "repositoryContentAbsentFromApi": "PASS"
+    },
+    "declaredFallback": {
+      "withoutPerRunConsentStatus": 409,
+      "withExplicitConsentStatus": 201,
+      "evidenceKind": "DECLARED_INTELLILOOP_FIXTURE",
+      "inferenceStatus": "UNAVAILABLE_SAFE_FAILURE",
+      "completeness": "UNAVAILABLE",
+      "manifestId": "intelliloop-checkout-modernization-v1",
+      "silentEquivalenceRejected": "PASS"
+    },
+    "persistence": {
+      "appendOnlyDatabaseTriggers": "PASS",
+      "restartDigestEquality": "PASS",
+      "canonicalIntegrityVerifiedOnRead": "PASS"
+    },
+    "repositorySafety": {
+      "inferredTreeDigestEquality": "PASS",
+      "fallbackTreeDigestEquality": "PASS",
+      "repositoryCodeExecuted": false,
+      "dependencyInstallationPerformed": false
+    },
+    "browser": {
+      "authoritativeAccessibleList": "PASS",
+      "keyboardRunPath": "PASS",
+      "reloadPersistence": "PASS",
+      "graphListParity": "NOT_APPLICABLE_NO_GRAPH"
+    },
+    "documentation": [
+      {
+        "document": "docs/api/API_REFERENCE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/architecture/DOMAIN_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/USER_GUIDE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/TRUST_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/security/SECURITY_AND_PRIVACY.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/TEST_EVIDENCE.md",
+        "status": "PASS"
+      }
+    ]
+  },
+  "integrity": {
+    "rawAbsolutePathsRecorded": false,
+    "repositoryContentBodiesRecorded": false,
+    "registeredRepositoryWritePerformedByProduct": false,
+    "externalProductCallMade": false,
+    "personalOrCandidateRepositoryUsed": false,
+    "temporaryFixtureRemovedAfterRun": true
+  },
+  "limitations": [
+    "STATIC_SYNTAX_ONLY",
+    "RUNTIME_SEMANTICS_NOT_OBSERVED",
+    "DYNAMIC_IMPORTS_AND_WRAPPERS_MAY_BE_MISSED",
+    "FIRST_UI_PAGE_IS_BOUNDED_TO_100_MEMBERS",
+    "NOT_TRUTH_SELECTION_OR_READINESS"
+  ],
+  "nextAuthorizedStory": "IL-5.1"
+}

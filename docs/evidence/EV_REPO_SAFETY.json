@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-REPO-SAFETY",
+  "storyBoundary": {
+    "from": "IL-2.1",
+    "through": "IL-2.6"
+  },
+  "capability": "DC-01",
+  "status": "PASS",
+  "evidenceDate": "2026-08-04",
+  "reproductionCommand": "npm.cmd run evidence:repo-safety",
+  "fixture": {
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC",
+    "branch": "main",
+    "committedFiles": 2,
+    "dirtyState": {
+      "indexChanges": 1,
+      "worktreeChanges": 1,
+      "untrackedFiles": 1
+    },
+    "databasePlacement": "OUTSIDE_REGISTERED_REPOSITORY",
+    "network": "OFFLINE",
+    "fixtureDefinitionDigest": "sha256:268af9f51cee13ca7478adf2f981343939a4048811f2d5af18eb5f6b5bc8cee0"
+  },
+  "proofs": {
+    "registration": {
+      "accessMode": "READ_ONLY",
+      "statusByteEquality": "PASS",
+      "statusDigestEquality": "PASS",
+      "completeTreeDigestEquality": "PASS"
+    },
+    "snapshotCapture": {
+      "statusByteEquality": "PASS",
+      "statusDigestEquality": "PASS",
+      "completeTreeDigestEquality": "PASS",
+      "repeatedChangedFilesDigestEquality": "PASS",
+      "observedCounts": {
+        "index": 1,
+        "worktree": 1,
+        "untracked": 1,
+        "total": 3
+      }
+    },
+    "negativeCorpus": {
+      "missingPath": "PASS",
+      "nonGitDirectory": "PASS",
+      "relativePath": "PASS",
+      "explicitTraversal": "PASS",
+      "filePath": "PASS",
+      "symlinkedRoot": "PASS",
+      "symlinkedGitMarker": "PASS",
+      "duplicateProjectBinding": "PASS",
+      "crossProjectRootReuse": "PASS",
+      "archivedProject": "PASS",
+      "postRegistrationSymlinkSubstitution": "PASS",
+      "missingRegistrationBeforeGit": "PASS",
+      "archivedMissionBeforeGit": "PASS",
+      "databaseInsideRepository": "PASS"
+    },
+    "preExecutionRejection": {
+      "gitRunnerCalls": 0,
+      "result": "PASS"
+    },
+    "httpBoundary": {
+      "pathFreeRepositoryResponse": "PASS",
+      "unsupportedRepositoryMethods": {
+        "POST": "PASS",
+        "PATCH": "PASS",
+        "DELETE": "PASS"
+      },
+      "callerControlledSnapshotBodyRejected": "PASS",
+      "noShellOrExecutionRoute": "PASS"
+    },
+    "documentation": [
+      {
+        "document": "docs/api/API_REFERENCE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/development/SETUP.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/security/SECURITY_AND_PRIVACY.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/USER_GUIDE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/TEST_EVIDENCE.md",
+        "status": "PASS"
+      }
+    ]
+  },
+  "equalityInputs": {
+    "statusAlgorithm": "SHA-256 over exact NUL-delimited porcelain-v1 bytes",
+    "treeAlgorithm": "SHA-256 over sorted relative entry type, path and complete file/link bytes",
+    "beforeStatusDigestComputed": true,
+    "afterStatusDigestComputed": true,
+    "beforeTreeDigestComputed": true,
+    "afterTreeDigestComputed": true
+  },
+  "integrity": {
+    "rawAbsolutePathsRecorded": false,
+    "repositoryFilenamesRecorded": false,
+    "registeredRepositoryWritePerformedByProduct": false,
+    "shellEndpointPresent": false,
+    "arbitraryCommandInputPresent": false,
+    "externalProductCallMade": false,
+    "candidateOrPersonalRepositoryUsed": false,
+    "temporaryFixtureRemovedAfterRun": true
+  },
+  "limitations": [
+    "LOCAL_SINGLE_USER_TRUST_MODEL",
+    "DIRECT_DOT_GIT_DIRECTORY_ONLY",
+    "POINT_OBSERVATION_NOT_ATOMIC_FILESYSTEM_SNAPSHOT",
+    "NO_EXACT_FILENAME_EVIDENCE",
+    "NOT_VALIDATION_OR_READINESS",
+    "OFFICIAL_AVISHKAR_RULES_UNVERIFIED"
+  ],
+  "nextAuthorizedStory": "IL-3.1"
+}

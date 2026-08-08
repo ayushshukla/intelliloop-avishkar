@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-FOUNDATION",
+  "storyBoundary": {
+    "from": "IL-1.1",
+    "through": "IL-1.6"
+  },
+  "gate": "G1_FOUNDATION_RUNNABLE",
+  "status": "PASS",
+  "evidenceDate": "2026-08-04",
+  "environment": {
+    "platform": "Windows 11",
+    "node": "v22.22.0",
+    "npm": "10.9.4",
+    "gitBranch": "main",
+    "gitHead": "UNBORN",
+    "gitRemotes": 0
+  },
+  "commands": [
+    {
+      "command": "npm.cmd ci",
+      "exitCode": 0,
+      "packagesInstalled": 219
+    },
+    {
+      "command": "npm.cmd run check",
+      "exitCode": 0,
+      "workspacesTypechecked": 5,
+      "unitAndComponent": {
+        "files": 9,
+        "tests": 56
+      },
+      "api": {
+        "files": 5,
+        "tests": 29
+      },
+      "viteModulesTransformed": 43,
+      "markdownFilesChecked": 30,
+      "brokenLocalDocumentationTargets": 0
+    },
+    {
+      "command": "npm.cmd run test:e2e",
+      "exitCode": 0,
+      "browser": "chromium",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "tests": 2
+    },
+    {
+      "command": "npm.cmd audit --omit=dev --json",
+      "exitCode": 0,
+      "productionVulnerabilities": 0
+    }
+  ],
+  "proofs": {
+    "cleanInstall": "PASS",
+    "typecheck": "PASS",
+    "tests": "PASS",
+    "productionBuild": "PASS",
+    "apiHealth": "PASS",
+    "webSmoke": "PASS",
+    "honestNetworkFailure": "PASS",
+    "defaultExternalCallsOff": "PASS",
+    "documentationLinks": "PASS",
+    "sourceIndependent": "PASS"
+  },
+  "integrity": {
+    "frozenPlanningHashes": {
+      "matched": 15,
+      "expected": 15
+    },
+    "candidateBaselines": {
+      "matched": 6,
+      "expected": 6
+    },
+    "sensitiveArtifacts": 0,
+    "temporaryE2eDirectories": 0,
+    "leftoverDevelopmentListeners": 0,
+    "productionSqliteImports": 1,
+    "candidateSourceTransferred": false,
+    "externalProductCallMade": false,
+    "gitWritePerformed": false,
+    "deployed": false
+  },
+  "limitations": [
+    "FOUNDATION_ONLY",
+    "NO_PROJECT_OR_CHANGE_MISSION",
+    "NO_EVIDENCE_OR_ACTIVE_TWIN",
+    "NO_RECONCILIATION_OR_READINESS",
+    "OFFICIAL_AVISHKAR_RULES_UNVERIFIED"
+  ],
+  "nextAuthorizedStory": "IL-2.1"
+}

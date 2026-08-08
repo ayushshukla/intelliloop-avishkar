@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-EVIDENCE-REPLAY",
+  "story": "IL-10.1",
+  "status": "PASS_OPTIONAL_FEATURE_FLAGGED",
+  "evidenceDate": "2026-08-07",
+  "reproductionCommand": "npm.cmd run evidence:evidence-replay",
+  "featureFlag": {
+    "name": "experiments.evidenceReplay",
+    "apiEnvironmentKey": "INTELLILOOP_EXPERIMENT_EVIDENCE_REPLAY",
+    "webEnvironmentKey": "VITE_INTELLILOOP_EXPERIMENT_EVIDENCE_REPLAY",
+    "defaultEnabled": false,
+    "malformedValueFailsClosed": true,
+    "launcher": "npm.cmd run dev:replay"
+  },
+  "focusedVerification": {
+    "webComparisonTests": 3,
+    "apiConfigurationTests": 16,
+    "pureComparisonNoInputMutation": "PASS",
+    "defaultFlagIsolation": "PASS",
+    "explicitOptInOnly": "PASS",
+    "falseCompleteOrFallbackComparison": "NOT_PRESENT"
+  },
+  "directBrowserObservation": {
+    "environment": "Windows 11 / local loopback / in-app Chromium / isolated schema-14 directory",
+    "baselineRevision": 1,
+    "candidateRevision": 2,
+    "baselineMembers": {
+      "nodes": 27,
+      "relationships": 53,
+      "total": 80
+    },
+    "candidateMembers": {
+      "nodes": 40,
+      "relationships": 85,
+      "total": 125
+    },
+    "differences": {
+      "added": 58,
+      "removed": 13,
+      "changed": 30,
+      "unchanged": 37
+    },
+    "allDifferencesCarryPersistedPathCitation": true,
+    "comparisonRequests": {
+      "method": "GET",
+      "count": 4,
+      "nonLoopback": 0
+    },
+    "demoAndTwinHistoryByteEqualBeforeAfter": true,
+    "readinessBefore": "READY",
+    "readinessAfter": "READY"
+  },
+  "authority": {
+    "readOnly": true,
+    "canonicalStateMutation": false,
+    "readinessAuthority": false,
+    "passportAuthority": false,
+    "providerCall": false,
+    "repositoryExecution": false
+  },
+  "sourceIntegrity": {
+    "apps/api/src/config.ts": "sha256:771edde0a9558264e36012f48eb248129b6e3e0a203a7a86df6db99df5cf231c",
+    "apps/api/test/config.test.ts": "sha256:2fa21abdd0acfa45dc116d27d2b7a6b7c23bf627a1424564c67590d334425e31",
+    "apps/web/src/feature-flags.ts": "sha256:eaea03999301fc9cefb961d18af72372772004d0de3966a87ffb1710186b7a79",
+    "apps/web/src/evidence-replay.ts": "sha256:851f6034283b148c865aa384a6df55031430c08784c6dc02e6152e7af047cb70",
+    "apps/web/src/EvidenceReplayLab.tsx": "sha256:72495d116c42f7f43af558040c21df7e5f70b91045fc703106c8b0a7f593250d",
+    "apps/web/src/TwinWorkspace.tsx": "sha256:f80173b7e23d1ee452cee9e290f8a03875ba1f4c5841f9fa51b6665bfd9d661e",
+    "apps/web/test/evidence-replay.test.tsx": "sha256:a403559b16ab67feebb85e3303ff1e4e1c8981cea1f9e199ed5f18f07ac0de63",
+    "scripts/run-evidence-replay.mjs": "sha256:dd2aea8fa117bde472fb9401beca24a4d4494a29d9d240993ea91b4703e153b3"
+  },
+  "limitations": [
+    "This optional lab compares complete bounded Twin pages already returned by local GET APIs; it withholds a partial comparison.",
+    "A digest/path difference is inspectable change evidence, not correctness, release readiness or approval.",
+    "The direct browser observation uses the IntelliLoop-authored LoopMart fixture and is not production validation."
+  ],
+  "nextAuthorizedStory": "IL-9.4_HUMAN_PILOT_INPUT_OR_IL-10.2_OPTIONAL"
+}

@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-RELEASE",
+  "story": "IL-9.1",
+  "status": "PASS_WINDOWS_LINUX_CI_CONFIGURED",
+  "checkpoint": "PHASE_9_RELEASE_VERIFICATION_STARTED",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:release-platform",
+  "environment": {
+    "node": {
+      "observed": "22.22.0",
+      "expected": "22.22.0",
+      "nodeVersionFile": "22.22.0",
+      "status": "PASS"
+    },
+    "npm": {
+      "observed": "10.9.4",
+      "expected": "10.9.4",
+      "packageManager": "npm@10.9.4",
+      "status": "PASS"
+    },
+    "lockfile": {
+      "version": 3,
+      "sha256": "sha256:1226a18521f5ccb51b28b622868d219d1c56b3ac746987b829dc2ff95a4883ef",
+      "status": "PASS"
+    },
+    "runtime": {
+      "platform": "win32",
+      "arch": "x64",
+      "osRelease": "10.0.26200",
+      "osVersion": "Windows 11 Pro"
+    }
+  },
+  "platformMatrix": {
+    "windows11": {
+      "status": "PASS",
+      "evidence": "THIS_RUN",
+      "scope": "clean install plus all required layers"
+    },
+    "linuxCi": {
+      "status": "CONFIGURED_NOT_OBSERVED_LOCALLY",
+      "evidence": ".github/workflows/release-platform-verification.yml",
+      "limitation": "No WSL, Linux runner or connected remote was available during the Windows evidence run."
+    }
+  },
+  "commands": [
+    {
+      "id": "CLEAN_INSTALL",
+      "layer": "INSTALL",
+      "command": "npm.cmd ci",
+      "status": "PASS",
+      "durationMs": 25829,
+      "observations": {
+        "installedPackages": 176,
+        "lockfileCommand": "npm ci"
+      }
+    },
+    {
+      "id": "TYPECHECK",
+      "layer": "STATIC",
+      "command": "npm.cmd run typecheck",
+      "status": "PASS",
+      "durationMs": 17611,
+      "observations": {}
+    },
+    {
+      "id": "UNIT_COMPONENT",
+      "layer": "UNIT_COMPONENT",
+      "command": "npm.cmd run test:unit",
+      "status": "PASS",
+      "durationMs": 43252,
+      "observations": {
+        "passedTests": 416,
+        "passedFiles": 49
+      }
+    },
+    {
+      "id": "API_INTEGRATION",
+      "layer": "API_INTEGRATION",
+      "command": "npm.cmd run test:api",
+      "status": "PASS",
+      "durationMs": 118912,
+      "observations": {
+        "passedTests": 174,
+        "passedFiles": 33
+      }
+    },
+    {
+      "id": "PRODUCTION_BUILD",
+      "layer": "BUILD",
+      "command": "npm.cmd run build",
+      "status": "PASS",
+      "durationMs": 20458,
+      "observations": {
+        "webModulesTransformed": 92
+      }
+    },
+    {
+      "id": "BROWSER_E2E",
+      "layer": "BROWSER_E2E",
+      "command": "npm.cmd run test:e2e",
+      "status": "PASS",
+      "durationMs": 90999,
+      "observations": {
+        "passedBrowserScenarios": 19
+      }
+    },
+    {
+      "id": "REPOSITORY_SAFETY",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:repo-safety",
+      "status": "PASS",
+      "durationMs": 4437,
+      "observations": {}
+    },
+    {
+      "id": "PRIVACY",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:privacy",
+      "status": "PASS",
+      "durationMs": 1923,
+      "observations": {}
+    },
+    {
+      "id": "TWIN_CODE_MAP",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:twin-code-map",
+      "status": "PASS",
+      "durationMs": 6742,
+      "observations": {}
+    },
+    {
+      "id": "RECONCILIATION_CITATIONS",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:reconcile",
+      "status": "PASS",
+      "durationMs": 8690,
+      "observations": {}
+    },
+    {
+      "id": "OPENAI_OFFLINE_CHECKPOINT",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:openai-eval",
+      "status": "PASS",
+      "durationMs": 1325,
+      "observations": {}
+    },
+    {
+      "id": "READINESS_PASSPORT",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:readiness-passport",
+      "status": "PASS",
+      "durationMs": 36167,
+      "observations": {}
+    },
+    {
+      "id": "READINESS_PASSPORT_DOCS",
+      "layer": "DOCUMENTATION_CONTRACT",
+      "command": "npm.cmd run check:readiness-passport-docs",
+      "status": "PASS",
+      "durationMs": 423,
+      "observations": {}
+    },
+    {
+      "id": "RETAIL_FIXTURE",
+      "layer": "GENERATED_EVIDENCE",
+      "command": "npm.cmd run check:retail-fixture",
+      "status": "PASS",
+      "durationMs": 428,
+      "observations": {}
+    },
+    {
+      "id": "AI_SAFETY_DOCS",
+      "layer": "DOCUMENTATION_CONTRACT",
+      "command": "npm.cmd run check:ai-safety-docs",
+      "status": "PASS",
+      "durationMs": 428,
+      "observations": {}
+    },
+    {
+      "id": "GOLDEN_FLOW",
+      "layer": "BROWSER_E2E",
+      "command": "npm.cmd run check:golden-flow",
+      "status": "PASS",
+      "durationMs": 31406,
+      "observations": {}
+    },
+    {
+      "id": "ACCESSIBILITY",
+      "layer": "BROWSER_ACCESSIBILITY",
+      "command": "npm.cmd run check:accessibility",
+      "status": "PASS",
+      "durationMs": 15006,
+      "observations": {}
+    },
+    {
+      "id": "DEMO_GATE_FAST",
+      "layer": "BROWSER_RECOVERY",
+      "command": "npm.cmd run check:demo-gate",
+      "status": "PASS",
+      "durationMs": 40523,
+      "observations": {}
+    },
+    {
+      "id": "DEMO_SUPPORT",
+      "layer": "FALLBACK_ASSETS",
+      "command": "npm.cmd run check:demo-support",
+      "status": "PASS",
+      "durationMs": 694,
+      "observations": {}
+    },
+    {
+      "id": "DOCUMENTATION_LINKS",
+      "layer": "DOCUMENTATION",
+      "command": "npm.cmd run check:docs",
+      "status": "PASS",
+      "durationMs": 447,
+      "observations": {}
+    }
+  ],
+  "cleanInstall": {
+    "status": "PASS",
+    "lockfileBefore": "sha256:1226a18521f5ccb51b28b622868d219d1c56b3ac746987b829dc2ff95a4883ef",
+    "lockfileAfter": "sha256:1226a18521f5ccb51b28b622868d219d1c56b3ac746987b829dc2ff95a4883ef",
+    "lockfileEquality": "PASS"
+  },
+  "hashes": {
+    "sourceTree": {
+      "sha256": "sha256:9d954e3b6bd979f792dc0dbe1d0dbc9d10ebac0cd83b3786d4005aebc07908d4",
+      "entryCount": 423
+    },
+    "artifacts": [
+      {
+        "path": ".node-version",
+        "kind": "FILE",
+        "bytes": 8,
+        "sha256": "sha256:4137094e7792cb49fe1afddc3f87208f0ef4adfef7d3acd1def0198786d393c2"
+      },
+      {
+        "path": "package.json",
+        "kind": "FILE",
+        "bytes": 6944,
+        "sha256": "sha256:6d03be125883c506d5065449a42e9a41d88d954dac3d2352aab349b7a4a72f59"
+      },
+      {
+        "path": "package-lock.json",
+        "kind": "FILE",
+        "bytes": 112219,
+        "sha256": "sha256:1226a18521f5ccb51b28b622868d219d1c56b3ac746987b829dc2ff95a4883ef"
+      },
+      {
+        "path": ".github/workflows/release-platform-verification.yml",
+        "kind": "FILE",
+        "bytes": 1519,
+        "sha256": "sha256:6f987bc54165c9f01c60abd256c3e928d9122371b3b1ec50bf560762207303d5"
+      },
+      {
+        "path": "scripts/generate-release-platform-evidence.mjs",
+        "kind": "FILE",
+        "bytes": 15457,
+        "sha256": "sha256:934d086f06e19460e51c120a55fe96e98f55863ba485846af0fbd7aa4c8416a3"
+      },
+      {
+        "path": "apps/api/dist",
+        "kind": "TREE",
+        "entryCount": 220,
+        "sha256": "sha256:a68e1c879035bf5a3fd0e7897ca2f03ce491e237098cbdb648fbe2418c7940c9"
+      },
+      {
+        "path": "apps/web/dist",
+        "kind": "TREE",
+        "entryCount": 3,
+        "sha256": "sha256:8ddfeb5089e6ec80e9513c5bfd62ba70f2e750952b9c996bcdf98569830656d9"
+      },
+      {
+        "path": "packages/domain/dist",
+        "kind": "TREE",
+        "entryCount": 120,
+        "sha256": "sha256:6c9797610c942116ce457327973876b9592e1ed85e696175da51a12642770e60"
+      },
+      {
+        "path": "packages/contracts/dist",
+        "kind": "TREE",
+        "entryCount": 60,
+        "sha256": "sha256:7ac658755eaaf400771f7269ba41cf6f02350eac74b0b87dfdc14f7a3ee0e972"
+      },
+      {
+        "path": "packages/demo-fixtures/dist",
+        "kind": "TREE",
+        "entryCount": 8,
+        "sha256": "sha256:e578c40e01d6ddbb11eb15fbc84dd1ed0f52521cd8ad0d4e660500f417e1c5e1"
+      },
+      {
+        "path": "docs/demo/assets",
+        "kind": "TREE",
+        "entryCount": 7,
+        "sha256": "sha256:f620c0a8b25b0efa4306ec520d7259e00766ca9aaa8a88eb92eacb521a35cb80"
+      },
+      {
+        "path": "docs/demo/DEMO_ASSET_MANIFEST.json",
+        "kind": "FILE",
+        "bytes": 5521,
+        "sha256": "sha256:4bd9cf7f2a6af11fb672d216aa30ade117b291d12b9580951946eb3fc4502b18"
+      },
+      {
+        "path": "docs/evidence/EV_DEMO_GATE.json",
+        "kind": "FILE",
+        "bytes": 4321,
+        "sha256": "sha256:a7a00995bf5f32f28848f3ed210acafdb511cd4e2da3464263df6fa3e68aae6f"
+      },
+      {
+        "path": "docs/evidence/EV_DEMO_SUPPORT.json",
+        "kind": "FILE",
+        "bytes": 2764,
+        "sha256": "sha256:3080e588de52b12eea626637e5c313fb929927e2eea5b92ec097f2e419c13374"
+      },
+      {
+        "path": "docs/evidence/EV_ACCESSIBILITY.json",
+        "kind": "FILE",
+        "bytes": 2727,
+        "sha256": "sha256:d04c616441235d293c536cb36bfb62d8a1000ad6ab04801b4467f56d7e0056b3"
+      },
+      {
+        "path": "docs/evidence/EV_REPO_SAFETY.json",
+        "kind": "FILE",
+        "bytes": 3652,
+        "sha256": "sha256:b803ec9a42aa85f3ca0876202447e181a1b5c40f693b9c015dabd1617ae5bd65"
+      },
+      {
+        "path": "docs/evidence/EV_PRIVACY.json",
+        "kind": "FILE",
+        "bytes": 2755,
+        "sha256": "sha256:6f235bc1d54c51160552d3b0914aa419fb7d2e93eaef28bd53efb0fc20225719"
+      }
+    ]
+  },
+  "limitations": [
+    "The complete run was observed on Windows 11; Linux is configured in a pinned GitHub Actions matrix but was not locally observed because no Linux runtime or connected remote was available.",
+    "A passing prototype release verifier is not production certification, competition-rules compliance, release approval or deployment authorization.",
+    "The IL-9.2 dependency, license, provenance, similarity, secret and security audit passed; its time-sensitive registry observations must be refreshed at final freeze."
+  ],
+  "nextAuthorizedStory": "IL-9.4"
+}

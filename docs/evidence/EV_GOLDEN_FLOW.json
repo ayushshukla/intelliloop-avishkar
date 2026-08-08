@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-GOLDEN-FLOW",
+  "story": "IL-8.3",
+  "status": "PASS",
+  "checkpoint": "COMPETITION_GOLDEN_WORKFLOW_READY",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:golden-flow",
+  "fixture": {
+    "fixtureId": "loopmart-expanded-cancellation-v1",
+    "fixtureVersion": "intelliloop-retail-cancellation-fixture.v1",
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC_ONLY",
+    "repositoryExecution": false
+  },
+  "execution": {
+    "apiFiles": [
+      "apps/api/test/demo-workspace-api.test.ts",
+      "apps/api/test/database-lifecycle.test.ts"
+    ],
+    "apiTests": 17,
+    "browserFile": "apps/web/e2e/golden-flow.spec.ts",
+    "browserTests": 4,
+    "totalFocusedTests": 21,
+    "browser": "chromium",
+    "viewport": "1366x768"
+  },
+  "demonstratedSequence": [
+    "EMPTY_TO_INITIAL_BLOCKED",
+    "CONFLICT_AND_CITED_IMPACT",
+    "DETERMINISTIC_AI_OFF_CITED_ANSWER",
+    "CONTROLLED_CORRECTION_TO_READY",
+    "UNSIGNED_READY_PASSPORT",
+    "DEPENDENCY_CHANGE_TO_STALE",
+    "HISTORICAL_PASSPORT_CURRENTLY_STALE"
+  ],
+  "acceptance": {
+    "persistedStateSequence": [
+      "BLOCKED",
+      "READY",
+      "STALE"
+    ],
+    "allStretchFlagsOff": true,
+    "externalAiCalls": false,
+    "unexpectedOutboundBrowserRequests": 0,
+    "credentialBearingBrowserRequests": 0,
+    "credentialRequired": false,
+    "failureTracePolicy": "RETAIN_ON_FAILURE",
+    "screenshotPolicy": "ONLY_ON_FAILURE",
+    "failureArtifactRoot": "test-results/<sanitized-test-id>",
+    "resetScopeCallerControlled": false
+  },
+  "featureFlags": {
+    "ai.externalCalls": false,
+    "experiments.evidenceReplay": false,
+    "experiments.agentDisagreement": false,
+    "experiments.remediationPreview": false
+  },
+  "sourceIntegrity": {
+    "packages/demo-fixtures/src/retail-cancellation.ts": "sha256:16aa06901cf1621f67a84d9b963dfd9aee4e1ec521f4928652675d7f0f52463e",
+    "apps/api/src/database/migrations/014-demo-golden-workflow.ts": "sha256:5e85b280802f31d17fbec3306375a14fe84aeeb58feab9f53468c5970035cc0a",
+    "apps/api/src/demo/demo-workspace-service.ts": "sha256:84cc6adc013e633922f7289c3cc37c36c63d54788a804cfb2fb0b5b5ca2d6aca",
+    "apps/api/src/demo/demo-routes.ts": "sha256:a9438c69413646f146845368e443acfb313bcd7fa1b3e20c4edd82eebee13099",
+    "apps/web/src/demo-client.ts": "sha256:2aac42aabb644e5d474a24c56d7785e1b17356940997cdd6961b2023eb222c37",
+    "apps/web/src/DemoWorkspace.tsx": "sha256:890a23f9b76b853c67adfad9cf5eb9bc291932564993c2162cedc8c040b1fb8a",
+    "apps/web/e2e/golden-flow.spec.ts": "sha256:d4663fddabeedf8e19b3d37a78a15e4e1d9b7039854d6bff3415c2a0fb54eb6f",
+    "playwright.config.ts": "sha256:5518a6e9e5f41f2e53c9b2842396fac2ee704a805aa7acc2b5b568e50fd5697c"
+  },
+  "limitations": [
+    "The fixture, review and validation inputs are synthetic and do not prove production safety.",
+    "READY applies only to the exact persisted inputs and is not release approval.",
+    "The Passport is unsigned and grants no deployment authority.",
+    "The demonstrated cited answer is deterministic and provider-off; no evidence is sent externally."
+  ],
+  "nextAuthorizedStory": "IL-8.4"
+}

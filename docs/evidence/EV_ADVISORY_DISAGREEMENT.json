@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-ADVISORY-DISAGREEMENT",
+  "story": "IL-10.2",
+  "status": "PASS_OPTIONAL_FEATURE_FLAGGED",
+  "evidenceDate": "2026-08-07",
+  "reproductionCommand": "npm.cmd run evidence:advisory-disagreement",
+  "featureFlag": {
+    "name": "experiments.agentDisagreement",
+    "apiEnvironmentKey": "INTELLILOOP_EXPERIMENT_AGENT_DISAGREEMENT",
+    "webEnvironmentKey": "VITE_INTELLILOOP_EXPERIMENT_AGENT_DISAGREEMENT",
+    "defaultEnabled": false,
+    "malformedValueFailsClosed": true,
+    "launcher": "npm.cmd run dev:disagreement"
+  },
+  "focusedVerification": {
+    "webImportAndComparisonTests": 4,
+    "apiConfigurationTests": 16,
+    "scopeAndCitationRejection": "PASS",
+    "forbiddenAuthorityRejection": "PASS",
+    "pureComparisonNoInputMutation": "PASS",
+    "defaultFlagIsolation": "PASS"
+  },
+  "directBrowserObservation": {
+    "environment": "Windows 11 / local loopback / in-app Chromium / isolated schema-14 directory",
+    "importedOutputs": 2,
+    "exactTextGroups": 3,
+    "alignedExactly": 0,
+    "citationVariance": 1,
+    "outputOnly": 2,
+    "comparisonNetworkRequests": 0,
+    "nonLoopbackRequests": 0,
+    "readinessBefore": "READY",
+    "readinessAfter": "READY",
+    "controlledExampleLabelVisible": true
+  },
+  "authority": {
+    "browserMemoryOnly": true,
+    "semanticContradictionInferred": false,
+    "canonicalStateMutation": false,
+    "readinessAuthority": false,
+    "passportAuthority": false,
+    "providerCall": false,
+    "liveOrchestration": false,
+    "repositoryExecution": false
+  },
+  "sourceIntegrity": {
+    "apps/api/src/config.ts": "sha256:771edde0a9558264e36012f48eb248129b6e3e0a203a7a86df6db99df5cf231c",
+    "apps/api/test/config.test.ts": "sha256:2fa21abdd0acfa45dc116d27d2b7a6b7c23bf627a1424564c67590d334425e31",
+    "apps/web/src/feature-flags.ts": "sha256:eaea03999301fc9cefb961d18af72372772004d0de3966a87ffb1710186b7a79",
+    "apps/web/src/advisory-disagreement.ts": "sha256:81316b6ff811dd01065fdcb143e26dab949b6bdf2211c37d80426d6fa9d7c18e",
+    "apps/web/src/AdvisoryDisagreementLab.tsx": "sha256:bcb603bd4160c1146620edad3907d1cb04385beeb93fd1d1693663ecf2e25e9e",
+    "apps/web/src/CitedExplanationWorkspace.tsx": "sha256:a7a8df4387b9771f3bb16fdd50482fa4282adcc97ccbf24ad9ce5460c83932a3",
+    "apps/web/test/advisory-disagreement.test.tsx": "sha256:6711465be01b31703f8d3402a8635edcbaded40f0df3ae0b919c9e8247323fa9",
+    "scripts/run-advisory-disagreement.mjs": "sha256:ba5f28c07bef375a9bd810270af6d60939dfc4bdf2565515331ff18606d784d3"
+  },
+  "limitations": [
+    "The comparator detects normalized exact-text membership and citation-set variance; it does not infer semantic agreement, contradiction, quality or truth.",
+    "Imported attribution is operator supplied and is not identity verification or provider attestation.",
+    "The direct browser observation uses IntelliLoop-authored controlled demonstration data and is not production validation."
+  ],
+  "nextAuthorizedStory": "IL-9.4_HUMAN_PILOT_INPUT_OR_IL-10.3_OPTIONAL"
+}

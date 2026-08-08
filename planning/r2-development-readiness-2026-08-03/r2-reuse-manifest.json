@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "INTELLILOOP-R2-REUSE-MANIFEST-2026-08-03",
+  "createdAt": "2026-08-03T15:24:18.5507097+05:30",
+  "decision": "SOURCE_INDEPENDENT_BUILD",
+  "directSourceCopyAuthorized": false,
+  "competitionPolicyClearance": "UNKNOWN_NOT_ASSUMED",
+  "applicationSourceLicenseClearance": "ABSENT_FOR_ALL_SIX_CANDIDATES",
+  "policy": {
+    "rule": "Technical maturity never implies permission. REUSE or ADAPT requires exact-source authorship/license evidence and competition-policy clearance.",
+    "result": "No exact application-source file cleared both requirements; no source will be copied.",
+    "ordinaryDependencies": "Published third-party packages may be selected independently under their own licenses. Lockfile, license and notice review is required before submission.",
+    "prohibited": [
+      "Copying candidate application source, schemas, prompts, UI text, assets or tests",
+      "Opening or transferring .env files, credentials, keystores, databases, build output or dependency directories",
+      "Using quarantined retail, employer, client, MyTeams or Pushhpa roots",
+      "Treating untracked or locally modified files as cleared source"
+    ]
+  },
+  "reuse": [],
+  "adapt": [],
+  "cleanRoom": [
+    {
+      "id": "CR-01",
+      "qualificationIds": ["Q-DL-F01", "Q-DL-F02", "Q-DL-F03", "Q-DL-F04", "Q-DL-F09", "Q-DL-F11", "Q-DL-F12", "Q-DL-F15", "Q-DL-F17"],
+      "behavioralReference": {
+        "candidateId": "ideas-devloop-autopilot",
+        "repository": "local-reference://ideas-devloop-autopilot",
+        "branch": "feature/solo-mvp-readiness",
+        "revision": "b7c1d81d99eea056b33413cbdda733ce3c4e4192"
+      },
+      "destinationIntent": "Rebuild bounded project, repository-state, evidence, deterministic readiness, report, advisory-import and history behaviors from IntelliLoop contracts.",
+      "separation": "Develop from R1/R2 requirements and test fixtures. Do not copy identifiers, prose, schemas, file structure, algorithms or UI composition.",
+      "requiredTests": ["clean database bootstrap", "restart persistence", "scope isolation", "stale evidence", "negative readiness", "offline operation"]
+    },
+    {
+      "id": "CR-02",
+      "qualificationIds": [],
+      "behavioralReference": null,
+      "destinationIntent": "Create IntelliLoop-specific Active Twin, deterministic Reconcile Core, bounded TypeScript code mapper, citation validator, Passport and retail demo fixtures from the frozen product model.",
+      "separation": "Greenfield implementation owned by IntelliLoop; candidate code is not an implementation template.",
+      "requiredTests": ["relationship vocabulary", "conflict truth table", "unknown-citation rejection", "repository safety limits", "BLOCKED-to-READY-to-STALE golden flow"]
+    }
+  ],
+  "contractReference": [
+    {
+      "id": "REF-DEVDEPLOY",
+      "candidateId": "ideas-devdeploy",
+      "repository": "local-reference://ideas-devdeploy",
+      "branch": "main",
+      "revision": "3c0f16ab8ca54d4d72a70cef7a4f79f7d0831d91",
+      "qualificationIds": ["Q-DD-F01", "Q-DD-F13"],
+      "allowedUse": "Inform bounded project registry and manifest/config discovery acceptance criteria only.",
+      "sourceTransfer": false
+    },
+    {
+      "id": "REF-CHATVAULT",
+      "candidateId": "ideas-chatvaultai",
+      "repository": "local-reference://ideas-chatvaultai",
+      "branch": "master",
+      "revision": "UNBORN",
+      "qualificationIds": ["Q-CV-F01", "Q-CV-F03", "Q-CV-F04", "Q-CV-F05", "Q-CV-F11", "Q-CV-F12", "Q-CV-F15", "Q-CV-F17"],
+      "allowedUse": "Inform import idempotency, provenance, audit timeline, context packaging and export acceptance criteria only.",
+      "sourceTransfer": false,
+      "specialConcern": "Candidate has 667 untracked files and no commit baseline; no file is provenance-cleared."
+    },
+    {
+      "id": "REF-FORGEOS",
+      "candidateId": "ideas-forgeos",
+      "repository": "local-reference://ideas-forgeos",
+      "branch": "main",
+      "revision": "204e345bbf0a6f6cee1c9cb23271e691cb6154a0",
+      "qualificationIds": ["Q-FO-F03", "Q-FO-F06", "Q-FO-F07", "Q-FO-F08", "Q-FO-F09", "Q-FO-F14", "Q-FO-F16", "Q-FO-F17"],
+      "allowedUse": "Inform graph, observation import, policy separation, dry-run and temporal-lineage acceptance criteria only.",
+      "sourceTransfer": false,
+      "specialConcern": "Recorded baseline includes 210 tracked modifications and 12 untracked paths; the broader executor/governance domain is intentionally excluded."
+    },
+    {
+      "id": "REF-MEMORY-UI",
+      "candidateId": "ideas-devforge-memory-ui",
+      "repository": "local-reference://ideas-devforge-memory-ui",
+      "branch": "main",
+      "revision": "7cba1d02b52117283629d79535d26b6162709e5d",
+      "qualificationIds": ["Q-DF-F12"],
+      "allowedUse": "Inform trust-state and provenance-screen usability criteria only.",
+      "sourceTransfer": false
+    },
+    {
+      "id": "REF-COCKPIT",
+      "candidateId": "ideas-devloop-os-cockpit",
+      "repository": "local-reference://ideas-devloop-os-cockpit",
+      "branch": "main",
+      "revision": "799a1dc916378647532446272c5124db42061c34",
+      "qualificationIds": ["Q-CO-F12"],
+      "allowedUse": "Inform competition-story hierarchy and trust visualization acceptance criteria only.",
+      "sourceTransfer": false
+    }
+  ],
+  "excluded": [
+    {
+      "id": "EX-01",
+      "scope": "All remaining candidate capabilities at or below 50 percent maturity",
+      "reason": "Insufficient distinct, proven or portable value for the frozen build."
+    },
+    {
+      "id": "EX-02",
+      "scope": "Candidate execution, terminal, git-write, patch, commit, push and deployment behaviors",
+      "reason": "Outside the competition core and incompatible with the read-only repository boundary."
+    },
+    {
+      "id": "EX-03",
+      "scope": "Live production twin, shadow traffic, continuous training, autonomous repair/deploy, agent orchestration, predictive scaling and multi-provider fabric",
+      "reason": "Post-competition only."
+    }
+  ],
+  "aboveFiftyDispositions": {
+    "count": 29,
+    "reuse": 0,
+    "adapt": 0,
+    "cleanRoomRebuild": 9,
+    "contractReferenceOnly": 20,
+    "qualificationIds": [
+      "Q-DL-F01", "Q-DL-F02", "Q-DL-F03", "Q-DL-F04", "Q-DL-F09", "Q-DL-F11", "Q-DL-F12", "Q-DL-F15", "Q-DL-F17",
+      "Q-DD-F01", "Q-DD-F13",
+      "Q-CV-F01", "Q-CV-F03", "Q-CV-F04", "Q-CV-F05", "Q-CV-F11", "Q-CV-F12", "Q-CV-F15", "Q-CV-F17",
+      "Q-FO-F03", "Q-FO-F06", "Q-FO-F07", "Q-FO-F08", "Q-FO-F09", "Q-FO-F14", "Q-FO-F16", "Q-FO-F17",
+      "Q-DF-F12", "Q-CO-F12"
+    ]
+  },
+  "cleanRoomControls": [
+    "Build only from this freeze, R1 contracts, public package documentation and independently authored fixtures.",
+    "Record a destination-file provenance header or ledger entry identifying greenfield authorship and requirement IDs.",
+    "Do not keep candidate source open while authoring equivalent modules; use behavioral acceptance criteria, not code transcription.",
+    "Use new names, schemas, structure, copy and visual composition tailored to the Active Software Twin.",
+    "Run a pre-submission similarity and secrets scan and retain the result.",
+    "Require a later written policy/ownership decision before changing directSourceCopyAuthorized."
+  ],
+  "transferredDependencies": [],
+  "transferredAssets": [],
+  "transferredFiles": [],
+  "redactions": [],
+  "validation": {
+    "allAboveFiftyDisposed": true,
+    "allReuseAndAdaptEntriesPositivelyCleared": true,
+    "noSourceCopied": true,
+    "noCandidateModified": true,
+    "directSourceCopyAuthorized": false
+  }
+}

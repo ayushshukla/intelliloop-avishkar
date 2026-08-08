@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactVersion": "1.1",
+  "artifactId": "INTELLILOOP-R1-PRODUCT-SCOPE-2026-08-03",
+  "createdAt": "2026-08-03T14:43:35.6678176+05:30",
+  "updatedAt": "2026-08-03T15:10:55.5529853+05:30",
+  "stage": "R1_PRODUCT_RECONCILIATION",
+  "decision": "R1_PRODUCT_RECONCILED_READY_FOR_REUSE_QUALIFICATION",
+  "authoritativeInputs": [
+    {
+      "path": "discovery/portfolio-evidence.json",
+      "sha256": "a0d582c323f18a64d4169ecd42fbf447cedc0181c74f2f760380488d7a63f560"
+    },
+    {
+      "path": "discovery/discovery-state.json",
+      "sha256": "e712c83924e94003524d008abfc3bed8b45a2f6121f1e4734401717830a5de19"
+    },
+    {
+      "path": "discovery/decision-review.md",
+      "sha256": "3b1ca5cf45b0f5b7774ce7a01307aabf3ff02d8738e60bee757fd0a5efed7551"
+    },
+    {
+      "path": "recovery/cross-thread-2026-08-03/R0_FORENSIC_AUDIT.md",
+      "sha256": "eddb35107f6745099da812b4862116d375a12bf79e13a06798801239981b0378"
+    },
+    {
+      "path": "recovery/cross-thread-2026-08-03/r0-state-inventory.json",
+      "sha256": "790de7650cf8ef284a4947712661e78a1fa6abe250ab3912a089dc72bb6cfa68"
+    }
+  ],
+  "checkpoint": {
+    "r0Recommendation": "ACCEPT_POST_WAVE2_STATE_FOR_R1_RECONCILIATION",
+    "destinationBranch": "main",
+    "headState": "UNBORN",
+    "commits": 0,
+    "remotes": 0,
+    "implementationPresent": false,
+    "superGate3Recorded": true,
+    "superGate4Present": false,
+    "codingPrompt11Complete": false,
+    "candidateSourceInspectionAuthorizedInR1": false,
+    "sourceCopyAuthorizedInR1": false
+  },
+  "productIdentity": {
+    "name": "IntelliLoop",
+    "subtitle": "The Evidence-Reconciled Active Software Twin",
+    "category": "AI-assisted, evidence-reconciled software-delivery intelligence",
+    "oneLinePitch": "IntelliLoop builds a living, evidence-backed twin of a software change, then reconciles requirements, decisions, code and tests so teams—and their AI—can see contradictions, impact and release truth before mistakes ship.",
+    "primaryWedge": "Retail software delivery",
+    "primaryScenario": "Expanded cancellation after picking starts but before dispatch",
+    "notA": [
+      "project tracker",
+      "generic RAG interface",
+      "document search tool",
+      "code chatbot",
+      "static release checklist"
+    ]
+  },
+  "personas": [
+    {
+      "priority": "PRIMARY",
+      "role": "Tech lead or engineering delivery lead",
+      "need": "Determine whether a software change is understood, supported by current evidence and ready for review or release."
+    },
+    {
+      "priority": "SECONDARY",
+      "role": "Software developer",
+      "need": "Understand current requirements, contradictions, affected assets and missing validation."
+    },
+    {
+      "priority": "SECONDARY",
+      "role": "QA or reviewer",
+      "need": "See which claims and impacted paths are or are not validated."
+    },
+    {
+      "priority": "SECONDARY",
+      "role": "Product owner",
+      "need": "Clarify which requirement or decision is current and what ambiguity remains."
+    }
+  ],
+  "problem": {
+    "trigger": "A cross-component change appears complete while its requirements, decisions, implementation state and tests have evolved independently.",
+    "fragmentedSources": [
+      "tickets and requirements",
+      "architecture decisions",
+      "documents and conversation extracts",
+      "repository and Git state",
+      "software assets and contracts",
+      "validation results",
+      "release claims"
+    ],
+    "failureMode": "Teams and generic AI assistants form a confident release view from incomplete, contradictory or stale evidence.",
+    "costAndRisk": [
+      "manual investigation and context switching",
+      "missed downstream dependencies",
+      "late discovery of contradictory requirements",
+      "tests that are green but incomplete for the changed rule",
+      "release decisions that cannot be reproduced"
+    ],
+    "whyExistingApproachesFallShort": {
+      "search": "Retrieves sources without reconciling their claims.",
+      "projectManagement": "Tracks activity and declarations rather than evidence relationships.",
+      "releaseChecklist": "Reports completion without proving currency, scope or contradiction state.",
+      "genericRag": "Can summarize a stale or incomplete retrieval set fluently without detecting an unselected conflicting source.",
+      "aiAlone": "Semantic fluency is not evidence authority; scoping, invalidation and readiness require deterministic contracts."
+    }
+  },
+  "differentiators": [
+    {
+      "id": "DIFF-01",
+      "name": "Reconciliation, not retrieval",
+      "description": "Detects disagreement, staleness and missing support instead of only returning similar content."
+    },
+    {
+      "id": "DIFF-02",
+      "name": "Living change twin",
+      "description": "Keeps claims, assets, Git state, validations and findings connected and visibly invalidates dependents when evidence changes."
+    },
+    {
+      "id": "DIFF-03",
+      "name": "AI with an evidence contract",
+      "description": "AI explains and proposes from a bounded cited pack while deterministic state remains independently verifiable."
+    }
+  ],
+  "aiMasteryAlignment": [
+    {
+      "sourceConcept": "Dual-engine execution and shadow testing",
+      "disposition": "STRETCH_MVP",
+      "intelliLoopCapability": "Evidence Replay Lab",
+      "competitionBoundary": "Compare baseline and candidate snapshots against the same controlled evidence and validations.",
+      "deferredOrRejected": "Real-time production mirroring and live shadow traffic are post-competition."
+    },
+    {
+      "sourceConcept": "Automated discrepancy reconciliation",
+      "disposition": "CORE_WITH_SAFETY_CORRECTION",
+      "intelliLoopCapability": "Reconcile Core",
+      "competitionBoundary": "Detect differences across requirements, decisions, observed behavior, code relationships and tests.",
+      "deferredOrRejected": "Automatic code, prompt or truth mutation is rejected; corrections are proposed only."
+    },
+    {
+      "sourceConcept": "Continuous feedback integration",
+      "disposition": "MVP_SUPPORTING",
+      "intelliLoopCapability": "Imported runtime-observation evidence",
+      "competitionBoundary": "Import bounded attributed telemetry summaries and invalidate dependent claims.",
+      "deferredOrRejected": "Continuous streaming, reinforcement and training pipelines are post-competition."
+    },
+    {
+      "sourceConcept": "Explainable AI auditing",
+      "disposition": "CORE",
+      "intelliLoopCapability": "Evidence-pack and AI-call lineage",
+      "competitionBoundary": "Persist pack digest, citations, epistemic labels and provider/model/request/usage metadata when available.",
+      "deferredOrRejected": "Hosted-model weight-level decision tracing is unavailable and not claimed."
+    },
+    {
+      "sourceConcept": "Multi-agent collaboration fabric",
+      "disposition": "STRETCH_MVP",
+      "intelliLoopCapability": "Imported agent-output reconciliation",
+      "competitionBoundary": "Treat multiple agent recommendations as attributed claims and expose disagreement.",
+      "deferredOrRejected": "Agent orchestration and sub-twin infrastructure are post-competition."
+    },
+    {
+      "sourceConcept": "Semantic code understanding",
+      "disposition": "DEMO_CRITICAL_ENHANCEMENT",
+      "intelliLoopCapability": "Bounded TypeScript code map",
+      "competitionBoundary": "Extract manifests, imports, routes/contracts and test-to-asset links from the controlled repository.",
+      "deferredOrRejected": "Universal whole-repository semantic understanding is not claimed."
+    },
+    {
+      "sourceConcept": "Self-healing code generation",
+      "disposition": "STRETCH_MVP_GUARDED",
+      "intelliLoopCapability": "Remediation Preview",
+      "competitionBoundary": "Propose a cited patch or test change and optionally validate it in a disposable sandbox.",
+      "deferredOrRejected": "No automatic apply, commit, push, deployment or production repair."
+    },
+    {
+      "sourceConcept": "Synthetic data generation",
+      "disposition": "MVP_SUPPORTING",
+      "intelliLoopCapability": "Synthetic demo and edge-case suggestions",
+      "competitionBoundary": "Generate or import visibly synthetic retail evidence and optional edge-case test suggestions.",
+      "deferredOrRejected": "Synthetic suggestions cannot satisfy readiness until executed and imported as real validation evidence."
+    },
+    {
+      "sourceConcept": "Governance and guardrail verification",
+      "disposition": "CORE_MINIMAL",
+      "intelliLoopCapability": "AI authority and action guardrails",
+      "competitionBoundary": "Reject unsafe paths, unknown citations, source mutation and AI attempts to alter canonical readiness.",
+      "deferredOrRejected": "Enterprise compliance, safety and bias benchmark suites are post-competition."
+    },
+    {
+      "sourceConcept": "Multi-modal state syncing",
+      "disposition": "CORE_WITH_NAMING_CORRECTION",
+      "intelliLoopCapability": "Multi-source state reconciliation",
+      "competitionBoundary": "Reconcile documents, conversation extracts, code maps, Git and tests with restart persistence.",
+      "deferredOrRejected": "Image/audio understanding and live architecture telemetry are post-competition."
+    },
+    {
+      "sourceConcept": "Predictive resource scaling",
+      "disposition": "POST_COMPETITION_WITH_MVP_METERING",
+      "intelliLoopCapability": "AI request usage and budget controls",
+      "competitionBoundary": "Expose token/usage metadata, explicit budgets, timeouts, retry limits and optional cost estimates.",
+      "deferredOrRejected": "Infrastructure and model-scaling simulation is post-competition."
+    },
+    {
+      "sourceConcept": "Version-controlled knowledge bases",
+      "disposition": "CORE",
+      "intelliLoopCapability": "Temporal Twin and evidence lineage",
+      "competitionBoundary": "Preserve immutable versions, supersession and read-only historical Twin comparison.",
+      "deferredOrRejected": "No destructive rollback of source code or knowledge."
+    }
+  ],
+  "ambitionLadder": [
+    {
+      "priority": 1,
+      "name": "Winning core",
+      "capabilities": ["DC-01", "DC-02", "DC-03", "DC-04", "DC-05", "DC-06", "DC-07", "DC-08", "DC-09"]
+    },
+    {
+      "priority": 2,
+      "name": "High-value enhancements",
+      "capabilities": ["bounded TypeScript code map", "Temporal Twin comparison"]
+    },
+    {
+      "priority": 3,
+      "name": "AI-mastery stretch",
+      "capabilities": ["Evidence Replay Lab", "imported agent-output disagreement", "guarded Remediation Preview"]
+    },
+    {
+      "priority": 4,
+      "name": "Post-competition horizon",
+      "capabilities": ["live telemetry", "continuous learning", "production shadowing", "autonomous repair", "agent orchestration", "resource-scaling simulation"]
+    }
+  ],
+  "personalOpenAiCheckpoint": {
+    "stage": "MID_DEVELOPMENT_AFTER_DETERMINISTIC_CORE",
+    "purpose": "Evaluate whether an optional personal OpenAI configuration materially improves the finale explanation and question-answering path without weakening trust or offline operation.",
+    "entryCriteria": [
+      "deterministic evidence ingestion passes",
+      "Active Software Twin construction passes",
+      "Reconcile Core conflict and staleness tests pass",
+      "citation IDs and evidence-pack digest are stable",
+      "AI-off explanation completes the golden path",
+      "provider-neutral adapter contract and mocked tests pass"
+    ],
+    "credentialBoundary": "Credentials are supplied at runtime through an environment variable or OS-appropriate secret mechanism and are never committed, persisted in product data or printed.",
+    "controls": [
+      "external calls off by default",
+      "explicit enablement and disclosure",
+      "redacted evidence-pack visibility",
+      "bounded input and output tokens",
+      "bounded timeout and retry count",
+      "per-request and session budget",
+      "safe model and usage metadata",
+      "unknown citation rejection",
+      "structured-output validation",
+      "deterministic fallback remains available"
+    ],
+    "evaluation": [
+      "grounding",
+      "citation validity",
+      "usefulness",
+      "latency",
+      "token usage",
+      "privacy and redaction",
+      "difference from deterministic explanation"
+    ],
+    "possibleDecisions": [
+      "USE_LIVE_PROVIDER_IN_FINALE",
+      "CORRECT_PROMPT_OR_EVIDENCE_PACK_AND_RETEST",
+      "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE"
+    ],
+    "readinessAuthority": false
+  },
+  "originalVisionDecisions": [
+    {
+      "concept": "Active Software Twin",
+      "classification": "RESTORE_AS_CORE"
+    },
+    {
+      "concept": "Reconcile Core/DREC",
+      "classification": "RESTORE_AS_CORE"
+    },
+    {
+      "concept": "Evidence-backed context",
+      "classification": "RESTORE_AS_CORE"
+    },
+    {
+      "concept": "Document/conversation tree",
+      "classification": "KEEP_WITH_CORRECTION"
+    },
+    {
+      "concept": "Context compilation",
+      "classification": "MVP_SUPPORTING"
+    },
+    {
+      "concept": "Claim reconciliation",
+      "classification": "RESTORE_AS_CORE"
+    },
+    {
+      "concept": "Freshness and staleness",
+      "classification": "RESTORE_AS_CORE"
+    },
+    {
+      "concept": "Change-impact analysis",
+      "classification": "RESTORE_AS_CORE"
+    },
+    {
+      "concept": "Hallucination reduction",
+      "classification": "KEEP_WITH_CORRECTION"
+    },
+    {
+      "concept": "Model-neutral AI assistance",
+      "classification": "MVP_SUPPORTING"
+    }
+  ],
+  "scopeLayers": {
+    "DEMO_CRITICAL": [
+      {
+        "id": "DC-01",
+        "name": "Local project and repository registration",
+        "userVisibleOutcome": "A real local workspace is tied safely to a controlled Git repository.",
+        "judgeValue": "Technical credibility and a real source boundary.",
+        "minimumImplementation": "Project create/retrieve, Git-root canonicalization and read-only identity/status capture.",
+        "completionEvidence": ["UI/API/SQLite path", "restart retrieval", "invalid-path test", "Git no-mutation proof"],
+        "dependencies": [],
+        "exclusions": ["cloud SCM", "repository writes", "multi-repository federation"]
+      },
+      {
+        "id": "DC-02",
+        "name": "Bounded evidence ingestion",
+        "userVisibleOutcome": "Requirements, decisions, conversation extracts and validations become attributed evidence.",
+        "judgeValue": "Shows how fragmented inputs become trusted product context.",
+        "minimumImplementation": "Bounded Markdown, text and JSON import with normalization, redaction, digest, scope and persistence.",
+        "completionEvidence": ["import/retrieve/restart test", "oversize rejection", "type mismatch rejection", "secret-sentinel absence"],
+        "dependencies": ["DC-01"],
+        "exclusions": ["enterprise connectors", "PDF ingestion", "arbitrary files", "embeddings"]
+      },
+      {
+        "id": "DC-03",
+        "name": "Active Software Twin",
+        "userVisibleOutcome": "The change, claims, affected assets and validations appear as one traceable living model.",
+        "judgeValue": "Primary visual and conceptual differentiator.",
+        "minimumImplementation": "Bounded typed nodes/edges with provenance, revision, fact/inference and freshness.",
+        "completionEvidence": ["fixture-to-graph deterministic test", "interactive graph/list view", "scope isolation"],
+        "dependencies": ["DC-01", "DC-02"],
+        "exclusions": ["universal ontology", "graph database", "all-language semantic code parser"]
+      },
+      {
+        "id": "DC-04",
+        "name": "Reconcile Core",
+        "userVisibleOutcome": "Contradictions, stale claims and missing support appear with explainable reasons.",
+        "judgeValue": "Proves IntelliLoop does more than search or summarize.",
+        "minimumImplementation": "Structured claim comparison, explicit supersession, dependency invalidation and coverage-gap rules.",
+        "completionEvidence": ["conflict truth tables", "staleness tests", "offline primary conflict reproduction"],
+        "dependencies": ["DC-03"],
+        "exclusions": ["autonomous truth selection", "general enterprise policy engine"]
+      },
+      {
+        "id": "DC-05",
+        "name": "Change-impact traversal",
+        "userVisibleOutcome": "A changed cancellation rule traces to inventory, refund, fulfilment, notification and required tests.",
+        "judgeValue": "Connects software intelligence to concrete business consequences.",
+        "minimumImplementation": "Bounded explainable traversal over typed impact, dependency, implementation and validation edges.",
+        "completionEvidence": ["expected-path tests", "displayed path citations", "missing-validation result"],
+        "dependencies": ["DC-03", "DC-04"],
+        "exclusions": ["whole-codebase semantic analysis", "production dependency discovery"]
+      },
+      {
+        "id": "DC-06",
+        "name": "Evidence-cited AI explanation",
+        "userVisibleOutcome": "A natural-language question receives a concise answer with facts, inferences, conflicts, gaps and citations.",
+        "judgeValue": "Meaningful AI value with visible trust controls.",
+        "minimumImplementation": "One adapter contract, redacted evidence pack, citation validation and deterministic offline narrative fallback.",
+        "completionEvidence": ["adapter contract test", "citation validation", "AI-off E2E", "optional provider smoke when configured"],
+        "dependencies": ["DC-04", "DC-05"],
+        "exclusions": ["AI readiness authority", "autonomous actions", "multiple providers"]
+      },
+      {
+        "id": "DC-07",
+        "name": "Deterministic readiness",
+        "userVisibleOutcome": "The change moves honestly through BLOCKED, READY and STALE based on current evidence.",
+        "judgeValue": "Transforms insight into a defensible decision without giving AI authority.",
+        "minimumImplementation": "Small fail-closed rule set covering integrity, scope/snapshot, critical findings, required validations and review.",
+        "completionEvidence": ["truth-table tests", "browser state transitions", "sample/fallback rejection"],
+        "dependencies": ["DC-04", "DC-05"],
+        "exclusions": ["full waiver platform", "deployment automation", "enterprise identity"]
+      },
+      {
+        "id": "DC-08",
+        "name": "Thin Release Passport",
+        "userVisibleOutcome": "One assessment becomes a concise reproducible evidence artifact.",
+        "judgeValue": "Memorable outcome and practical business handoff.",
+        "minimumImplementation": "Persisted projection containing scope, snapshot, findings, validations, status, blockers, citations and digest.",
+        "completionEvidence": ["Passport/assessment equality", "restart retrieval", "stale banner"],
+        "dependencies": ["DC-07"],
+        "exclusions": ["digital signing", "compliance certification", "complex exports"]
+      },
+      {
+        "id": "DC-09",
+        "name": "Competition demo workspace",
+        "userVisibleOutcome": "The full apparent-green to hidden-risk to evidence-backed resolution story runs in five to seven minutes.",
+        "judgeValue": "Clarity, memorability and working-software credibility.",
+        "minimumImplementation": "Controlled synthetic repository/evidence processed through real product paths plus guided views.",
+        "completionEvidence": ["Playwright golden path", "timed rehearsal", "no hardcoded green state"],
+        "dependencies": ["DC-01", "DC-02", "DC-03", "DC-04", "DC-05", "DC-06", "DC-07", "DC-08"],
+        "exclusions": ["client data", "company repositories", "production commerce integration"]
+      }
+    ],
+    "MVP_SUPPORTING": [
+      {
+        "id": "MS-01",
+        "name": "Evidence timeline",
+        "minimumImplementation": "Append-oriented events for imports, findings, assessments and Passports.",
+        "completionEvidence": ["ordering test", "restart retrieval"],
+        "dependencies": ["DC-02"],
+        "exclusions": ["complete cryptographic ledger and recovery suite"]
+      },
+      {
+        "id": "MS-02",
+        "name": "Context compiler",
+        "minimumImplementation": "Bounded redacted evidence pack with digest and stable citation IDs.",
+        "completionEvidence": ["determinism test", "scope/redaction test"],
+        "dependencies": ["DC-03"],
+        "exclusions": ["general prompt studio", "long-term memory platform"]
+      },
+      {
+        "id": "MS-03",
+        "name": "Privacy guardrails",
+        "minimumImplementation": "Pre-persistence redaction, input/output limits, safe logs and no network by default.",
+        "completionEvidence": ["sentinel scan", "negative tests"],
+        "dependencies": ["DC-02", "DC-06"],
+        "exclusions": ["enterprise DLP", "privileged-host protection claims"]
+      },
+      {
+        "id": "MS-04",
+        "name": "Evidence correction",
+        "minimumImplementation": "Append a superseding claim or validation and invalidate exact dependents.",
+        "completionEvidence": ["successor test", "staleness propagation test"],
+        "dependencies": ["DC-04"],
+        "exclusions": ["collaborative editing", "CRDT replication"]
+      },
+      {
+        "id": "MS-05",
+        "name": "Compact onboarding",
+        "minimumImplementation": "Guided primary action and honest empty states.",
+        "completionEvidence": ["browser empty-state and navigation test"],
+        "dependencies": ["DC-01"],
+        "exclusions": ["role system", "enterprise identity", "personalization"]
+      }
+    ],
+    "POST_COMPETITION": [
+      "CI/CD and cloud-SCM connectors",
+      "Jira, Confluence, email and chat connectors",
+      "continuous repository watchers",
+      "multi-language semantic code graphs",
+      "authenticated multi-user governance",
+      "learned conflict prioritization",
+      "multiple AI providers and local-model runtimes",
+      "signed Passports and enterprise retention"
+    ]
+  },
+  "capabilityDependencies": [
+    {"from": "DC-01", "to": "DC-02"},
+    {"from": "DC-02", "to": "DC-03"},
+    {"from": "DC-03", "to": "DC-04"},
+    {"from": "DC-03", "to": "DC-05"},
+    {"from": "DC-04", "to": "DC-05"},
+    {"from": "DC-04", "to": "DC-06"},
+    {"from": "DC-05", "to": "DC-06"},
+    {"from": "DC-04", "to": "DC-07"},
+    {"from": "DC-05", "to": "DC-07"},
+    {"from": "DC-07", "to": "DC-08"},
+    {"from": "DC-01..DC-08", "to": "DC-09"}
+  ],
+  "activeSoftwareTwin": {
+    "nodes": [
+      {"type": "Project", "purpose": "Stable local workspace boundary"},
+      {"type": "ChangeMission", "purpose": "One versioned software change"},
+      {"type": "EvidenceSource", "purpose": "Attributed document, conversation extract, repository observation or validation import"},
+      {"type": "Claim", "purpose": "Structured requirement, decision, implementation, validation or risk assertion"},
+      {"type": "SoftwareAsset", "purpose": "Bounded component, file, API/contract or retail domain"},
+      {"type": "GitSnapshot", "purpose": "Exact repository revision and worktree identity"},
+      {"type": "ValidationResult", "purpose": "Scoped pass, fail, skip or error tied to claims/assets/snapshot"},
+      {"type": "ReconciliationFinding", "purpose": "Conflict, stale claim, missing support, ambiguity or impact gap"},
+      {"type": "ReleaseAssessment", "purpose": "Deterministic projection of obligations and blockers"},
+      {"type": "ReleasePassport", "purpose": "Immutable projection of one assessment"}
+    ],
+    "relationships": [
+      "SCOPED_TO",
+      "EXTRACTED_FROM",
+      "ASSERTS",
+      "CONCERNS",
+      "IMPLEMENTS",
+      "AFFECTS",
+      "DEPENDS_ON",
+      "VALIDATED_BY",
+      "CONTRADICTS",
+      "SUPERSEDES",
+      "DERIVED_FROM",
+      "BOUND_TO",
+      "BLOCKS"
+    ],
+    "requiredMetadata": [
+      "stableId",
+      "projectId",
+      "missionId",
+      "origin",
+      "sourceReference",
+      "sourceRevisionOrDigest",
+      "recordedAt",
+      "effectiveAtWhenKnown",
+      "extractionMethod",
+      "epistemicLabel"
+    ],
+    "epistemicLabels": ["FACT", "INFERENCE"],
+    "findingLabels": ["CONFLICT", "STALE", "MISSING", "AMBIGUOUS", "IMPACT_GAP"],
+    "confidenceMeaning": "Extraction or relationship-match confidence only; never truth probability.",
+    "invalidationTriggers": [
+      "source digest or revision changes",
+      "claim correction or supersession",
+      "relationship changes",
+      "Git snapshot changes",
+      "validation input or result changes",
+      "reconciliation rule version changes",
+      "assessment dependency changes"
+    ]
+  },
+  "reconciliationBehaviors": {
+    "deterministic": [
+      "normalize accepted structured claims into subject, predicate, value, applicability and revision",
+      "compare claims with matching subject/predicate and overlapping applicability",
+      "detect incompatible values",
+      "apply explicit supersession without timestamp-only truth selection",
+      "detect stale bindings and unsupported assertions",
+      "preserve unresolved ambiguity",
+      "traverse impacted assets and identify missing validations",
+      "invalidate dependent findings, answers, assessments and Passports",
+      "produce canonical finding and readiness states"
+    ],
+    "aiAssisted": [
+      "propose structured claims from bounded prose",
+      "suggest semantically related claims and candidate edges",
+      "summarize findings",
+      "explain likely business impact and next actions",
+      "answer natural-language questions with validated citations"
+    ],
+    "never": [
+      "invent evidence",
+      "hide or silently resolve ambiguity",
+      "approve or waive",
+      "determine canonical readiness",
+      "mutate a repository",
+      "claim deployment",
+      "receive unredacted secrets"
+    ]
+  },
+  "demo": {
+    "targetDurationMinutes": "5-7",
+    "fictionalChange": "Allow customers to cancel a reserved retail order after picking has started but before dispatch.",
+    "businessConsequence": "An incomplete change can leave inventory reserved, fulfilment active or refund/notification behavior inconsistent even when visible tests are green.",
+    "evidenceInputs": [
+      "Requirement v2 permits BEFORE_DISPATCH cancellation and requires inventory release, refund, fulfilment stop and notification.",
+      "An older ADR permits cancellation only BEFORE_PICKING and assigns inventory release differently.",
+      "A Git snapshot shows cancellation API and refund changes but no inventory-reservation consumer change.",
+      "Validation imports show order-state and refund passing but no post-picking inventory or fulfilment coverage.",
+      "A release note claims the expanded flow is ready."
+    ],
+    "steps": [
+      {"order": 1, "action": "Open the apparently green change overview", "expected": "Declared readiness is visible but not canonical READY."},
+      {"order": 2, "action": "Register/import controlled evidence", "expected": "Sources persist with scope, digest and attribution."},
+      {"order": 3, "action": "Open Active Software Twin", "expected": "Requirement, ADR, assets, Git snapshot and tests are connected."},
+      {"order": 4, "action": "Run Reconcile Core", "expected": "Requirement/ADR conflict, unsupported ready claim and missing inventory/fulfilment validation appear."},
+      {"order": 5, "action": "Ask whether the change can be released", "expected": "Answer is not yet; facts, inferences, missing evidence and citations are separate."},
+      {"order": 6, "action": "Trace change impact", "expected": "Order, inventory, refund, fulfilment, notification and validation paths are explained."},
+      {"order": 7, "action": "Add superseding decision and missing passing validations", "expected": "Old findings become historical/stale and successors resolve."},
+      {"order": 8, "action": "Reassess", "expected": "Deterministic state changes from BLOCKED to READY."},
+      {"order": 9, "action": "Generate Passport", "expected": "Passport reproduces current assessment and citations."},
+      {"order": 10, "action": "Optionally change a bound source", "expected": "Assessment and Passport visibly become STALE."}
+    ],
+    "fallbackWithoutAi": "A deterministic narrative renderer explains the same structured findings and is labeled DETERMINISTIC_EXPLANATION; reconciliation, impact, readiness and Passport remain complete.",
+    "dataPolicy": "Controlled synthetic data and repository only; no company, client or private source."
+  },
+  "aiBoundaries": {
+    "genuineValue": [
+      "extracting candidate structured claims from prose",
+      "finding semantically related evidence",
+      "translating graph findings into clear explanations",
+      "answering varied natural-language questions over a bounded pack"
+    ],
+    "deterministicAuthority": [
+      "identity and scope",
+      "accepted claim values",
+      "explicit contradiction and supersession",
+      "dependency invalidation",
+      "coverage obligations",
+      "canonical readiness"
+    ],
+    "inputContract": "Explicit Project/Mission-scoped, minimized, redacted evidence pack with digest and stable citation IDs.",
+    "outputContract": "Attributed advisory artifact with provider/model/request metadata when safely available and labels for FACT, INFERENCE, MISSING and CONFLICT.",
+    "citationPolicy": "Every material factual statement must cite an existing pack ID; unknown citations fail validation.",
+    "providerStrategy": "One provider-neutral interface and at most one optional v0.1 adapter.",
+    "aiOff": "All canonical findings, impact paths, readiness transitions and Passport behavior work without an API key.",
+    "claim": "The design reduces unsupported output through scoped evidence and validation; it does not eliminate hallucinations."
+  },
+  "impactMetrics": [
+    {
+      "metric": "Time to identify the release-blocking contradiction",
+      "classification": "PROJECTED",
+      "measurement": "Timed manual lookup versus IntelliLoop on the controlled scenario"
+    },
+    {
+      "metric": "Artifacts opened or context switches",
+      "classification": "PROJECTED",
+      "measurement": "Count controlled manual and IntelliLoop actions"
+    },
+    {
+      "metric": "Seeded conflict detection",
+      "classification": "TO_BE_VALIDATED",
+      "measurement": "Detected expected conflicts divided by controlled truth-set conflicts"
+    },
+    {
+      "metric": "Affected-asset path coverage",
+      "classification": "TO_BE_VALIDATED",
+      "measurement": "Expected impacted assets and validations represented by cited paths"
+    },
+    {
+      "metric": "Citation validity",
+      "classification": "TO_BE_VALIDATED",
+      "measurement": "Material answer claims resolving to an exact evidence-pack item"
+    },
+    {
+      "metric": "Readiness truth-table accuracy",
+      "classification": "TO_BE_VALIDATED",
+      "measurement": "Expected versus actual result for controlled BLOCKED, READY and STALE cases"
+    },
+    {
+      "metric": "Passport fidelity",
+      "classification": "TO_BE_VALIDATED",
+      "measurement": "Exact equality between Passport trust fields and source assessment"
+    },
+    {
+      "metric": "Onboarding comprehension",
+      "classification": "TO_BE_VALIDATED",
+      "measurement": "Optional timed explanation by a new reviewer after the guided demo"
+    }
+  ],
+  "scorecard": [
+    {"criterion": "real business problem", "score": 5, "followThrough": "Keep the retail consequence specific."},
+    {"criterion": "AI-created value", "score": 5, "followThrough": "Prove one cited natural-language answer."},
+    {"criterion": "innovation", "score": 5, "followThrough": "Keep reconciliation and the living Twin central."},
+    {"criterion": "practicality", "score": 4, "followThrough": "Use bounded local inputs and cut supporting scope before core intelligence."},
+    {"criterion": "scalability", "score": 4, "followThrough": "Demonstrate adapter/model generalization without claiming measured production scale."},
+    {"criterion": "meaningful business impact", "score": 4, "followThrough": "Collect controlled timing and correctness indicators."},
+    {"criterion": "demo clarity", "score": 5, "followThrough": "Rehearse the single reveal-driven story."},
+    {"criterion": "technical credibility", "score": 4, "followThrough": "Require build, restart, golden-flow and negative-path proof."},
+    {"criterion": "trustworthiness", "score": 5, "followThrough": "Preserve citations, epistemic labels and non-authoritative AI."},
+    {"criterion": "memorability", "score": 5, "followThrough": "Lead with the hidden risk that green checks missed."}
+  ],
+  "claims": {
+    "permittedAfterR1": [
+      "IntelliLoop is designed as an evidence-reconciled Active Software Twin.",
+      "The planned Reconcile Core combines deterministic rules with advisory AI.",
+      "The MVP is designed for AI-off operation and synthetic data.",
+      "Business benefits are projections or hypotheses pending measurement."
+    ],
+    "requireImplementationProof": [
+      "the application builds, runs, persists or survives restart",
+      "conflicts, staleness or impact are detected",
+      "answers are evidence cited",
+      "readiness or Passport behavior works",
+      "security and repository no-mutation controls work",
+      "candidate functionality was reused or adapted"
+    ],
+    "requireMeasurement": [
+      "time or percentage reductions",
+      "detection accuracy",
+      "impact coverage",
+      "citation accuracy",
+      "usability improvement",
+      "production scale or reliability"
+    ],
+    "prohibited": [
+      "guaranteed safe releases",
+      "eliminated defects or hallucinations",
+      "production deployment",
+      "enterprise-grade security",
+      "official Nisum endorsement",
+      "trademark clearance",
+      "competition victory",
+      "client adoption",
+      "unproven ownership or source reuse"
+    ]
+  },
+  "risks": [
+    {"id": "RISK-01", "category": "schedule", "severity": "HIGH", "control": "One scenario and nine demo-critical capabilities; supporting scope is cut first."},
+    {"id": "RISK-02", "category": "AI variability", "severity": "HIGH", "control": "Offline deterministic reconciliation and explanation path."},
+    {"id": "RISK-03", "category": "source provenance", "severity": "HIGH", "control": "R2 manifest before copy; clean-room default."},
+    {"id": "RISK-04", "category": "confidentiality", "severity": "HIGH", "control": "Synthetic inputs; quarantined roots excluded."},
+    {"id": "RISK-05", "category": "false findings", "severity": "MEDIUM", "control": "Explainable rules, visible ambiguity and controlled truth-set tests."},
+    {"id": "RISK-06", "category": "misleading readiness", "severity": "HIGH", "control": "Small fail-closed rules and no static/sample READY state."},
+    {"id": "RISK-07", "category": "graph overengineering", "severity": "MEDIUM", "control": "SQLite/materialized relationships; no graph database or universal ontology."},
+    {"id": "RISK-08", "category": "demo polish", "severity": "MEDIUM", "control": "Dedicated demo UX story after the intelligence vertical works."},
+    {"id": "RISK-09", "category": "event policy", "severity": "MEDIUM", "control": "Confirm pre-existing-code, branding and exact submission rules before source integration or final submission."}
+  ],
+  "r2Targets": [
+    "project and workspace persistence",
+    "Mission or change lifecycle",
+    "safe repository registration",
+    "read-only Git snapshot capture",
+    "evidence/event persistence and attribution",
+    "context/conversation import and normalization",
+    "project-scoped search and recovery",
+    "context-pack compilation and citation UX",
+    "Twin/relationship visualization",
+    "claim comparison and staleness",
+    "change-impact analysis",
+    "validation evidence and deterministic readiness",
+    "provider-neutral AI adapter or structured-output validation",
+    "delivery reporting or Release Passport projection",
+    "competition-quality cockpit and evidence UX",
+    "bounded TypeScript manifest/import/route/test mapping",
+    "baseline/candidate evidence replay",
+    "imported runtime-observation evidence",
+    "multiple imported AI-output reconciliation",
+    "guarded remediation preview and disposable validation",
+    "temporal Twin comparison and lineage",
+    "AI request usage and budget controls"
+  ],
+  "unknowns": [
+    {
+      "item": "Official pre-existing-code and open-source rules",
+      "blockingForR2ReadOnlyQualification": false,
+      "blockingForDirectReuse": true,
+      "default": "No source copy; record technical and provenance evidence only."
+    },
+    {
+      "item": "IntelliLoop/Nisum branding or trademark permission",
+      "blockingForR2ReadOnlyQualification": false,
+      "blockingForInternal working name": false,
+      "default": "Use IntelliLoop as a working name and make no clearance claim."
+    },
+    {
+      "item": "Final AI provider",
+      "blockingForArchitecture": false,
+      "default": "One provider-neutral contract, deterministic offline path, select at Super-Gate 4."
+    },
+    {
+      "item": "Candidate-source ownership and license permission",
+      "blockingForR2ReadOnlyQualification": false,
+      "blockingForCopy": true,
+      "default": "Clean-room behavior reimplementation unless R2 clears exact source."
+    },
+    {
+      "item": "Final transitive/native dependency notices",
+      "blockingForR2": false,
+      "blockingForImplementationRelease": true,
+      "default": "Generate after dependency selection and before final release gate."
+    }
+  ],
+  "nextGate": {
+    "id": "R2_REUSE_AI_MASTERY_AND_DEVELOPMENT_READINESS",
+    "purpose": "Read-only candidate-source maturity, portability and provenance audit followed by a development-readiness freeze without backlog generation",
+    "requiredCompletionMarker": "INTELLILOOP_DEV_READY_FOR_BACKLOG_GENERATION",
+    "directReuseAuthorizedByR1": false,
+    "implementationAuthorizedByR1": false,
+    "backlogGenerationAuthorizedByR1": false
+  },
+  "safety": {
+    "planningOnly": true,
+    "canonicalDiscoveryArtifactsModified": false,
+    "recoveryArtifactsModified": false,
+    "productSourceCreated": false,
+    "candidateSourceInspected": false,
+    "candidateRepositoryModified": false,
+    "sourceCopied": false,
+    "dependenciesInstalled": false,
+    "applicationOrDatabaseStarted": false,
+    "secretBearingContentAccessed": false
+  }
+}

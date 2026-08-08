@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-DEMO-SUPPORT",
+  "story": "IL-8.6",
+  "status": "PASS",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:demo-support",
+  "liveFlow": {
+    "sequence": [
+      "BLOCKED",
+      "TWIN",
+      "CONFLICT_AND_IMPACT",
+      "AI_OFF_CITED",
+      "READY",
+      "UNAVAILABLE",
+      "READY_AFTER_RESTART",
+      "STALE"
+    ],
+    "restartRecovery": "PASS",
+    "screenshotCount": 7
+  },
+  "fallback": {
+    "status": "PASS",
+    "format": "STATIC_LOCAL_HTML_ORDERED_SCREENSHOT_SEQUENCE",
+    "serviceStoppedDuringValidation": true,
+    "slideCount": 7,
+    "brokenImages": 0,
+    "viewerSha256": "sha256:36ccd9f95246b3226a4eacb717a0182f3c1c247c4137ad58be893a846a260b2b",
+    "manifestId": "INTELLILOOP-DEMO-ASSETS"
+  },
+  "safety": {
+    "browserNonLoopbackRequests": 0,
+    "browserAuthorizationHeaders": 0,
+    "externalAiCalls": false,
+    "privateRepositoryUsed": false,
+    "repositoryCodeExecuted": false
+  },
+  "disclosures": {
+    "syntheticFixture": true,
+    "aiOff": true,
+    "notLiveExecution": true,
+    "readyNotApproval": true,
+    "passportUnsigned": true
+  },
+  "sourceIntegrity": {
+    "apps/api/src/demo/demo-workspace-service.ts": "sha256:84cc6adc013e633922f7289c3cc37c36c63d54788a804cfb2fb0b5b5ca2d6aca",
+    "apps/web/src/App.tsx": "sha256:a0eccedb4ac3b49eb841fd54452ae08538974f0b90cc1c1231913dca4ac46960",
+    "apps/web/src/DemoWorkspace.tsx": "sha256:890a23f9b76b853c67adfad9cf5eb9bc291932564993c2162cedc8c040b1fb8a",
+    "apps/web/src/TwinWorkspace.tsx": "sha256:f80173b7e23d1ee452cee9e290f8a03875ba1f4c5841f9fa51b6665bfd9d661e",
+    "apps/web/src/ReconciliationWorkspace.tsx": "sha256:a1c43377b1b14faa991fdc6ff383de1a1fa34c337b271f0d943ff5c86aae6984",
+    "apps/web/src/CitedExplanationWorkspace.tsx": "sha256:a7a8df4387b9771f3bb16fdd50482fa4282adcc97ccbf24ad9ce5460c83932a3",
+    "apps/web/src/ReadinessPassportWorkspace.tsx": "sha256:c2b6958a2aa3c526331bd44456bd25ad1bf9df5c71d923e4ea08321a3f440de0",
+    "apps/web/src/styles.css": "sha256:99f2355867fa40550a8a80d03c409e38b6bb54ead3287100428685758c9d58f2",
+    "packages/demo-fixtures/src/retail-cancellation.ts": "sha256:16aa06901cf1621f67a84d9b963dfd9aee4e1ec521f4928652675d7f0f52463e",
+    "scripts/generate-demo-support-evidence.mjs": "sha256:cd05c794f4555ad4356edc1f998a5f08973757516f8d6f8f1dd19ab34f0623e9"
+  },
+  "limitations": [
+    "Screenshots are recorded synthetic evidence, not live execution or production results.",
+    "Ready is an exact-input Release Check; the Release Evidence Report is unsigned and non-approving.",
+    "The sequence demonstrates loopback behavior and does not prove production scale, organizational benefit or universal accessibility."
+  ],
+  "nextAuthorizedStory": "IL-9.1"
+}

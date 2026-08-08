@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-OPENAI-EVAL",
+  "story": "IL-6.5",
+  "capability": [
+    "DC-06",
+    "SUP-04"
+  ],
+  "status": "PASS",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:openai-eval",
+  "programGate": {
+    "id": "G4_OPENAI_COURSE_CORRECTION",
+    "status": "PASS_OFFLINE_DECISION",
+    "liveEvaluationRequiredForSelectedDecision": false
+  },
+  "sourceEvidence": {
+    "reconciliation": {
+      "evidenceId": "EV-RECONCILE",
+      "status": "PASS"
+    },
+    "citations": {
+      "evidenceId": "EV-CITATIONS",
+      "status": "PASS"
+    },
+    "privacy": {
+      "evidenceId": "EV-PRIVACY",
+      "status": "PASS"
+    }
+  },
+  "checkpoint": {
+    "version": "openai-evaluation-checkpoint.v1",
+    "digestVersion": "openai-evaluation-checkpoint-digest.v1",
+    "story": "IL-6.5",
+    "gate": "G4_OPENAI_COURSE_CORRECTION",
+    "mode": "OFFLINE_DECISION",
+    "runStatus": "NOT_RUN_NOT_AUTHORIZED",
+    "entryChecklist": [
+      {
+        "id": "G3_DETERMINISTIC_CORE_PROVEN",
+        "status": "PASS"
+      },
+      {
+        "id": "RECONCILIATION_EVIDENCE_PASS",
+        "status": "PASS"
+      },
+      {
+        "id": "CITATION_EVIDENCE_PASS",
+        "status": "PASS"
+      },
+      {
+        "id": "PRIVACY_EVIDENCE_PASS",
+        "status": "PASS"
+      },
+      {
+        "id": "FIXED_QUESTION_SET_VERIFIED",
+        "status": "PASS"
+      },
+      {
+        "id": "EXACT_REDACTED_PREVIEW_AVAILABLE",
+        "status": "PASS"
+      },
+      {
+        "id": "TRANSFER_REMAINS_NOT_SENT",
+        "status": "PASS"
+      },
+      {
+        "id": "PACK_WITHIN_FROZEN_LIMIT",
+        "status": "PASS"
+      },
+      {
+        "id": "PRODUCTION_PROVIDER_DISABLED",
+        "status": "PASS"
+      },
+      {
+        "id": "RUNTIME_ONLY_CREDENTIAL_POLICY",
+        "status": "PASS"
+      }
+    ],
+    "baseline": {
+      "fixedQuestions": [
+        "Can we release?",
+        "What conflicts are open?",
+        "What is impacted?",
+        "What validation is missing?",
+        "What should happen next?",
+        "What changed after correction?"
+      ],
+      "expectedQuestionCount": 6,
+      "passedQuestionCount": 6,
+      "transferStatus": "NOT_SENT",
+      "exactRedactedPackPreviewAvailable": true,
+      "maximumInputTokenUpperBound": 11683,
+      "frozenInputTokenUpperBound": 12000,
+      "productionProviderOutcome": "DISABLED"
+    },
+    "credentialBoundary": {
+      "requiredOnlyForLiveBranch": true,
+      "explicitUserEnablement": false,
+      "runtimeCredentialInjected": false,
+      "runtimeCredentialRead": false,
+      "credentialPersisted": false,
+      "credentialLogged": false
+    },
+    "providerMetrics": {
+      "grounding": "NOT_MEASURED",
+      "citationValidity": "NOT_MEASURED",
+      "usefulness": "NOT_MEASURED",
+      "latencyMs": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "differenceFromDeterministicExplanation": "NOT_MEASURED"
+    },
+    "allowedDecisions": [
+      "USE_LIVE_PROVIDER_IN_FINALE",
+      "CORRECT_PROMPT_OR_EVIDENCE_PACK_AND_RETEST",
+      "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE"
+    ],
+    "decision": "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE",
+    "authority": {
+      "externalCallMade": false,
+      "canonicalStateChanged": false,
+      "findingMutationAvailable": false,
+      "readinessAuthority": false,
+      "releasePassportAuthority": false
+    },
+    "checkpointDigest": "sha256:af6f2a073c76671dc4d1924219771a1b058e1658006e8a036c9af1df36305d94"
+  },
+  "proofs": {
+    "entryChecklist": [
+      {
+        "id": "G3_DETERMINISTIC_CORE_PROVEN",
+        "status": "PASS"
+      },
+      {
+        "id": "RECONCILIATION_EVIDENCE_PASS",
+        "status": "PASS"
+      },
+      {
+        "id": "CITATION_EVIDENCE_PASS",
+        "status": "PASS"
+      },
+      {
+        "id": "PRIVACY_EVIDENCE_PASS",
+        "status": "PASS"
+      },
+      {
+        "id": "FIXED_QUESTION_SET_VERIFIED",
+        "status": "PASS"
+      },
+      {
+        "id": "EXACT_REDACTED_PREVIEW_AVAILABLE",
+        "status": "PASS"
+      },
+      {
+        "id": "TRANSFER_REMAINS_NOT_SENT",
+        "status": "PASS"
+      },
+      {
+        "id": "PACK_WITHIN_FROZEN_LIMIT",
+        "status": "PASS"
+      },
+      {
+        "id": "PRODUCTION_PROVIDER_DISABLED",
+        "status": "PASS"
+      },
+      {
+        "id": "RUNTIME_ONLY_CREDENTIAL_POLICY",
+        "status": "PASS"
+      }
+    ],
+    "fixedSetResults": [
+      {
+        "question": "Can we release?",
+        "redactedPackPreview": "AVAILABLE_NOT_SENT",
+        "serializedBytes": 11674,
+        "providerEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+        "grounding": "NOT_MEASURED",
+        "citationValidity": "NOT_MEASURED",
+        "usefulness": "NOT_MEASURED",
+        "latencyMs": null,
+        "inputTokens": null,
+        "outputTokens": null,
+        "differenceFromDeterministicExplanation": "NOT_MEASURED"
+      },
+      {
+        "question": "What conflicts are open?",
+        "redactedPackPreview": "AVAILABLE_NOT_SENT",
+        "serializedBytes": 5713,
+        "providerEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+        "grounding": "NOT_MEASURED",
+        "citationValidity": "NOT_MEASURED",
+        "usefulness": "NOT_MEASURED",
+        "latencyMs": null,
+        "inputTokens": null,
+        "outputTokens": null,
+        "differenceFromDeterministicExplanation": "NOT_MEASURED"
+      },
+      {
+        "question": "What is impacted?",
+        "redactedPackPreview": "AVAILABLE_NOT_SENT",
+        "serializedBytes": 6057,
+        "providerEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+        "grounding": "NOT_MEASURED",
+        "citationValidity": "NOT_MEASURED",
+        "usefulness": "NOT_MEASURED",
+        "latencyMs": null,
+        "inputTokens": null,
+        "outputTokens": null,
+        "differenceFromDeterministicExplanation": "NOT_MEASURED"
+      },
+      {
+        "question": "What validation is missing?",
+        "redactedPackPreview": "AVAILABLE_NOT_SENT",
+        "serializedBytes": 5170,
+        "providerEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+        "grounding": "NOT_MEASURED",
+        "citationValidity": "NOT_MEASURED",
+        "usefulness": "NOT_MEASURED",
+        "latencyMs": null,
+        "inputTokens": null,
+        "outputTokens": null,
+        "differenceFromDeterministicExplanation": "NOT_MEASURED"
+      },
+      {
+        "question": "What should happen next?",
+        "redactedPackPreview": "AVAILABLE_NOT_SENT",
+        "serializedBytes": 11683,
+        "providerEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+        "grounding": "NOT_MEASURED",
+        "citationValidity": "NOT_MEASURED",
+        "usefulness": "NOT_MEASURED",
+        "latencyMs": null,
+        "inputTokens": null,
+        "outputTokens": null,
+        "differenceFromDeterministicExplanation": "NOT_MEASURED"
+      },
+      {
+        "question": "What changed after correction?",
+        "redactedPackPreview": "AVAILABLE_NOT_SENT",
+        "serializedBytes": 7705,
+        "providerEvaluationStatus": "NOT_RUN_NOT_AUTHORIZED",
+        "grounding": "NOT_MEASURED",
+        "citationValidity": "NOT_MEASURED",
+        "usefulness": "NOT_MEASURED",
+        "latencyMs": null,
+        "inputTokens": null,
+        "outputTokens": null,
+        "differenceFromDeterministicExplanation": "NOT_MEASURED"
+      }
+    ],
+    "deterministicBaseline": {
+      "renderedStatementCount": 56,
+      "resolvedStatementCitationCount": 78,
+      "maximumInputTokenUpperBound": 11683,
+      "providerMeasurementsClaimed": false
+    },
+    "credentialSafety": {
+      "selectedBranchRequiresCredential": false,
+      "runtimeCredentialRequested": false,
+      "runtimeCredentialRead": false,
+      "credentialPersisted": false,
+      "credentialLogged": false,
+      "repositoryPatternScan": "PASS",
+      "repositoryTextFilesScanned": 425,
+      "allowedSyntheticFixtureMatches": 6,
+      "logAndPersistenceSentinelEvidence": "PASS"
+    },
+    "decision": {
+      "allowedDecisions": [
+        "USE_LIVE_PROVIDER_IN_FINALE",
+        "CORRECT_PROMPT_OR_EVIDENCE_PACK_AND_RETEST",
+        "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE"
+      ],
+      "selected": "KEEP_PROVIDER_OPTIONAL_AND_DEMO_OFFLINE",
+      "frozenByCheckpointDigest": "sha256:af6f2a073c76671dc4d1924219771a1b058e1658006e8a036c9af1df36305d94"
+    },
+    "documentation": [
+      {
+        "document": "README.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/security/AI_SAFETY_AND_DATA_TRANSFER.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/governance/AI_USE_DISCLOSURE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/IL_6_5_TEST_EVIDENCE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/TEST_EVIDENCE.md",
+        "status": "PASS"
+      }
+    ]
+  },
+  "integrity": {
+    "externalCallMade": false,
+    "providerCredentialReadOrRecorded": false,
+    "providerPromptOrResponseBodyRecorded": false,
+    "exactPackBodyCopiedIntoReport": false,
+    "canonicalStateChanged": false,
+    "readinessOrPassportAuthorityCreated": false
+  },
+  "limitations": [
+    "LIVE_PROVIDER_EVALUATION_NOT_RUN_NOT_AUTHORIZED",
+    "PROVIDER_GROUNDING_CITATION_USEFULNESS_LATENCY_AND_TOKENS_NOT_MEASURED",
+    "REPOSITORY_PATTERN_SCAN_IS_NOT_COMPLETE_SECRET_DETECTION",
+    "CONTROLLED_SYNTHETIC_BASELINE_ONLY",
+    "NO_RELEASE_READINESS_OR_PASSPORT_AUTHORITY"
+  ],
+  "nextAuthorizedStory": "IL-6.6"
+}

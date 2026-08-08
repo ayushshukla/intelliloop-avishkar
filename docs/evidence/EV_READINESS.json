@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "story": "IL-7.5",
+  "status": "PASS",
+  "evidenceDate": "2026-08-06",
+  "fixtureKind": "CONTROLLED_LOCAL_DETERMINISTIC",
+  "reproductionCommand": "npm.cmd run evidence:readiness-passport",
+  "execution": {
+    "unitFiles": [
+      "packages/domain/test/readiness-evaluation.test.ts",
+      "packages/domain/test/readiness-assessment.test.ts",
+      "apps/web/test/readiness-passport-client.test.tsx"
+    ],
+    "unitTests": 45,
+    "apiFiles": [
+      "apps/api/test/readiness-repository.test.ts",
+      "apps/api/test/readiness-passport-api.test.ts"
+    ],
+    "apiTests": 10,
+    "browserTests": 1,
+    "totalFocusedTests": 56
+  },
+  "layerCoverage": [
+    "DOMAIN",
+    "SQLITE",
+    "PRODUCTION_API_ROUTES",
+    "BROWSER_DECODER",
+    "BROWSER_UI"
+  ],
+  "sourceIntegrity": {
+    "packages/domain/src/readiness-evaluation.ts": "sha256:9a75255122dccea40d64c7b5538d8707a41aeaac4fdaf4de06529d39c1ad94a9",
+    "packages/domain/src/readiness-assessment.ts": "sha256:8302cc273837deb3578f88ce7af20b01dd1eaa38191cafc1dfec9e241a033405",
+    "packages/domain/src/release-passport.ts": "sha256:0025204699c8706a7e2a1afac1c06e21160d1ae5241e86b869ed91ecd1a985f8",
+    "apps/api/src/readiness/readiness-service.ts": "sha256:4b7ec834cdd8d65d69402ca3aa7c9405e7df44d1764ccc3bb6e288702af8293c",
+    "apps/api/src/readiness/readiness-repository.ts": "sha256:87b299665e0deda1e463e38373d64d48fca6e0256d2eae1c94387eb4b97ab16e",
+    "apps/api/src/passports/passport-service.ts": "sha256:393ec57c52d341d91f6141e87f4788797752435adfd0d217e77c2f3718776a4a",
+    "apps/api/src/passports/passport-repository.ts": "sha256:a4c8dd54095baabf81e4ee0b31729d355e21c106bb77acc25d9490aea44df1c1",
+    "apps/api/src/readiness/readiness-passport-routes.ts": "sha256:0a0dc9271953425ac5d1891d21afd99632123d959d56cb780d166c8bd3084bbc",
+    "apps/web/src/readiness-passport-client.ts": "sha256:7abeba085d8d40ea04ec5d6add098b1af5a68b5d863850b6d437144dc617e0d7",
+    "apps/web/src/ReadinessPassportWorkspace.tsx": "sha256:c2b6958a2aa3c526331bd44456bd25ad1bf9df5c71d923e4ea08321a3f440de0"
+  },
+  "safety": {
+    "externalCallMade": false,
+    "providerRequired": false,
+    "sourceBodiesPersistedInEvidence": false,
+    "absolutePathsPersistedInEvidence": false,
+    "credentialsPersistedInEvidence": false
+  },
+  "limitations": [
+    "This is deterministic local implementation evidence, not a production release approval.",
+    "The Passport is an unsigned projection and grants no deployment authority.",
+    "Phase 8 owns the final golden-demo fixture and end-to-end operator walkthrough."
+  ],
+  "nextAuthorizedStory": "IL-7.6",
+  "evidenceId": "EV-READINESS",
+  "capability": "DC-07",
+  "conclusion": "No controlled negative case produced READY, and server-owned state survived restart without project leakage or external AI calls.",
+  "proofs": {
+    "readyPositiveCases": 1,
+    "controlledNonReadyCases": 26,
+    "controlledFalseReadyCount": 0,
+    "persistenceCorruptionFailsClosed": true,
+    "restartRecovery": true,
+    "projectAndMissionIsolation": true,
+    "browserConsumesServerStatusWithoutRecomputation": true,
+    "mutationInputsAreEmptyAndServerOwned": true
+  }
+}

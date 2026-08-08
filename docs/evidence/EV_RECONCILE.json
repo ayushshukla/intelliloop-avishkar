@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-RECONCILE",
+  "storyBoundary": {
+    "from": "IL-5.1",
+    "through": "IL-5.7"
+  },
+  "capabilities": [
+    "DC-04",
+    "DC-05"
+  ],
+  "phaseExitAuthority": "DC-04_AND_DC-05",
+  "status": "PASS",
+  "evidenceDate": "2026-08-06",
+  "reproductionCommand": "npm.cmd run evidence:reconcile",
+  "programGate": {
+    "id": "G3_DETERMINISTIC_CORE_PROVEN",
+    "status": "PASS",
+    "reason": "EV-RECONCILE and EV-CITATIONS jointly prove the deterministic core plus the required cited-question, disclosure and citation/mock boundary through IL-6.4."
+  },
+  "fixture": {
+    "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC",
+    "network": "OFFLINE",
+    "databasePlacement": "OUTSIDE_REGISTERED_REPOSITORY",
+    "projectCount": 1,
+    "missionCount": 1,
+    "evidenceSourceCount": 1,
+    "initialClaimCount": 4,
+    "explicitSuccessorCount": 1
+  },
+  "proofs": {
+    "truthTable": [
+      {
+        "case": "ACTIVE_VALUE_CONFLICT",
+        "expected": 1,
+        "observed": 1,
+        "status": "PASS"
+      },
+      {
+        "case": "NULL_VERSUS_KNOWN_AMBIGUITY",
+        "expected": 1,
+        "observed": 1,
+        "status": "PASS"
+      },
+      {
+        "case": "DECLARED_SUPPORT_MISSING",
+        "expected": 2,
+        "observed": 2,
+        "status": "PASS"
+      },
+      {
+        "case": "IMPLEMENTATION_AND_VALIDATION_GAPS",
+        "expected": 2,
+        "observed": 2,
+        "status": "PASS"
+      },
+      {
+        "case": "EXPLICIT_SUPERSESSION_CLEARS_CONFLICT",
+        "expected": 0,
+        "observed": 0,
+        "status": "PASS"
+      },
+      {
+        "case": "EXACT_DEPENDENCY_CHANGE_APPENDS_STALE",
+        "expected": 1,
+        "observed": 1,
+        "status": "PASS"
+      }
+    ],
+    "findingKinds": {
+      "initial": {
+        "AMBIGUOUS": 1,
+        "CONFLICT": 1,
+        "MISSING": 2,
+        "IMPACT_GAP": 2
+      },
+      "corrected": {
+        "AMBIGUOUS": 1,
+        "MISSING": 2,
+        "IMPACT_GAP": 2,
+        "STALE": 1
+      }
+    },
+    "impact": {
+      "initialPathCount": 2,
+      "exactGapReasons": [
+        "CRITICAL_IMPLEMENTATION_ASSET_ABSENT",
+        "REQUIRED_VALIDATION_RESULT_ABSENT"
+      ],
+      "citationsRequiredAndVerified": "PASS"
+    },
+    "supersession": {
+      "explicitLinkCount": 1,
+      "projectedTwinRelationshipCount": 1,
+      "predecessorPreservedInHistory": "PASS",
+      "canonicalFindingMutationAvailable": false
+    },
+    "deterministicRerun": {
+      "exactInputReplayCreatedRevision": false,
+      "reorderedInputReplayCreatedRevision": false,
+      "canonicalResultDigestEquality": "PASS",
+      "reorderedResultDigestEquality": "PASS",
+      "measuredReplayResponseByteEquality": "PASS",
+      "measuredReplayIterations": 25
+    },
+    "persistence": {
+      "immutableRevisionCount": 2,
+      "restartDigestEquality": "PASS",
+      "historicalRevisionPreserved": "PASS"
+    },
+    "controlledMetrics": {
+      "accuracy": {
+        "passed": 6,
+        "total": 6,
+        "percentage": 100
+      },
+      "initialRunMilliseconds": 108.8,
+      "correctionRunMilliseconds": 129.789,
+      "exactReplay": {
+        "unit": "milliseconds",
+        "samples": 25,
+        "minimum": 84.984,
+        "median": 97.552,
+        "p95": 115.28,
+        "maximum": 122.561
+      },
+      "productionExtrapolationPerformed": false,
+      "passThresholdBasedOnWallClock": false
+    },
+    "repositorySafety": {
+      "treeDigestEquality": "PASS",
+      "repositoryCodeExecuted": false,
+      "dependencyInstallationPerformed": false,
+      "repositoryWritePerformedByProduct": false
+    },
+    "documentation": [
+      {
+        "document": "README.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/architecture/DOMAIN_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/product/TRUST_MODEL.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/development/TESTING.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/TEST_EVIDENCE.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/evidence/METRICS_REPORT.md",
+        "status": "PASS"
+      },
+      {
+        "document": "docs/governance/PROMISE_TO_EVIDENCE_MATRIX.md",
+        "status": "PASS"
+      }
+    ]
+  },
+  "integrity": {
+    "rawAbsolutePathsRecorded": false,
+    "repositoryContentBodiesRecorded": false,
+    "credentialReadOrRecorded": false,
+    "externalProductCallMade": false,
+    "personalOrCandidateRepositoryUsed": false,
+    "temporaryFixtureRemovedAfterRun": true
+  },
+  "limitations": [
+    "CONTROLLED_SYNTHETIC_TRUTH_TABLE_ONLY",
+    "LOCAL_SINGLE_PROCESS_TIMING_ONLY",
+    "NO_PRODUCTION_OR_ORGANIZATIONAL_EXTRAPOLATION",
+    "NO_PERSISTED_VALIDATION_RESULT_INTAKE",
+    "NO_LIVE_AI_PROVIDER_OR_READINESS_AUTHORITY"
+  ],
+  "nextAuthorizedStory": "IL-6.5"
+}

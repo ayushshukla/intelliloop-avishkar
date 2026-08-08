@@ -1,0 +1,50 @@
+{
+  "files": {
+    "package.json": "{\n  \"name\": \"@intelliloop/sample\",\n  \"version\": \"1.2.3\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": { \"build\": \"tsc\", \"check\": \"vitest run\" },\n  \"dependencies\": { \"fastify\": \"5.8.5\" },\n  \"devDependencies\": { \"vitest\": \"^2.1.9\" },\n  \"optionalDependencies\": { \"optional-package\": \"~1.0.0\" },\n  \"peerDependencies\": { \"react\": \">=18\" },\n  \"workspaces\": [\"apps/*\", \"packages/*\"]\n}\n",
+    "config/settings.json": "{\"feature\": true}\n",
+    "src/contracts.ts": "export interface Order { id: OrderId; }\ntype Internal = string;\nexport type OrderId = string;\nenum State { Open, Closed }\nexport { State as OrderState };\nexport const marker = 1;\n",
+    "src/service.ts": "import type { Order } from \"./contracts\";\nexport function serve(order: Order): string { return order.id; }\n",
+    "src/routes.ts": "import type { FastifyInstance as Api } from \"fastify\";\nexport function install(app: Api): void {\n  app.get(\"/health\", async () => ({ ok: true }));\n  app.post(`/items`, async () => ({ ok: true }));\n  const runtimePath = \"/runtime\";\n  app.get(runtimePath, async () => ({ ok: true }));\n}\n",
+    "src/server.ts": "import createFastify, { fastify as makeFastify } from \"fastify\";\nconst app = createFastify();\napp.route({ method: \"PUT\", url: \"/items/:id\", handler: async () => ({ ok: true }) });\nconst second = makeFastify();\nsecond.delete(\"/items/:id\", async () => ({ ok: true }));\n",
+    "test/service.spec.ts": "import { serve } from \"../src/service\";\nvoid serve;\nvoid import(\"../src/service\");\n"
+  },
+  "expected": {
+    "filePaths": [
+      "config/settings.json",
+      "package.json",
+      "src/contracts.ts",
+      "src/routes.ts",
+      "src/server.ts",
+      "src/service.ts",
+      "test/service.spec.ts"
+    ],
+    "importSpecifiers": [
+      "src/routes.ts:fastify",
+      "src/server.ts:fastify",
+      "src/service.ts:./contracts",
+      "test/service.spec.ts:../src/service"
+    ],
+    "exports": [
+      "src/contracts.ts:DECLARATION:Order",
+      "src/contracts.ts:DECLARATION:OrderId",
+      "src/contracts.ts:DECLARATION:marker",
+      "src/contracts.ts:NAMED:OrderState",
+      "src/routes.ts:DECLARATION:install",
+      "src/service.ts:DECLARATION:serve"
+    ],
+    "contracts": [
+      "src/contracts.ts:INTERFACE:Order:Order",
+      "src/contracts.ts:TYPE_ALIAS:OrderId:OrderId",
+      "src/contracts.ts:ENUM:State:OrderState"
+    ],
+    "routes": [
+      "src/routes.ts:GET:/health:DIRECT_FASTIFY_CALL",
+      "src/routes.ts:POST:/items:DIRECT_FASTIFY_CALL",
+      "src/server.ts:DELETE:/items/:id:DIRECT_FASTIFY_CALL",
+      "src/server.ts:PUT:/items/:id:DIRECT_FASTIFY_ROUTE_OBJECT"
+    ],
+    "testAssociations": [
+      "test/service.spec.ts:src/service.ts:STATIC_TEST_IMPORT"
+    ]
+  }
+}

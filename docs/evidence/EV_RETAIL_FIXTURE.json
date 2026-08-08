@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "EV-RETAIL-FIXTURE",
+  "story": "IL-8.1",
+  "status": "PASS",
+  "evidenceDate": "2026-08-06",
+  "fixtureVersion": "intelliloop-retail-cancellation-fixture.v1",
+  "fixtureId": "loopmart-expanded-cancellation-v1",
+  "ownership": "INTELLILOOP_AUTHORED_SYNTHETIC_ONLY",
+  "synthetic": true,
+  "provenance": {
+    "authoredFor": "IntelliLoop Avishkar controlled demonstration",
+    "authoredBy": "IntelliLoop project",
+    "sourceStrategy": "SOURCE_INDEPENDENT_BUILD",
+    "externalSourceTransfer": "NONE",
+    "license": "PROJECT_INTERNAL_SYNTHETIC_FIXTURE",
+    "recordedDate": "2026-08-06"
+  },
+  "scenario": {
+    "change": "Allow cancellation after picking starts and before dispatch.",
+    "expectedStateSequence": [
+      "BLOCKED",
+      "READY",
+      "STALE"
+    ],
+    "authority": "EXPECTED_DEMO_SEQUENCE_NOT_PRECOMPUTED_PRODUCT_STATE"
+  },
+  "counts": {
+    "initialRepositoryFiles": 9,
+    "correctedRepositoryFiles": 10,
+    "correctionChanges": 5,
+    "evidenceDrafts": 9,
+    "claimDrafts": 7,
+    "validationDrafts": 4,
+    "supportRequirements": 5,
+    "impactRequirements": 5
+  },
+  "deterministicIntegrity": {
+    "fixtureDigest": "sha256:bfc7189f28dd5bcffb4888ec3e9e69c0a86d95a6b3fc06fcefa7cbc449b8ac40",
+    "initialRepositoryTreeDigest": "sha256:0085d0861ca95e66f3b33558f88a6a75136917b63ab332d30668e1a0b5c42b6c",
+    "correctedRepositoryTreeDigest": "sha256:5e3bd1ca47b9d4f1af0ce0fc073490167dbe7dc510649f6c925085be06c1e4d0",
+    "evidenceSetDigest": "sha256:cce7fe82f08da418b9020a3c30f4d3e9f3907fd9f232a915e95cfe2eb3dff357",
+    "initialRepositoryFiles": [
+      {
+        "path": "package.json",
+        "mediaType": "application/json",
+        "bytes": 119,
+        "sha256": "sha256:52fb2ce9231803952175dc7dc008c41655658f1c6a2ab39d19edaf9fbdad3209"
+      },
+      {
+        "path": "src/contracts/cancellation-policy.ts",
+        "mediaType": "text/typescript",
+        "bytes": 528,
+        "sha256": "sha256:df5e0ec9004497fea8e2c1f210dd6463c2da7669d7389dc1ec79f396cd18bfdd"
+      },
+      {
+        "path": "src/fulfilment/dispatch-coordinator.ts",
+        "mediaType": "text/typescript",
+        "bytes": 78,
+        "sha256": "sha256:60830fff27257ce0cace3d26f32a6d833cb995708c18cefb6e45019fb631029c"
+      },
+      {
+        "path": "src/inventory/reservation-consumer.ts",
+        "mediaType": "text/typescript",
+        "bytes": 82,
+        "sha256": "sha256:baf65b52cd4853063dbe05c53a95d4b7d11e569d7a410a8dafe6031a8f7daa64"
+      },
+      {
+        "path": "src/notification/customer-notifier.ts",
+        "mediaType": "text/typescript",
+        "bytes": 82,
+        "sha256": "sha256:ca8b20df111946bf72369e7cf7eff4542c784c62333000b3598500ee04b81774"
+      },
+      {
+        "path": "src/order/cancellation-service.ts",
+        "mediaType": "text/typescript",
+        "bytes": 1180,
+        "sha256": "sha256:f00bf19019232df1f16b2e1e56ae9d267dda0c2071d2371cd94562c68dda8ab6"
+      },
+      {
+        "path": "src/refund/refund-handler.ts",
+        "mediaType": "text/typescript",
+        "bytes": 90,
+        "sha256": "sha256:a0b56426a7925a13a032260055df8e16ca147d08c839a6968d8ef20c301e6660"
+      },
+      {
+        "path": "test/order/cancellation-service.test.ts",
+        "mediaType": "text/typescript",
+        "bytes": 346,
+        "sha256": "sha256:afc56d337e5ef59081cba9922cb1ebc2f4bf9f90cb2a0a546312c870963691dc"
+      },
+      {
+        "path": "test/refund/refund-handler.test.ts",
+        "mediaType": "text/typescript",
+        "bytes": 164,
+        "sha256": "sha256:afba15920f39ec6f69b17652d7eb16e73b80fa39baada39f87922ecc743d18e4"
+      }
+    ],
+    "correctedRepositoryFiles": [
+      {
+        "path": "package.json",
+        "mediaType": "application/json",
+        "bytes": 119,
+        "sha256": "sha256:52fb2ce9231803952175dc7dc008c41655658f1c6a2ab39d19edaf9fbdad3209"
+      },
+      {
+        "path": "src/contracts/cancellation-policy.ts",
+        "mediaType": "text/typescript",
+        "bytes": 528,
+        "sha256": "sha256:df5e0ec9004497fea8e2c1f210dd6463c2da7669d7389dc1ec79f396cd18bfdd"
+      },
+      {
+        "path": "src/fulfilment/dispatch-coordinator.ts",
+        "mediaType": "text/typescript",
+        "bytes": 90,
+        "sha256": "sha256:d832a61b13c684e7ace0e8d72821d1e6db2888f30cc7d466d8979b7b5fce7312"
+      },
+      {
+        "path": "src/inventory/reservation-consumer.ts",
+        "mediaType": "text/typescript",
+        "bytes": 94,
+        "sha256": "sha256:ae8fdd56386f042eb88f671fff07fb5ab8d0c88ed02273d4d38863ed0b113209"
+      },
+      {
+        "path": "src/notification/customer-notifier.ts",
+        "mediaType": "text/typescript",
+        "bytes": 94,
+        "sha256": "sha256:08f2501c32b36bce819a743782f076ba2ec8039ce658c1ebf624ba019d1e5453"
+      },
+      {
+        "path": "src/order/cancellation-service.ts",
+        "mediaType": "text/typescript",
+        "bytes": 1293,
+        "sha256": "sha256:27a169e94600c2b56213f3b9b73125ba822e4b5c882543c8e58f626b96c3ff9e"
+      },
+      {
+        "path": "src/refund/refund-handler.ts",
+        "mediaType": "text/typescript",
+        "bytes": 90,
+        "sha256": "sha256:a0b56426a7925a13a032260055df8e16ca147d08c839a6968d8ef20c301e6660"
+      },
+      {
+        "path": "test/integration/post-picking-cancellation.test.ts",
+        "mediaType": "text/typescript",
+        "bytes": 439,
+        "sha256": "sha256:559581dbd300584be7e6d1a24d6e415b8d4a068ef9a3bccc8ed9bb003bc8d428"
+      },
+      {
+        "path": "test/order/cancellation-service.test.ts",
+        "mediaType": "text/typescript",
+        "bytes": 346,
+        "sha256": "sha256:afc56d337e5ef59081cba9922cb1ebc2f4bf9f90cb2a0a546312c870963691dc"
+      },
+      {
+        "path": "test/refund/refund-handler.test.ts",
+        "mediaType": "text/typescript",
+        "bytes": 164,
+        "sha256": "sha256:afba15920f39ec6f69b17652d7eb16e73b80fa39baada39f87922ecc743d18e4"
+      }
+    ],
+    "evidenceDrafts": [
+      {
+        "evidenceKey": "ADR_V1",
+        "phase": "INITIAL_BLOCKED",
+        "sourceLocator": "synthetic:loopmart/decisions/cancellation-v1",
+        "bytes": 172,
+        "sha256": "sha256:654228d9a5be384afaaccc27cf1f7faefb60174800c292e61523d2e9012b7a93"
+      },
+      {
+        "evidenceKey": "ADR_V2",
+        "phase": "CORRECTED_READY_INPUTS",
+        "sourceLocator": "synthetic:loopmart/decisions/cancellation-v2",
+        "bytes": 255,
+        "sha256": "sha256:e11468b79b1ea8aa65ba120cecd51777c0f45b3660ea645b227ee6fb20ddaec5"
+      },
+      {
+        "evidenceKey": "HUMAN_REVIEW",
+        "phase": "CORRECTED_READY_INPUTS",
+        "sourceLocator": "synthetic:loopmart/reviews/cancellation-corrected",
+        "bytes": 288,
+        "sha256": "sha256:2cc7cb90b8092a4548a508ae77fea4fc1da11809b52af555b84393d51e4fc37d"
+      },
+      {
+        "evidenceKey": "RELEASE_NOTE_INITIAL",
+        "phase": "INITIAL_BLOCKED",
+        "sourceLocator": "synthetic:loopmart/releases/cancellation-candidate-1",
+        "bytes": 105,
+        "sha256": "sha256:662409a37c12790a417fff8b8670d948794dbe6b93210a444beabab4d8db6bc5"
+      },
+      {
+        "evidenceKey": "REQUIREMENT_V2",
+        "phase": "INITIAL_BLOCKED",
+        "sourceLocator": "synthetic:loopmart/requirements/cancellation-v2",
+        "bytes": 217,
+        "sha256": "sha256:0b64c7589f34685bbd86514da64640b0b6b3a42d3340846a87b4d75fc46921a7"
+      },
+      {
+        "evidenceKey": "VALIDATION_FULFILMENT",
+        "phase": "CORRECTED_READY_INPUTS",
+        "sourceLocator": "synthetic:loopmart/validations/fulfilment-stop",
+        "bytes": 161,
+        "sha256": "sha256:a3a55efe054cf59103f32b855f60c93fc55fe650806a2fa1a0671c9ba90d2efc"
+      },
+      {
+        "evidenceKey": "VALIDATION_INVENTORY",
+        "phase": "CORRECTED_READY_INPUTS",
+        "sourceLocator": "synthetic:loopmart/validations/inventory-release",
+        "bytes": 163,
+        "sha256": "sha256:afaa981f692143b32af7a81b56b602202296f0c86d515485db45373ae57584b9"
+      },
+      {
+        "evidenceKey": "VALIDATION_ORDER",
+        "phase": "INITIAL_BLOCKED",
+        "sourceLocator": "synthetic:loopmart/validations/order-window",
+        "bytes": 158,
+        "sha256": "sha256:318e47c585af6b45a9ed92e8591f1727cfb1ace8a5a1a2a938a7f095f6a8b096"
+      },
+      {
+        "evidenceKey": "VALIDATION_REFUND",
+        "phase": "INITIAL_BLOCKED",
+        "sourceLocator": "synthetic:loopmart/validations/refund-initiation",
+        "bytes": 150,
+        "sha256": "sha256:94dcb3a67219a93e52b90520346fd8cd32ba52fa5028eefbff01378cb69859be"
+      }
+    ]
+  },
+  "coverage": {
+    "cancellationConflict": true,
+    "inventoryOwnershipConflict": true,
+    "apparentlyGreenReleaseClaim": true,
+    "initialPartialValidation": true,
+    "inventoryImpact": true,
+    "refundImpact": true,
+    "fulfilmentImpact": true,
+    "notificationImpact": true,
+    "supersedingDecision": true,
+    "correctedImplementation": true,
+    "missingValidationsAdded": true,
+    "explicitSyntheticHumanReview": true
+  },
+  "safety": {
+    "containsPersonalData": false,
+    "containsEmployerOrClientData": false,
+    "containsPrivateAbsolutePaths": false,
+    "containsCredentialShapes": false,
+    "requiresNetwork": false,
+    "executesRepositoryCode": false,
+    "precomputedProductState": false
+  },
+  "loaderBoundary": {
+    "materializationImplemented": false,
+    "resetImplemented": false,
+    "owningStory": "IL-8.2",
+    "mayWriteOnlyToDedicatedGeneratedFixtureRoot": true
+  },
+  "limitations": [
+    "Fixture declarations are inert data; IL-8.2 owns materialization, Git commits and scoped reset.",
+    "Validation drafts are attributed synthetic results with executed=false, not observed test executions.",
+    "Expected BLOCKED, READY and STALE are demo intentions until the real product path proves them in IL-8.3."
+  ],
+  "nextAuthorizedStory": "IL-8.2"
+}

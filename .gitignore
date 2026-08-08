@@ -1,0 +1,71 @@
+# Secret-bearing and local configuration files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+*.jks
+credentials*
+secrets*
+
+# Dependencies, caches, and generated output
+node_modules/
+.next/
+dist/
+build/
+target/
+coverage/
+.vite/
+*.tsbuildinfo
+playwright-report/
+test-results/
+.playwright/
+.chrome*/
+.gradle/
+.idea/
+.vscode/
+*.code-workspace
+.cache/
+.expo/
+Pods/
+.pnpm-store/
+venv/
+.venv/
+env/
+bin/
+obj/
+
+# Local data and logs
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+*.pid
+*.pid.lock
+*.zip
+*.7z
+*.tar
+*.tgz
+*.bak
+*.local
+
+# Local discovery, recovery and generated submission work products
+# These directories contain machine-local provenance inputs or generated files,
+# not release-candidate source. Canonical release evidence uses the allowlisted
+# source roots documented by IL-9.2.
+discovery/
+recovery/
+artifacts/
+tmp/
+temp/
+.codex/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+desktop.ini

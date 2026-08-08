@@ -1,0 +1,63 @@
+name: Release platform verification
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  release-platform:
+    name: ${{ matrix.platform }} release verification
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: Windows Server 2025 CI
+            os: windows-2025
+          - platform: Linux
+            os: ubuntu-24.04
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Use pinned Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.22.0
+          cache: npm
+
+      - name: Use pinned npm
+        run: npm install --global npm@10.9.4
+
+      - name: Prime clean dependencies
+        run: npm ci
+
+      - name: Install bundled Chromium runtime
+        run: npx playwright install chromium
+
+      - name: Install Linux browser dependencies
+        if: runner.os == 'Linux'
+        run: npx playwright install-deps chromium
+
+      - name: Run complete release verifier
+        run: npm run evidence:release-platform
+        env:
+          INTELLILOOP_RELEASE_CI: GITHUB_ACTIONS
+
+      - name: Upload platform evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: intelliloop-release-${{ runner.os }}
+          path: |
+            docs/evidence/EV_RELEASE.json
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14
