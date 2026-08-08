@@ -69,3 +69,6 @@ temp/
 .DS_Store
 Thumbs.db
 desktop.ini
+*.env
+credentials.json
+.credentials
