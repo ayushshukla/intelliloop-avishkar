@@ -7,7 +7,7 @@
   "evidenceDate": "2026-08-06",
   "reproductionCommand": "npm.cmd run evidence:release-security",
   "candidate": {
-    "sha256": "sha256:5c1c1a97e1b7f0038afc4dfe5c733644878271e393e9e3dc23f667a7180d7fbf",
+    "sha256": "sha256:9209c534f0402706ed4fb7e60aa308b0247ded0e8c522fcd693d66882c14214a",
     "fileCount": 421,
     "boundary": {
       "status": "PASS",

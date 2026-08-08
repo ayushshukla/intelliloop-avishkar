@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import {
   mkdirSync,
   mkdtempSync,
@@ -11,7 +11,7 @@ import {
 import { tmpdir } from "node:os";
 import { basename, join, sep } from "node:path";
 
-import { createClock } from "@intelliloop/domain";
+import { createClock, createStableIdGenerator } from "@intelliloop/domain";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { buildApp } from "../src/app.js";
@@ -30,6 +30,8 @@ import { RepositoryRegistrationService } from "../src/projects/repository-regist
 const roots: string[] = [];
 const apps: ReturnType<typeof buildApp>[] = [];
 const databases: ReturnType<typeof openFoundationDatabase>[] = [];
+const SNAPSHOT_CAPTURED_AT = "2026-08-08T00:00:00.000Z";
+const PROJECTION_RECORDED_AT = "2026-08-08T00:01:00.000Z";
 
 function git(root: string, args: readonly string[], encoding?: BufferEncoding): string | Buffer {
   return execFileSync("git", [...args], {
@@ -88,14 +90,18 @@ function setup() {
     registrations,
     { enabled: true, allowedRoots: [repositoryRoot] }
   );
-  const snapshots = new GitSnapshotService(database.connection, registrations);
+  const snapshots = new GitSnapshotService(database.connection, registrations, {
+    ids: createStableIdGenerator(() => randomUUID()),
+    clock: createClock(() => new Date(SNAPSHOT_CAPTURED_AT)),
+    runner: new FixedGitCommandRunner()
+  });
   const codeMaps = new SqliteCodeMapRepository(database.connection);
   const projection = new CodeMapProjectionService({
     snapshots,
     scanner: new CodeMapScanner(database.connection, registrations),
     extractor: new CodeMapExtractor(),
     repository: codeMaps,
-    clock: createClock(() => new Date("2026-08-08T00:00:00.000Z"))
+    clock: createClock(() => new Date(PROJECTION_RECORDED_AT))
   });
   const logs: string[] = [];
   const app = buildApp({
@@ -239,6 +245,7 @@ describe("Local Project Pilot API", () => {
     expect(snapshot.statusCode).toBe(201);
     expect(snapshot.json().snapshot).toMatchObject({
       headCommit: env.exactCommit,
+      capturedAtUtc: SNAPSHOT_CAPTURED_AT,
       dirty: true,
       changedFileCount: 1
     });
@@ -246,6 +253,14 @@ describe("Local Project Pilot API", () => {
       method: "POST", url: `/api/v1/missions/${mission.missionId}/code-map/revisions`
     });
     expect(mapped.statusCode, mapped.body).toBe(201);
+    expect(mapped.json()).toMatchObject({
+      created: true,
+      codeMapRevision: {
+        recordedAtUtc: PROJECTION_RECORDED_AT,
+        snapshot: { capturedAtUtc: SNAPSHOT_CAPTURED_AT },
+        evidence: { evidenceKind: "STATIC_INFERENCE" }
+      }
+    });
     const assets = await env.app.inject({
       method: "GET", url: `/api/v1/missions/${mission.missionId}/code-map/revisions/1/assets?limit=100`
     });
