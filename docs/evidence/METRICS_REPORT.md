@@ -11,9 +11,9 @@ The deterministic truth table passed **6/6 authored cases (100%)**. This is exac
 
 | Controlled operation | Samples | Minimum (ms) | Median (ms) | p95 (ms) | Maximum (ms) |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Initial conflict/ambiguity/missing/impact assessment | 1 | 96.351 | 96.351 | 96.351 | 96.351 |
-| Correction and stale-successor assessment | 1 | 103.282 | 103.282 | 103.282 | 103.282 |
-| Exact persisted replay | 25 | 80.833 | 89.766 | 101.843 | 124.808 |
+| Initial conflict/ambiguity/missing/impact assessment | 1 | 87.23 | 87.23 | 87.23 | 87.23 |
+| Correction and stale-successor assessment | 1 | 109.254 | 109.254 | 109.254 | 109.254 |
+| Exact persisted replay | 25 | 71.645 | 87.914 | 100.475 | 102.317 |
 
 ## Method
 

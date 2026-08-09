@@ -51,9 +51,14 @@ async function sha256File(path) {
   return sha256Bytes(await readFile(path));
 }
 
+async function sha256CanonicalSourceFile(path) {
+  const source = await readFile(path, "utf8");
+  return sha256Bytes(Buffer.from(source.replace(/\r\n?/gu, "\n"), "utf8"));
+}
+
 async function applicationRevision() {
   const entries = [];
-  for (const logical of SOURCE_FILES) entries.push(`${logical}\0${await sha256File(join(ROOT, logical))}\0`);
+  for (const logical of SOURCE_FILES) entries.push(`${logical}\0${await sha256CanonicalSourceFile(join(ROOT, logical))}\0`);
   return sha256Bytes(Buffer.from(entries.join(""), "utf8"));
 }
 
@@ -162,7 +167,7 @@ async function validateExisting() {
   assert(evidence.fallback?.viewerSha256 === await sha256File(FALLBACK_VIEWER), "Fallback viewer hash no longer matches evidence.");
   assert(evidence.fallback?.status === "PASS" && evidence.fallback?.brokenImages === 0 && evidence.fallback?.serviceStoppedDuringValidation === true, "Fallback validation evidence is incomplete.");
   assert(evidence.safety?.browserNonLoopbackRequests === 0 && evidence.safety?.browserAuthorizationHeaders === 0 && evidence.safety?.externalAiCalls === false, "Demo support safety evidence is not fail-closed.");
-  for (const logical of SOURCE_FILES) assert(evidence.sourceIntegrity?.[logical] === await sha256File(join(ROOT, logical)), `Demo support source hash drifted: ${logical}.`);
+  for (const logical of SOURCE_FILES) assert(evidence.sourceIntegrity?.[logical] === await sha256CanonicalSourceFile(join(ROOT, logical)), `Demo support source hash drifted: ${logical}.`);
   console.log(`EV-DEMO-SUPPORT PASS verify-existing assets=${assets.length} fallback=${evidence.fallback.status}`);
 }
 
@@ -297,7 +302,7 @@ try {
     story: "IL-8.6",
     status: "PASS",
     captureDate: "2026-08-06",
-    appRevision: { scheme: "SOURCE_FILE_SET_SHA256", digest: appRevision, files: SOURCE_FILES },
+    appRevision: { scheme: "SOURCE_FILE_SET_CANONICAL_LF_SHA256", digest: appRevision, files: SOURCE_FILES },
     fixture: { fixtureId: FIXTURE_ID, fixtureVersion: FIXTURE_VERSION, ownership: "INTELLILOOP_AUTHORED_SYNTHETIC_ONLY" },
     capture: { browser: "PLAYWRIGHT_BUNDLED_CHROMIUM", viewport: VIEWPORT, productionBuild: true, loopbackOnly: true, externalAiCalls: false },
     assets,
@@ -330,7 +335,7 @@ try {
     fallback: { status: "PASS", format: "STATIC_LOCAL_HTML_ORDERED_SCREENSHOT_SEQUENCE", serviceStoppedDuringValidation: true, slideCount: fallbackImages.length, brokenImages: 0, viewerSha256: await sha256File(FALLBACK_VIEWER), manifestId: manifest.manifestId },
     safety: { browserNonLoopbackRequests: nonLoopbackRequests.length, browserAuthorizationHeaders: authorizationHeaders.length, externalAiCalls: false, privateRepositoryUsed: false, repositoryCodeExecuted: false },
     disclosures: { syntheticFixture: true, aiOff: true, notLiveExecution: true, readyNotApproval: true, passportUnsigned: true },
-    sourceIntegrity: Object.fromEntries(await Promise.all(SOURCE_FILES.map(async (logical) => [logical, await sha256File(join(ROOT, logical))]))),
+    sourceIntegrity: Object.fromEntries(await Promise.all(SOURCE_FILES.map(async (logical) => [logical, await sha256CanonicalSourceFile(join(ROOT, logical))]))),
     limitations: manifest.limitations,
     nextAuthorizedStory: "IL-9.1"
   };

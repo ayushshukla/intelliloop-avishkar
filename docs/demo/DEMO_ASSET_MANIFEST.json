@@ -5,8 +5,8 @@
   "status": "PASS",
   "captureDate": "2026-08-06",
   "appRevision": {
-    "scheme": "SOURCE_FILE_SET_SHA256",
-    "digest": "sha256:bbad8c79c9470b479bb78f56d3d907dc0e4c9626c57967f92cde4b0d1779f74f",
+    "scheme": "SOURCE_FILE_SET_CANONICAL_LF_SHA256",
+    "digest": "sha256:0d05e7281e8e41f54a49070453fdefff1ee3d36ad16b68d88f6723d7dec2be9a",
     "files": [
       "apps/api/src/demo/demo-workspace-service.ts",
       "apps/web/src/App.tsx",
