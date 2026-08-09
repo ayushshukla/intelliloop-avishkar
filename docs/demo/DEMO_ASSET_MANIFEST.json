@@ -6,7 +6,7 @@
   "captureDate": "2026-08-06",
   "appRevision": {
     "scheme": "SOURCE_FILE_SET_SHA256",
-    "digest": "sha256:aecfa59a23e58a53dd303a21b8515886f3b3d0bdce83bc4a0d067770542ccb71",
+    "digest": "sha256:bbad8c79c9470b479bb78f56d3d907dc0e4c9626c57967f92cde4b0d1779f74f",
     "files": [
       "apps/api/src/demo/demo-workspace-service.ts",
       "apps/web/src/App.tsx",
@@ -46,8 +46,8 @@
       "testState": "PERSISTED_CONFLICT",
       "path": "docs/demo/assets/01-blocked-control-room.png",
       "mediaType": "image/png",
-      "bytes": 342640,
-      "sha256": "sha256:9408739944208e908a5a8eee882417862885b51b7b16a9490020aa88e710dd75",
+      "bytes": 342392,
+      "sha256": "sha256:77d34e76453e65075b387746eac8ba154b47c889e82879b4f69785a6bc90a905",
       "dimensions": {
         "width": 1366,
         "height": 768
@@ -63,8 +63,8 @@
       "testState": "PERSISTED_TWIN_REVISION",
       "path": "docs/demo/assets/02-active-twin.png",
       "mediaType": "image/png",
-      "bytes": 179778,
-      "sha256": "sha256:07f5f94f1c3166943fa435f37f1cc7dcf84260482fa3aa60215450b47e4cfb69",
+      "bytes": 180103,
+      "sha256": "sha256:033e994a0e1c7928a37a0fec1e9556573abc9d8dd92524d12cbeaec8a647769a",
       "dimensions": {
         "width": 1366,
         "height": 768
@@ -80,8 +80,8 @@
       "testState": "OPEN_CONFLICT_AND_CITED_IMPACT",
       "path": "docs/demo/assets/03-conflict-impact.png",
       "mediaType": "image/png",
-      "bytes": 185809,
-      "sha256": "sha256:b8d011a5092011671426b4d5c327bbca7abe8b1751d89e3a6d676bc16b30ba7b",
+      "bytes": 186822,
+      "sha256": "sha256:3ef91b0bb172d5d2df643650f4424e80522b6487137c30b2e0dfc6c6c6e0ae29",
       "dimensions": {
         "width": 1366,
         "height": 768
@@ -114,8 +114,8 @@
       "testState": "EXACT_OBLIGATIONS_PASS",
       "path": "docs/demo/assets/05-ready-passport.png",
       "mediaType": "image/png",
-      "bytes": 63863,
-      "sha256": "sha256:396f5aeaa7e3bceefdf755b3809499a227c63637acb8e245be42d3a29bca3895",
+      "bytes": 63965,
+      "sha256": "sha256:c146c2f8ca9716ab9b199ed3a1378bf687451f027634797bb66f6d83f69b2431",
       "dimensions": {
         "width": 1366,
         "height": 768
@@ -131,8 +131,8 @@
       "testState": "IMMUTABLE_PROJECTION_STALE_ASSOCIATION",
       "path": "docs/demo/assets/06-stale-passport.png",
       "mediaType": "image/png",
-      "bytes": 64793,
-      "sha256": "sha256:317d73bb65467b3607fc458aacc188689e38c89539ba300e10beab7c37f05e6f",
+      "bytes": 64865,
+      "sha256": "sha256:d313c470d4c68c78cd83412964e5f853fb6a576f5634453df82009ac138c6024",
       "dimensions": {
         "width": 1366,
         "height": 768

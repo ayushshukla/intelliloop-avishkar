@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { createHash, randomUUID } from "node:crypto";
+import { createHash } from "node:crypto";
 import {
   mkdirSync,
   mkdtempSync,
@@ -32,6 +32,11 @@ const apps: ReturnType<typeof buildApp>[] = [];
 const databases: ReturnType<typeof openFoundationDatabase>[] = [];
 const SNAPSHOT_CAPTURED_AT = "2026-08-08T00:00:00.000Z";
 const PROJECTION_RECORDED_AT = "2026-08-08T00:01:00.000Z";
+const SNAPSHOT_IDS = Object.freeze([
+  "00000000-0000-4000-8000-000000000001",
+  "00000000-0000-4000-8000-000000000002",
+  "00000000-0000-4000-8000-000000000003"
+]);
 
 function git(root: string, args: readonly string[], encoding?: BufferEncoding): string | Buffer {
   return execFileSync("git", [...args], {
@@ -90,8 +95,16 @@ function setup() {
     registrations,
     { enabled: true, allowedRoots: [repositoryRoot] }
   );
+  let snapshotIdIndex = 0;
   const snapshots = new GitSnapshotService(database.connection, registrations, {
-    ids: createStableIdGenerator(() => randomUUID()),
+    ids: createStableIdGenerator(() => {
+      const snapshotId = SNAPSHOT_IDS[snapshotIdIndex];
+      if (snapshotId === undefined) {
+        throw new Error("Local Project Pilot snapshot ID fixture exhausted.");
+      }
+      snapshotIdIndex += 1;
+      return snapshotId;
+    }),
     clock: createClock(() => new Date(SNAPSHOT_CAPTURED_AT)),
     runner: new FixedGitCommandRunner()
   });
@@ -244,6 +257,7 @@ describe("Local Project Pilot API", () => {
     });
     expect(snapshot.statusCode).toBe(201);
     expect(snapshot.json().snapshot).toMatchObject({
+      snapshotId: SNAPSHOT_IDS[0],
       headCommit: env.exactCommit,
       capturedAtUtc: SNAPSHOT_CAPTURED_AT,
       dirty: true,
@@ -257,10 +271,20 @@ describe("Local Project Pilot API", () => {
       created: true,
       codeMapRevision: {
         recordedAtUtc: PROJECTION_RECORDED_AT,
-        snapshot: { capturedAtUtc: SNAPSHOT_CAPTURED_AT },
+        snapshot: {
+          snapshotId: SNAPSHOT_IDS[2],
+          capturedAtUtc: SNAPSHOT_CAPTURED_AT
+        },
         evidence: { evidenceKind: "STATIC_INFERENCE" }
       }
     });
+    const snapshots = await env.app.inject({
+      method: "GET", url: `/api/v1/missions/${mission.missionId}/git-snapshots?limit=100`
+    });
+    expect(snapshots.statusCode).toBe(200);
+    expect(snapshots.json().snapshots.map((item: { snapshotId: string }) => item.snapshotId)).toEqual(
+      SNAPSHOT_IDS
+    );
     const assets = await env.app.inject({
       method: "GET", url: `/api/v1/missions/${mission.missionId}/code-map/revisions/1/assets?limit=100`
     });

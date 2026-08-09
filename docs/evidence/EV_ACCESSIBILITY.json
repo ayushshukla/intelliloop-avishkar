@@ -56,8 +56,8 @@
     "apps/web/src/DemoWorkspace.tsx": "sha256:890a23f9b76b853c67adfad9cf5eb9bc291932564993c2162cedc8c040b1fb8a",
     "apps/web/src/GuidedDemoJourney.tsx": "sha256:435ce62941d43b3e99056f4da747e4e88a4ee83ffdc84b7c62c11e7554b3d532",
     "apps/web/src/presentation.tsx": "sha256:ce6270f29908455d095897b745dde7e8fbe174da3f168b9053ee4e9d0f7b6ecc",
-    "apps/web/src/styles.css": "sha256:99f2355867fa40550a8a80d03c409e38b6bb54ead3287100428685758c9d58f2",
-    "apps/web/e2e/accessibility-polish.spec.ts": "sha256:fd7d1f54373250fc062a8847e79fc031198aaf4b17bd9d24ee864f54b6d9981c",
+    "apps/web/src/styles.css": "sha256:37540481e34f4665032c1cf5b8ad85d372223ac0842ada57fc8dc396889b5112",
+    "apps/web/e2e/accessibility-polish.spec.ts": "sha256:c6dc7f6a78781eca360c7c2e84f3a00fb8a9e82b4b5fc115462c5add5c37c057",
     "playwright.config.ts": "sha256:5518a6e9e5f41f2e53c9b2842396fac2ee704a805aa7acc2b5b568e50fd5697c"
   },
   "limitations": [

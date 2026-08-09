@@ -143,7 +143,13 @@ test("keeps the three-state story semantic, non-color-only and keyboard operable
 
 test("avoids horizontal overflow at competition and mobile viewports", async ({ page }, testInfo) => {
   await page.route("**/api/v1/demo", (route) => fulfillJson(route, STALE_WORKSPACE));
-  for (const viewport of [{ width: 1366, height: 768 }, { width: 768, height: 1024 }, { width: 390, height: 844 }]) {
+  for (const viewport of [
+    { width: 1440, height: 900 },
+    { width: 1366, height: 768 },
+    { width: 768, height: 1024 },
+    { width: 390, height: 844 },
+    { width: 320, height: 568 }
+  ]) {
     await page.setViewportSize(viewport);
     await page.goto("/demo");
     await expect(page.getByRole("heading", { name: "LoopMart cancellation control room" })).toBeVisible();

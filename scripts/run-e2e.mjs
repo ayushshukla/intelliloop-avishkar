@@ -114,9 +114,21 @@ await removeGeneratedE2eDirectories();
 const dataDirectory = await mkdtemp(join(temporaryRoot, "intelliloop-e2e-"));
 const localPilotRepository = join(dataDirectory, "local-pilot-repository");
 const outsidePilotRepository = join(dataDirectory, "outside-pilot-repository");
-const foundationRepository = join(dataDirectory, "INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL");
-const codeMapRepository = join(dataDirectory, "INTELLILOOP_CODE_MAP_REPOSITORY_SENTINEL");
-const reconciliationRepository = join(dataDirectory, "INTELLILOOP_RECONCILIATION_REPOSITORY_SENTINEL");
+const foundationRepository = join(
+  dataDirectory,
+  "INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL",
+  "foundation-repository"
+);
+const codeMapRepository = join(
+  dataDirectory,
+  "INTELLILOOP_CODE_MAP_REPOSITORY_SENTINEL",
+  "code-map-repository"
+);
+const reconciliationRepository = join(
+  dataDirectory,
+  "INTELLILOOP_RECONCILIATION_REPOSITORY_SENTINEL",
+  "reconciliation-repository"
+);
 const localPilotCommit = await createLocalPilotFixture(localPilotRepository, "CommittedPilotContract");
 await createLocalPilotFixture(outsidePilotRepository, "OutsidePilotContract");
 await createLocalPilotFixture(foundationRepository, "FoundationContract");

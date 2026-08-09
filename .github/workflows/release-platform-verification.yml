@@ -36,6 +36,10 @@ jobs:
       - name: Use pinned npm
         run: npm install --global npm@10.9.4
 
+      - name: Canonicalize Windows temporary root
+        if: runner.os == 'Windows'
+        run: node scripts/configure-windows-ci-temp.mjs
+
       - name: Prime clean dependencies
         run: npm ci
 
