@@ -88,16 +88,14 @@ function safeWrite(value) {
 const temporaryDirectory = mkdtempSync(join(tmpdir(), "intelliloop-golden-proof-"));
 try {
   const apiReportPath = join(temporaryDirectory, "api.json");
-  const [, browserOutput] = await Promise.all([
-    run("Golden-flow API and migration proof", process.execPath, [
-      join(ROOT, "node_modules", "vitest", "vitest.mjs"),
-      "run", "--config", "vitest.api.config.ts", "--reporter=json", "--outputFile", apiReportPath,
-      ...API_FILES
-    ]),
-    run("Serial browser golden workflow", process.execPath, [
-      join(ROOT, "scripts", "run-e2e.mjs"),
-      "apps/web/e2e/golden-flow.spec.ts", "--reporter=line"
-    ])
+  await run("Golden-flow API and migration proof", process.execPath, [
+    join(ROOT, "node_modules", "vitest", "vitest.mjs"),
+    "run", "--config", "vitest.api.config.ts", "--reporter=json", "--outputFile", apiReportPath,
+    ...API_FILES
+  ]);
+  const browserOutput = await run("Serial browser golden workflow", process.execPath, [
+    join(ROOT, "scripts", "run-e2e.mjs"),
+    "apps/web/e2e/golden-flow.spec.ts", "--reporter=line"
   ]);
   const apiReport = JSON.parse(readFileSync(apiReportPath, "utf8"));
   const apiTests = (apiReport.testResults ?? []).flatMap((suite) => suite.assertionResults ?? []);

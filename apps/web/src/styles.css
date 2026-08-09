@@ -1600,6 +1600,11 @@ footer {
   .guided-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+@media (max-width: 800px) {
+  .overview-hero { align-items: flex-start; flex-direction: column; }
+  .truth-badge { flex-basis: auto; width: 100%; }
+}
+
 @media (max-width: 720px) {
   .app-shell { width: min(100% - 28px, 620px); }
   .topbar { padding: 0.9rem 0; align-items: flex-start; }
@@ -1610,8 +1615,6 @@ footer {
   .ai-boundary { margin-top: 0.8rem; }
   main { padding-top: 2.2rem; }
   .scope-note, footer { align-items: flex-start; flex-direction: column; }
-  .overview-hero { align-items: flex-start; flex-direction: column; }
-  .truth-badge { flex-basis: auto; width: 100%; }
   .status-axis-card { width: 100%; flex-basis: auto; }
   .overview-grid { grid-template-columns: 1fr; }
   .workspace-card--snapshot { grid-column: auto; }

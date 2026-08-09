@@ -1,6 +1,6 @@
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 
 import { expect, test, type Page } from "@playwright/test";
 
@@ -9,14 +9,24 @@ if (e2eRoot === undefined) {
   throw new Error("The IntelliLoop E2E data directory is required.");
 }
 
-const repositoryRoot = join(e2eRoot, "INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL");
+const PRIVATE_REPOSITORY_SENTINEL = "INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL";
+const CODE_MAP_REPOSITORY_SENTINEL = "INTELLILOOP_CODE_MAP_REPOSITORY_SENTINEL";
+const RECONCILIATION_REPOSITORY_SENTINEL = "INTELLILOOP_RECONCILIATION_REPOSITORY_SENTINEL";
+const PRIVATE_FILE_SENTINEL = "INTELLILOOP_PRIVATE_FILE_SENTINEL";
+const repositoryRoot = join(
+  e2eRoot,
+  PRIVATE_REPOSITORY_SENTINEL,
+  "foundation-repository"
+);
 const codeMapRepositoryRoot = join(
   e2eRoot,
-  "INTELLILOOP_CODE_MAP_REPOSITORY_SENTINEL"
+  CODE_MAP_REPOSITORY_SENTINEL,
+  "code-map-repository"
 );
 const reconciliationRepositoryRoot = join(
   e2eRoot,
-  "INTELLILOOP_RECONCILIATION_REPOSITORY_SENTINEL"
+  RECONCILIATION_REPOSITORY_SENTINEL,
+  "reconciliation-repository"
 );
 
 function initializeControlledRepository(root = repositoryRoot): void {
@@ -107,18 +117,32 @@ async function registerControlledRepository(
   });
   expect(preflight.ok()).toBe(true);
   const preflightBody = (await preflight.json()) as {
-    preflight: { status: "READY" | "REJECTED"; reason?: string };
+    preflight: {
+      status: "READY" | "REJECTED";
+      reason?: string;
+      repository?: { displayName: string };
+    };
   };
   expect(
     preflightBody.preflight.status,
     `Controlled repository preflight: ${preflightBody.preflight.reason ?? "ready"}`
   ).toBe("READY");
+  expect(preflightBody.preflight.repository?.displayName).toBe(basename(rootPath));
+  expect(JSON.stringify(preflightBody)).not.toContain(rootPath);
 
   const registration = await page.request.put(
     `/api/v1/projects/${projectId}/repository`,
     { data: { rootPath } }
   );
   expect(registration.status()).toBe(201);
+}
+
+async function expectBodyToExcludePrivateValues(
+  page: Page,
+  values: readonly string[]
+): Promise<void> {
+  const bodyText = await page.locator("body").innerText();
+  for (const value of values) expect(bodyText).not.toContain(value);
 }
 
 test("renders connected Project selection with keyboard and honest empty state", async ({ page }) => {
@@ -185,7 +209,8 @@ test("completes the persisted path-safe Project workflow by keyboard", async ({ 
   await expect(page.getByText("Local Git", { exact: true })).toBeVisible();
   await expect(page.getByText("READ ONLY", { exact: true })).toBeVisible();
   await expect(page.getByText(/server-gated Local Project Pilot/u)).toHaveCount(0);
-  await expect(page.locator("body")).not.toContainText("INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL");
+  await expect(page.getByText("foundation-repository", { exact: true })).toBeVisible();
+  await expectBodyToExcludePrivateValues(page, [PRIVATE_REPOSITORY_SENTINEL, repositoryRoot]);
 
   const capture = page.getByRole("button", { name: "Analyze current commit" });
   await capture.focus();
@@ -193,7 +218,7 @@ test("completes the persisted path-safe Project workflow by keyboard", async ({ 
   await expect(page.getByText("DIRTY OBSERVATION", { exact: true })).toBeVisible();
   await expect(page.getByText(/ATTACHED · Captured/u)).toBeVisible();
   await expect(page.getByText("Not a Release Check.", { exact: true })).toBeVisible();
-  await expect(page.locator("body")).not.toContainText("INTELLILOOP_PRIVATE_FILE_SENTINEL");
+  await expectBodyToExcludePrivateValues(page, [PRIVATE_FILE_SENTINEL]);
   await expect(page.getByText("READY", { exact: true })).toHaveCount(0);
 
   const overviewUrl = page.url();
@@ -202,7 +227,11 @@ test("completes the persisted path-safe Project workflow by keyboard", async ({ 
   await expect(page.getByText("Reconcile cancellation behavior", { exact: true })).toBeVisible();
   await expect(page.getByText("Local Git", { exact: true })).toBeVisible();
   await expect(page.getByText("DIRTY OBSERVATION", { exact: true })).toBeVisible();
-  await expect(page.locator("body")).not.toContainText("INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL");
+  await expectBodyToExcludePrivateValues(page, [
+    PRIVATE_REPOSITORY_SENTINEL,
+    PRIVATE_FILE_SENTINEL,
+    repositoryRoot
+  ]);
 
   await page.keyboard.press("Tab");
   await expect(page.getByRole("link", { name: "Skip to main content" })).toBeFocused();
@@ -465,8 +494,12 @@ test("maps a controlled repository into attributed assets and explainable Twin p
   await expect(page.getByLabel("Selected immutable code-map revision")).toHaveValue("1");
   await expect(page.getByText("src/cancellation-policy.ts", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("SoftwareAsset", { exact: true }).first()).toBeVisible();
-  await expect(page.locator("body")).not.toContainText("INTELLILOOP_PRIVATE_REPOSITORY_SENTINEL");
-  await expect(page.locator("body")).not.toContainText("INTELLILOOP_CODE_MAP_REPOSITORY_SENTINEL");
+  await expect(page.getByText("code-map-repository", { exact: true }).first()).toBeVisible();
+  await expectBodyToExcludePrivateValues(page, [
+    PRIVATE_REPOSITORY_SENTINEL,
+    CODE_MAP_REPOSITORY_SENTINEL,
+    codeMapRepositoryRoot
+  ]);
 });
 
 test("reviews initial conflict, cited impact, explicit correction and stale history by keyboard", async ({ page }) => {
@@ -724,7 +757,10 @@ test("reviews initial conflict, cited impact, explicit correction and stale hist
   await expect(page.getByText("NOT EVIDENCE", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("PROVIDER DISABLED", { exact: true })).toBeVisible();
   await expect(page.locator(".statement-citations a").first()).toHaveAttribute("href", /^#citation-/u);
-  await expect(page.locator("body")).not.toContainText("INTELLILOOP_RECONCILIATION_REPOSITORY_SENTINEL");
+  await expectBodyToExcludePrivateValues(page, [
+    RECONCILIATION_REPOSITORY_SENTINEL,
+    reconciliationRepositoryRoot
+  ]);
   await expect(page.getByText("READY", { exact: true })).toHaveCount(0);
 
   const providerFailureBody = structuredClone(citedBody);

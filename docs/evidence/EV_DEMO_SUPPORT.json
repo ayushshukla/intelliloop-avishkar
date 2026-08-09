@@ -50,9 +50,9 @@
     "apps/web/src/ReconciliationWorkspace.tsx": "sha256:a1c43377b1b14faa991fdc6ff383de1a1fa34c337b271f0d943ff5c86aae6984",
     "apps/web/src/CitedExplanationWorkspace.tsx": "sha256:a7a8df4387b9771f3bb16fdd50482fa4282adcc97ccbf24ad9ce5460c83932a3",
     "apps/web/src/ReadinessPassportWorkspace.tsx": "sha256:c2b6958a2aa3c526331bd44456bd25ad1bf9df5c71d923e4ea08321a3f440de0",
-    "apps/web/src/styles.css": "sha256:99f2355867fa40550a8a80d03c409e38b6bb54ead3287100428685758c9d58f2",
+    "apps/web/src/styles.css": "sha256:37540481e34f4665032c1cf5b8ad85d372223ac0842ada57fc8dc396889b5112",
     "packages/demo-fixtures/src/retail-cancellation.ts": "sha256:16aa06901cf1621f67a84d9b963dfd9aee4e1ec521f4928652675d7f0f52463e",
-    "scripts/generate-demo-support-evidence.mjs": "sha256:cd05c794f4555ad4356edc1f998a5f08973757516f8d6f8f1dd19ab34f0623e9"
+    "scripts/generate-demo-support-evidence.mjs": "sha256:8b4848cb0ad6ff3cc9f8828509acf459153f0b610e16b99f44a333b55508fe94"
   },
   "limitations": [
     "Screenshots are recorded synthetic evidence, not live execution or production results.",

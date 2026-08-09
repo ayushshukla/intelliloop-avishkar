@@ -262,7 +262,7 @@
       "credentialPersisted": false,
       "credentialLogged": false,
       "repositoryPatternScan": "PASS",
-      "repositoryTextFilesScanned": 425,
+      "repositoryTextFilesScanned": 426,
       "allowedSyntheticFixtureMatches": 6,
       "logAndPersistenceSentinelEvidence": "PASS"
     },

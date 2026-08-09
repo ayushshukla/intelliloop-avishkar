@@ -49,7 +49,7 @@
       "layer": "INSTALL",
       "command": "npm.cmd ci",
       "status": "PASS",
-      "durationMs": 25829,
+      "durationMs": 28373,
       "observations": {
         "installedPackages": 176,
         "lockfileCommand": "npm ci"
@@ -60,7 +60,7 @@
       "layer": "STATIC",
       "command": "npm.cmd run typecheck",
       "status": "PASS",
-      "durationMs": 17611,
+      "durationMs": 15871,
       "observations": {}
     },
     {
@@ -68,7 +68,7 @@
       "layer": "UNIT_COMPONENT",
       "command": "npm.cmd run test:unit",
       "status": "PASS",
-      "durationMs": 43252,
+      "durationMs": 47308,
       "observations": {
         "passedTests": 416,
         "passedFiles": 49
@@ -79,7 +79,7 @@
       "layer": "API_INTEGRATION",
       "command": "npm.cmd run test:api",
       "status": "PASS",
-      "durationMs": 118912,
+      "durationMs": 126998,
       "observations": {
         "passedTests": 174,
         "passedFiles": 33
@@ -90,7 +90,7 @@
       "layer": "BUILD",
       "command": "npm.cmd run build",
       "status": "PASS",
-      "durationMs": 20458,
+      "durationMs": 18646,
       "observations": {
         "webModulesTransformed": 92
       }
@@ -100,7 +100,7 @@
       "layer": "BROWSER_E2E",
       "command": "npm.cmd run test:e2e",
       "status": "PASS",
-      "durationMs": 90999,
+      "durationMs": 77533,
       "observations": {
         "passedBrowserScenarios": 19
       }
@@ -110,7 +110,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:repo-safety",
       "status": "PASS",
-      "durationMs": 4437,
+      "durationMs": 3388,
       "observations": {}
     },
     {
@@ -118,7 +118,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:privacy",
       "status": "PASS",
-      "durationMs": 1923,
+      "durationMs": 1538,
       "observations": {}
     },
     {
@@ -126,7 +126,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:twin-code-map",
       "status": "PASS",
-      "durationMs": 6742,
+      "durationMs": 5345,
       "observations": {}
     },
     {
@@ -134,7 +134,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:reconcile",
       "status": "PASS",
-      "durationMs": 8690,
+      "durationMs": 6701,
       "observations": {}
     },
     {
@@ -142,7 +142,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:openai-eval",
       "status": "PASS",
-      "durationMs": 1325,
+      "durationMs": 1153,
       "observations": {}
     },
     {
@@ -150,7 +150,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:readiness-passport",
       "status": "PASS",
-      "durationMs": 36167,
+      "durationMs": 31968,
       "observations": {}
     },
     {
@@ -158,7 +158,7 @@
       "layer": "DOCUMENTATION_CONTRACT",
       "command": "npm.cmd run check:readiness-passport-docs",
       "status": "PASS",
-      "durationMs": 423,
+      "durationMs": 411,
       "observations": {}
     },
     {
@@ -166,7 +166,7 @@
       "layer": "GENERATED_EVIDENCE",
       "command": "npm.cmd run check:retail-fixture",
       "status": "PASS",
-      "durationMs": 428,
+      "durationMs": 395,
       "observations": {}
     },
     {
@@ -174,7 +174,7 @@
       "layer": "DOCUMENTATION_CONTRACT",
       "command": "npm.cmd run check:ai-safety-docs",
       "status": "PASS",
-      "durationMs": 428,
+      "durationMs": 396,
       "observations": {}
     },
     {
@@ -182,7 +182,7 @@
       "layer": "BROWSER_E2E",
       "command": "npm.cmd run check:golden-flow",
       "status": "PASS",
-      "durationMs": 31406,
+      "durationMs": 48030,
       "observations": {}
     },
     {
@@ -190,7 +190,7 @@
       "layer": "BROWSER_ACCESSIBILITY",
       "command": "npm.cmd run check:accessibility",
       "status": "PASS",
-      "durationMs": 15006,
+      "durationMs": 16209,
       "observations": {}
     },
     {
@@ -198,7 +198,7 @@
       "layer": "BROWSER_RECOVERY",
       "command": "npm.cmd run check:demo-gate",
       "status": "PASS",
-      "durationMs": 40523,
+      "durationMs": 41724,
       "observations": {}
     },
     {
@@ -206,7 +206,7 @@
       "layer": "FALLBACK_ASSETS",
       "command": "npm.cmd run check:demo-support",
       "status": "PASS",
-      "durationMs": 694,
+      "durationMs": 686,
       "observations": {}
     },
     {
@@ -214,7 +214,7 @@
       "layer": "DOCUMENTATION",
       "command": "npm.cmd run check:docs",
       "status": "PASS",
-      "durationMs": 447,
+      "durationMs": 515,
       "observations": {}
     }
   ],
@@ -226,8 +226,8 @@
   },
   "hashes": {
     "sourceTree": {
-      "sha256": "sha256:9d954e3b6bd979f792dc0dbe1d0dbc9d10ebac0cd83b3786d4005aebc07908d4",
-      "entryCount": 423
+      "sha256": "sha256:4455d4a747c25aa55641e05f1a30480caae253f6ec470ca9b954892af0f4fa07",
+      "entryCount": 424
     },
     "artifacts": [
       {
@@ -251,8 +251,8 @@
       {
         "path": ".github/workflows/release-platform-verification.yml",
         "kind": "FILE",
-        "bytes": 1519,
-        "sha256": "sha256:6f987bc54165c9f01c60abd256c3e928d9122371b3b1ec50bf560762207303d5"
+        "bytes": 1661,
+        "sha256": "sha256:ce5d8d74f3554e7a15c13d13958d3a749341b3ee6cfb697b6d5f0626360bd89d"
       },
       {
         "path": "scripts/generate-release-platform-evidence.mjs",
@@ -270,7 +270,7 @@
         "path": "apps/web/dist",
         "kind": "TREE",
         "entryCount": 3,
-        "sha256": "sha256:8ddfeb5089e6ec80e9513c5bfd62ba70f2e750952b9c996bcdf98569830656d9"
+        "sha256": "sha256:77571a1b0f40d1c8a5da3c1dff62154a1c4ede2a7975e7056b7227cf90a1528f"
       },
       {
         "path": "packages/domain/dist",
@@ -294,13 +294,13 @@
         "path": "docs/demo/assets",
         "kind": "TREE",
         "entryCount": 7,
-        "sha256": "sha256:f620c0a8b25b0efa4306ec520d7259e00766ca9aaa8a88eb92eacb521a35cb80"
+        "sha256": "sha256:25578a67de90d6c1e27ad597dd2df7579563e3e3232eb6d3c87c2b7a6112c7b9"
       },
       {
         "path": "docs/demo/DEMO_ASSET_MANIFEST.json",
         "kind": "FILE",
-        "bytes": 5521,
-        "sha256": "sha256:4bd9cf7f2a6af11fb672d216aa30ade117b291d12b9580951946eb3fc4502b18"
+        "bytes": 5534,
+        "sha256": "sha256:9b2b72fbf4699c08ac72bff6967c403f687db677adb72b2bad7f455642ce0538"
       },
       {
         "path": "docs/evidence/EV_DEMO_GATE.json",
@@ -312,13 +312,13 @@
         "path": "docs/evidence/EV_DEMO_SUPPORT.json",
         "kind": "FILE",
         "bytes": 2764,
-        "sha256": "sha256:3080e588de52b12eea626637e5c313fb929927e2eea5b92ec097f2e419c13374"
+        "sha256": "sha256:acdff47b820108c6799c4f915ae2ab0adc11b45bdc337c05918e10e88f978151"
       },
       {
         "path": "docs/evidence/EV_ACCESSIBILITY.json",
         "kind": "FILE",
         "bytes": 2727,
-        "sha256": "sha256:d04c616441235d293c536cb36bfb62d8a1000ad6ab04801b4467f56d7e0056b3"
+        "sha256": "sha256:c03d6b42e02d49a6653e95613246085a7162e5d3b7762e6dd12bed8e792605e7"
       },
       {
         "path": "docs/evidence/EV_REPO_SAFETY.json",
