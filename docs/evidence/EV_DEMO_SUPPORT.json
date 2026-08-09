@@ -52,7 +52,7 @@
     "apps/web/src/ReadinessPassportWorkspace.tsx": "sha256:c2b6958a2aa3c526331bd44456bd25ad1bf9df5c71d923e4ea08321a3f440de0",
     "apps/web/src/styles.css": "sha256:37540481e34f4665032c1cf5b8ad85d372223ac0842ada57fc8dc396889b5112",
     "packages/demo-fixtures/src/retail-cancellation.ts": "sha256:16aa06901cf1621f67a84d9b963dfd9aee4e1ec521f4928652675d7f0f52463e",
-    "scripts/generate-demo-support-evidence.mjs": "sha256:4162f60a87ea1aaf7a6a36a7dc97b297d3f02eb64c458d5c22d0b1e4125def10"
+    "scripts/generate-demo-support-evidence.mjs": "sha256:8b4848cb0ad6ff3cc9f8828509acf459153f0b610e16b99f44a333b55508fe94"
   },
   "limitations": [
     "Screenshots are recorded synthetic evidence, not live execution or production results.",

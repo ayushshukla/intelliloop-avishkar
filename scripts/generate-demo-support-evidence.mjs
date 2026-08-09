@@ -51,14 +51,14 @@ async function sha256File(path) {
   return sha256Bytes(await readFile(path));
 }
 
-async function sha256CanonicalSourceFile(path) {
+async function sha256CanonicalTextFile(path) {
   const source = await readFile(path, "utf8");
   return sha256Bytes(Buffer.from(source.replace(/\r\n?/gu, "\n"), "utf8"));
 }
 
 async function applicationRevision() {
   const entries = [];
-  for (const logical of SOURCE_FILES) entries.push(`${logical}\0${await sha256CanonicalSourceFile(join(ROOT, logical))}\0`);
+  for (const logical of SOURCE_FILES) entries.push(`${logical}\0${await sha256CanonicalTextFile(join(ROOT, logical))}\0`);
   return sha256Bytes(Buffer.from(entries.join(""), "utf8"));
 }
 
@@ -164,10 +164,10 @@ async function validateExisting() {
   const viewer = await readFile(FALLBACK_VIEWER, "utf8");
   for (const asset of assets) assert(viewer.includes(`../assets/${asset.file}`), `Fallback viewer does not reference ${asset.file}.`);
   assert(viewer.includes("not a live run") && viewer.includes("AI off") && viewer.includes("unsigned and non-approving"), "Fallback viewer is missing mandatory truth disclosures.");
-  assert(evidence.fallback?.viewerSha256 === await sha256File(FALLBACK_VIEWER), "Fallback viewer hash no longer matches evidence.");
+  assert(evidence.fallback?.viewerSha256 === await sha256CanonicalTextFile(FALLBACK_VIEWER), "Fallback viewer hash no longer matches evidence.");
   assert(evidence.fallback?.status === "PASS" && evidence.fallback?.brokenImages === 0 && evidence.fallback?.serviceStoppedDuringValidation === true, "Fallback validation evidence is incomplete.");
   assert(evidence.safety?.browserNonLoopbackRequests === 0 && evidence.safety?.browserAuthorizationHeaders === 0 && evidence.safety?.externalAiCalls === false, "Demo support safety evidence is not fail-closed.");
-  for (const logical of SOURCE_FILES) assert(evidence.sourceIntegrity?.[logical] === await sha256CanonicalSourceFile(join(ROOT, logical)), `Demo support source hash drifted: ${logical}.`);
+  for (const logical of SOURCE_FILES) assert(evidence.sourceIntegrity?.[logical] === await sha256CanonicalTextFile(join(ROOT, logical)), `Demo support source hash drifted: ${logical}.`);
   console.log(`EV-DEMO-SUPPORT PASS verify-existing assets=${assets.length} fallback=${evidence.fallback.status}`);
 }
 
@@ -332,10 +332,10 @@ try {
     evidenceDate: "2026-08-06",
     reproductionCommand: "npm.cmd run evidence:demo-support",
     liveFlow: { sequence: ["BLOCKED", "TWIN", "CONFLICT_AND_IMPACT", "AI_OFF_CITED", "READY", "UNAVAILABLE", "READY_AFTER_RESTART", "STALE"], restartRecovery: "PASS", screenshotCount: assets.length },
-    fallback: { status: "PASS", format: "STATIC_LOCAL_HTML_ORDERED_SCREENSHOT_SEQUENCE", serviceStoppedDuringValidation: true, slideCount: fallbackImages.length, brokenImages: 0, viewerSha256: await sha256File(FALLBACK_VIEWER), manifestId: manifest.manifestId },
+    fallback: { status: "PASS", format: "STATIC_LOCAL_HTML_ORDERED_SCREENSHOT_SEQUENCE", serviceStoppedDuringValidation: true, slideCount: fallbackImages.length, brokenImages: 0, viewerSha256: await sha256CanonicalTextFile(FALLBACK_VIEWER), manifestId: manifest.manifestId },
     safety: { browserNonLoopbackRequests: nonLoopbackRequests.length, browserAuthorizationHeaders: authorizationHeaders.length, externalAiCalls: false, privateRepositoryUsed: false, repositoryCodeExecuted: false },
     disclosures: { syntheticFixture: true, aiOff: true, notLiveExecution: true, readyNotApproval: true, passportUnsigned: true },
-    sourceIntegrity: Object.fromEntries(await Promise.all(SOURCE_FILES.map(async (logical) => [logical, await sha256CanonicalSourceFile(join(ROOT, logical))]))),
+    sourceIntegrity: Object.fromEntries(await Promise.all(SOURCE_FILES.map(async (logical) => [logical, await sha256CanonicalTextFile(join(ROOT, logical))]))),
     limitations: manifest.limitations,
     nextAuthorizedStory: "IL-9.1"
   };
