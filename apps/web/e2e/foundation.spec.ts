@@ -227,7 +227,11 @@ test("completes the persisted path-safe Project workflow by keyboard", async ({ 
   await expect(page.getByText("Reconcile cancellation behavior", { exact: true })).toBeVisible();
   await expect(page.getByText("Local Git", { exact: true })).toBeVisible();
   await expect(page.getByText("DIRTY OBSERVATION", { exact: true })).toBeVisible();
-  await expectBodyToExcludePrivateValues(page, [PRIVATE_REPOSITORY_SENTINEL, repositoryRoot]);
+  await expectBodyToExcludePrivateValues(page, [
+    PRIVATE_REPOSITORY_SENTINEL,
+    PRIVATE_FILE_SENTINEL,
+    repositoryRoot
+  ]);
 
   await page.keyboard.press("Tab");
   await expect(page.getByRole("link", { name: "Skip to main content" })).toBeFocused();

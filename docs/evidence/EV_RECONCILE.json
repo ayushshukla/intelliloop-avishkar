@@ -114,15 +114,15 @@
         "total": 6,
         "percentage": 100
       },
-      "initialRunMilliseconds": 87.23,
-      "correctionRunMilliseconds": 109.254,
+      "initialRunMilliseconds": 67.381,
+      "correctionRunMilliseconds": 69.462,
       "exactReplay": {
         "unit": "milliseconds",
         "samples": 25,
-        "minimum": 71.645,
-        "median": 87.914,
-        "p95": 100.475,
-        "maximum": 102.317
+        "minimum": 56.988,
+        "median": 65.833,
+        "p95": 85.306,
+        "maximum": 96.667
       },
       "productionExtrapolationPerformed": false,
       "passThresholdBasedOnWallClock": false
